@@ -17,24 +17,21 @@ function useIsActive() {
 export default function Navbar() {
   const isActive = useIsActive();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileSubOpen, setMobileSubOpen] = useState(false);
 
-  const closeMobile = () => {
-    setMobileOpen(false);
-    setMobileSubOpen(false);
-  };
+  const closeMobile = () => setMobileOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur">
+    <>
+      <header className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur">
       <nav
         aria-label="Primary"
         className="container-x flex h-16 items-center justify-between gap-6 lg:h-20"
       >
-        {/* Brand */}
+        {/* Brand — left on desktop, RIGHT on mobile */}
         <Link
           href="/"
           onClick={closeMobile}
-          className="flex flex-col leading-tight"
+          className="order-2 flex flex-col items-end text-right leading-tight lg:order-1 lg:items-start lg:text-left"
         >
           <span className="font-heading text-base font-bold tracking-tight lg:text-lg">
             Angels Baby Land
@@ -45,7 +42,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="order-3 hidden items-center gap-1 lg:flex">
           {navItems.map((item) =>
             item.children ? (
               <DesktopDropdown key={item.href} item={item} isActive={isActive} />
@@ -59,13 +56,13 @@ export default function Navbar() {
           )}
         </ul>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger — LEFT on mobile */}
         <button
           type="button"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((v) => !v)}
-          className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[5px] lg:hidden"
+          className="relative z-50 order-1 flex h-10 w-10 flex-col items-center justify-center gap-[5px] lg:hidden"
         >
           <span
             className={`block h-0.5 w-6 bg-text transition-transform duration-300 ${
@@ -84,81 +81,66 @@ export default function Navbar() {
           />
         </button>
       </nav>
+      </header>
 
-      {/* Mobile slide-in panel */}
+      {/* Mobile menu overlay — sibling of <header> so `fixed` covers the FULL
+          viewport (the header's backdrop-blur would otherwise contain it). */}
       <div
         className={`fixed inset-0 z-40 lg:hidden ${
           mobileOpen ? "" : "pointer-events-none"
         }`}
         aria-hidden={!mobileOpen}
       >
-        {/* Backdrop */}
+        {/* Blurred + dimmed backdrop — blurs the page content behind it */}
         <div
           onClick={closeMobile}
-          className={`absolute inset-0 bg-text/30 transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-text/20 backdrop-blur-sm transition-opacity duration-300 ${
             mobileOpen ? "opacity-100" : "opacity-0"
           }`}
         />
-        {/* Panel */}
+
+        {/* Slide-in panel — from the LEFT (matches the hamburger side) */}
         <div
-          className={`absolute right-0 top-0 flex h-full w-72 max-w-[80%] flex-col gap-1 overflow-y-auto border-l border-border bg-bg px-6 pb-8 pt-20 shadow-xl transition-transform duration-300 ${
-            mobileOpen ? "translate-x-0" : "translate-x-full"
+          className={`absolute left-0 top-0 flex h-full w-72 max-w-[82%] flex-col gap-1 overflow-y-auto border-r border-border bg-bg px-6 pb-8 pt-20 shadow-xl transition-transform duration-300 ${
+            mobileOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          {navItems.map((item) =>
-            item.children ? (
-              <div key={item.href} className="border-b border-border/60">
-                <button
-                  type="button"
-                  onClick={() => setMobileSubOpen((v) => !v)}
-                  aria-expanded={mobileSubOpen}
-                  className="flex w-full items-center justify-between py-3 text-left font-medium"
-                >
-                  {item.label}
-                  <span
-                    className={`text-text-muted transition-transform duration-200 ${
-                      mobileSubOpen ? "rotate-180" : ""
-                    }`}
-                  >
-                    ▾
-                  </span>
-                </button>
-                {mobileSubOpen && (
-                  <ul className="pb-2 pl-3">
-                    {item.children.map((child) => (
-                      <li key={child.href}>
-                        <Link
-                          href={child.href}
-                          onClick={closeMobile}
-                          className={`block py-2 text-sm ${
-                            isActive(child.href)
-                              ? "text-accent-strong"
-                              : "text-text-muted"
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ) : (
+          {/* Full feature list; Activities is expanded inline by default */}
+          {navItems.map((item) => (
+            <div key={item.href} className="border-b border-border/60">
               <Link
-                key={item.href}
                 href={item.href}
                 onClick={closeMobile}
-                className={`border-b border-border/60 py-3 font-medium ${
+                className={`block py-3 font-medium ${
                   isActive(item.href) ? "text-accent-strong" : "text-text"
                 }`}
               >
                 {item.label}
               </Link>
-            )
-          )}
+              {item.children && (
+                <ul className="pb-2 pl-3">
+                  {item.children.map((child) => (
+                    <li key={child.href}>
+                      <Link
+                        href={child.href}
+                        onClick={closeMobile}
+                        className={`block py-2 text-sm ${
+                          isActive(child.href)
+                            ? "text-accent-strong"
+                            : "text-text-muted"
+                        }`}
+                      >
+                        {child.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
         </div>
       </div>
-    </header>
+    </>
   );
 }
 
@@ -224,9 +206,7 @@ function DesktopDropdown({
               <Link
                 href={child.href}
                 className={`block px-4 py-2 text-sm transition-colors hover:bg-bg-alt ${
-                  isActive(child.href)
-                    ? "text-accent-strong"
-                    : "text-text"
+                  isActive(child.href) ? "text-accent-strong" : "text-text"
                 }`}
               >
                 {child.label}
