@@ -17,8 +17,13 @@ function useIsActive() {
 export default function Navbar() {
   const isActive = useIsActive();
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Which mobile submenu is expanded (by parent href); null = all collapsed.
+  const [openSub, setOpenSub] = useState<string | null>(null);
 
-  const closeMobile = () => setMobileOpen(false);
+  const closeMobile = () => {
+    setMobileOpen(false);
+    setOpenSub(null);
+  };
 
   return (
     <>
@@ -105,36 +110,72 @@ export default function Navbar() {
             mobileOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          {/* Full feature list; Activities is expanded inline by default */}
+          {/* Full feature list; items with children expand on tapping the arrow */}
           {navItems.map((item) => (
             <div key={item.href} className="border-b border-border/60">
-              <Link
-                href={item.href}
-                onClick={closeMobile}
-                className={`block py-3 font-medium ${
-                  isActive(item.href) ? "text-accent-strong" : "text-text"
-                }`}
-              >
-                {item.label}
-              </Link>
-              {item.children && (
-                <ul className="pb-2 pl-3">
-                  {item.children.map((child) => (
-                    <li key={child.href}>
-                      <Link
-                        href={child.href}
-                        onClick={closeMobile}
-                        className={`block py-2 text-sm ${
-                          isActive(child.href)
-                            ? "text-accent-strong"
-                            : "text-text-muted"
+              {item.children ? (
+                <>
+                  {/* Label links to the landing; the arrow toggles the submenu */}
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href={item.href}
+                      onClick={closeMobile}
+                      className={`flex-1 py-3 font-medium ${
+                        isActive(item.href) ? "text-accent-strong" : "text-text"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                    <button
+                      type="button"
+                      aria-label={`Toggle ${item.label} submenu`}
+                      aria-expanded={openSub === item.href}
+                      onClick={() =>
+                        setOpenSub((cur) =>
+                          cur === item.href ? null : item.href
+                        )
+                      }
+                      className="flex h-11 w-11 items-center justify-center text-text-muted"
+                    >
+                      <span
+                        className={`transition-transform duration-200 ${
+                          openSub === item.href ? "rotate-180" : ""
                         }`}
                       >
-                        {child.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                        ▾
+                      </span>
+                    </button>
+                  </div>
+                  {openSub === item.href && (
+                    <ul className="pb-2 pl-3">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            onClick={closeMobile}
+                            className={`block py-2 text-sm ${
+                              isActive(child.href)
+                                ? "text-accent-strong"
+                                : "text-text-muted"
+                            }`}
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={item.href}
+                  onClick={closeMobile}
+                  className={`block py-3 font-medium ${
+                    isActive(item.href) ? "text-accent-strong" : "text-text"
+                  }`}
+                >
+                  {item.label}
+                </Link>
               )}
             </div>
           ))}
