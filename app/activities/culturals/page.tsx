@@ -4,7 +4,7 @@ import GalleryDetail from "@/components/ui/GalleryDetail";
 import { culturals } from "@/data/activities";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Culturals",
+  title: "Cultural Activities",
   description: culturals.intro,
   path: "/activities/culturals",
 });

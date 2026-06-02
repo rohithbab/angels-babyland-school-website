@@ -11,7 +11,7 @@ const IMG = "/assets/placeholder.jpg";
 
 /** Culturals leaf — /activities/culturals */
 export const culturals: ActivitySection = {
-  title: "Culturals",
+  title: "Cultural Activities",
   intro:
     "Annual day, festivals and stage performances that celebrate our students' creativity.",
   frames: [
@@ -23,7 +23,7 @@ export const culturals: ActivitySection = {
 
 /** Sports leaf — /activities/sports */
 export const sports: ActivitySection = {
-  title: "Sports",
+  title: "Sports & Physical Activities",
   intro:
     "Athletics, team games and the annual sports meet that build fitness and team spirit.",
   frames: [

@@ -4,7 +4,7 @@ import GalleryDetail from "@/components/ui/GalleryDetail";
 import { sports } from "@/data/activities";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Sports",
+  title: "Sports & Physical Activities",
   description: sports.intro,
   path: "/activities/sports",
 });

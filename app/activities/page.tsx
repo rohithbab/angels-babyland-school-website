@@ -35,8 +35,8 @@ export default function ActivitiesPage() {
     <section className="container-x section-y">
       <SectionHeading
         as="h1"
-        title="Beyond Academics"
-        subtitle="The activities that shape well-rounded students."
+        title="Activities & Clubs"
+        subtitle="Encouraging creativity, confidence, and holistic development beyond the classroom."
         className="mb-10"
       />
       <CardGrid items={items} columns={3} />
