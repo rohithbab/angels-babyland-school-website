@@ -104,10 +104,10 @@
 /*  Layout helpers                                                     */
 /* ------------------------------------------------------------------ */
 @layer components {
-  /* Centered content column: 1200px cap, 24px → 80px side padding */
+  /* Full-width content row: no cap — spans the viewport minus side padding
+     (24px → 80px). --content-max is kept for any section that opts back in. */
   .container-x {
     width: 100%;
-    max-width: var(--content-max);
     margin-inline: auto;
     padding-inline: var(--pad-x-mobile);
   }

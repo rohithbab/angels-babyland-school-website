@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -30,24 +31,34 @@ export default function Navbar() {
       <header className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur">
       <nav
         aria-label="Primary"
-        className="container-x flex h-16 items-center justify-between gap-6 lg:h-20"
+        className="container-x flex h-18 items-center justify-between gap-6 lg:h-24"
       >
-        {/* Brand — left on desktop, RIGHT on mobile */}
+        {/* Brand — crest + name. Left on desktop, RIGHT on mobile. */}
         <Link
           href="/"
           onClick={closeMobile}
-          className="order-2 flex flex-col items-end text-right leading-tight lg:order-1 lg:items-start lg:text-left"
+          className="order-2 flex items-center gap-2.5 lg:order-1 lg:gap-3"
         >
-          <span className="font-heading text-base font-bold tracking-tight lg:text-lg">
-            Angels Baby Land
-          </span>
-          <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-text-muted lg:text-xs">
-            Matric Hr. Sec. School
+          <Image
+            src="/assets/abl_school_logo.png"
+            alt="Angels Babyland school crest"
+            width={56}
+            height={56}
+            priority
+            className="h-10 w-10 shrink-0 object-contain lg:h-14 lg:w-14"
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="font-heading text-base font-extrabold uppercase tracking-tight text-text lg:text-xl">
+              ANGELS BABYLAND
+            </span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-text-muted lg:text-xs">
+              Matric Hr. Sec. School
+            </span>
           </span>
         </Link>
 
         {/* Desktop links */}
-        <ul className="order-3 hidden items-center gap-1 lg:flex">
+        <ul className="order-3 hidden items-center gap-1.5 lg:flex">
           {navItems.map((item) =>
             item.children ? (
               <DesktopDropdown key={item.href} item={item} isActive={isActive} />
@@ -201,7 +212,7 @@ function DesktopLink({
   return (
     <Link
       href={href}
-      className={`group relative px-3 py-2 text-sm font-medium transition-colors ${
+      className={`group relative inline-flex items-center px-3.5 py-2 text-sm font-semibold tracking-tight transition-colors ${
         active ? "text-accent-strong" : "text-text hover:text-accent-strong"
       }`}
     >
@@ -228,7 +239,7 @@ function DesktopDropdown({
     <li className="group relative">
       <Link
         href={item.href}
-        className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${
+        className={`flex items-center gap-1 px-3.5 py-2 text-sm font-semibold tracking-tight transition-colors ${
           parentActive
             ? "text-accent-strong"
             : "text-text hover:text-accent-strong"

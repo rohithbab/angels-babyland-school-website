@@ -288,3 +288,11 @@ Import trace:
  GET /about 200 in 398ms (next.js: 277ms, application-code: 121ms)
 [browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
  GET / 200 in 97ms (next.js: 17ms, application-code: 80ms)
+✓ Compiled in 126ms
+ GET / 200 in 176ms (next.js: 109ms, application-code: 67ms)
+✓ Compiled in 63ms
+ GET / 200 in 253ms (next.js: 167ms, application-code: 85ms)
+ GET / 200 in 280ms (next.js: 3ms, application-code: 277ms)
+ GET /activities 200 in 337ms (next.js: 227ms, application-code: 111ms)
+ GET /achievements 200 in 307ms (next.js: 206ms, application-code: 101ms)
+ GET / 200 in 76ms (next.js: 5ms, application-code: 72ms)
