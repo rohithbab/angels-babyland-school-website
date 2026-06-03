@@ -20,6 +20,20 @@
   /* Font families (variables injected by next/font in layout.tsx) */
   --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+/* Gentle vertical drift — used for the floating crest on the About page. */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 /* Non-theme design tokens (layout + elevation) */
@@ -97,6 +111,13 @@
   :focus-visible {
     outline: 2px solid var(--color-accent-strong);
     outline-offset: 2px;
+  }
+
+  /* Respect users who prefer no motion — disable the floating drift. */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float {
+      animation: none !important;
+    }
   }
 }
 
