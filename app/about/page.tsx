@@ -29,17 +29,13 @@ const infrastructure = [
 type Block = { type: "p" | "quote"; text: string };
 
 const leadership: {
-  heading: string;
+  role: string;
   name: string;
-  title: string;
-  imageSide: "left" | "right";
   blocks: Block[];
 }[] = [
   {
-    heading: "Our Founder",
+    role: "Founder",
     name: "P. Thangaraj",
-    title: "Founder",
-    imageSide: "left",
     blocks: [
       {
         type: "p",
@@ -64,10 +60,8 @@ const leadership: {
     ],
   },
   {
-    heading: "Message from the Correspondent",
+    role: "Correspondent",
     name: "Bagyam Thangaraj",
-    title: "Correspondent",
-    imageSide: "right",
     blocks: [
       {
         type: "p",
@@ -92,10 +86,8 @@ const leadership: {
     ],
   },
   {
-    heading: "Message from the Secretary",
+    role: "Secretary",
     name: "Dr. Jasmine Deva Arul Selvi. T",
-    title: "Secretary",
-    imageSide: "left",
     blocks: [
       {
         type: "p",
@@ -132,17 +124,19 @@ const leadership: {
 export default function AboutPage() {
   return (
     <section className="container-x section-y">
-      {/* HERO */}
-      <SectionHeading
-        as="h1"
-        title="About Us"
-        subtitle="For over three decades, Angels BabyLand has shaped confident, capable young minds — rooted in knowledge, strong values, and an unwavering pursuit of excellence. Our promise lives in our motto: From Darkness, Lead Unto Light."
-      />
+      {/* HERO + WHO WE ARE — crest vertically centered on the right, spanning
+          the full height of the intro + Who We Are copy. */}
+      <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
+        <div>
+          <h1>About Us</h1>
+          <p className="mt-3 text-text-muted">
+            For over three decades, Angels BabyLand has shaped confident,
+            capable young minds — rooted in knowledge, strong values, and an
+            unwavering pursuit of excellence. Our promise lives in our motto:
+            From Darkness, Lead Unto Light.
+          </p>
 
-      <div className="mt-12 space-y-14 lg:mt-16 lg:space-y-20">
-        {/* WHO WE ARE — text + floating crest fills the full width */}
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
-          <div>
+          <div className="mt-10 lg:mt-14">
             <h2>Who We Are ?</h2>
             <p className="mt-4 text-justify text-text-muted">
               Angels BabyLand Matric Higher Secondary School has been a trusted
@@ -157,18 +151,21 @@ export default function AboutPage() {
               carries a wealth that can never be taken away.
             </p>
           </div>
-          <div className="flex justify-center lg:justify-end">
-            <Image
-              src="/assets/about/about_us_section_image.png"
-              alt="Angels BabyLand school crest"
-              width={512}
-              height={512}
-              priority
-              className="h-auto w-52 animate-float object-contain drop-shadow-[0_22px_40px_rgba(236,156,190,0.45)] sm:w-60 lg:w-72 xl:w-80"
-            />
-          </div>
         </div>
 
+        <div className="flex justify-center lg:justify-end">
+          <Image
+            src="/assets/about/about_us_section_image.png"
+            alt="Angels BabyLand school crest"
+            width={512}
+            height={512}
+            priority
+            className="h-auto w-64 animate-float object-contain drop-shadow-[0_24px_44px_rgba(236,156,190,0.45)] sm:w-80 lg:w-[26rem] xl:w-[30rem]"
+          />
+        </div>
+      </div>
+
+      <div className="mt-14 space-y-14 lg:mt-20 lg:space-y-20">
         {/* VISION + MISSION */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <Card interactive={false} className="p-8">
@@ -191,57 +188,68 @@ export default function AboutPage() {
           </Card>
         </div>
 
-        {/* LEADERSHIP — Founder, Correspondent, Secretary (alternating sides) */}
+        {/* LEADERSHIP — Founder → Correspondent → Secretary. Stacked cards, each
+            with a square photo straddling the card's top edge, joined by a
+            vertical connector line (timeline feel). */}
         <div>
           <SectionHeading
             title="Our Leadership"
             subtitle="The vision and the voices behind Angels BabyLand."
           />
-          <div className="mt-10 space-y-14 lg:mt-12 lg:space-y-20">
-            {leadership.map((person) => (
-              <article
-                key={person.title}
-                className={`flex flex-col gap-8 md:flex-row md:items-start lg:gap-12 ${
-                  person.imageSide === "right" ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Photo — pink placeholder box for now */}
-                <div className="w-full md:w-72 md:shrink-0">
-                  <div
-                    className="flex aspect-square w-full items-end rounded-[var(--radius-card)] bg-accent p-4"
-                    role="img"
-                    aria-label={`Photo of ${person.name}, ${person.title}`}
-                  >
-                    <span className="font-heading text-sm font-semibold uppercase tracking-wide text-text/70">
-                      {person.title}
-                    </span>
+          <div className="mx-auto mt-16 flex w-full max-w-[1600px] flex-col lg:mt-20">
+            {leadership.map((person, idx) => (
+              <div key={person.role} className="w-full">
+                {/* Connector line between consecutive cards */}
+                {idx > 0 && (
+                  <div className="flex justify-center" aria-hidden>
+                    <span className="h-12 w-0.5 bg-accent-strong/40 lg:h-16" />
                   </div>
-                </div>
+                )}
 
-                {/* Content */}
-                <div className="flex-1">
-                  <div className="mb-4 h-1 w-12 bg-accent" />
-                  <h3 className="uppercase tracking-tight">{person.heading}</h3>
-                  {person.blocks.map((block, i) =>
-                    block.type === "quote" ? (
-                      <blockquote
-                        key={i}
-                        className="my-5 border-l-2 border-accent-strong pl-4 font-heading text-base italic text-text lg:text-lg"
-                      >
-                        “{block.text}”
-                      </blockquote>
-                    ) : (
-                      <p key={i} className="mt-4 text-justify text-text-muted">
-                        {block.text}
-                      </p>
-                    )
-                  )}
-                  <p className="mt-6 font-heading font-bold uppercase tracking-wide">
-                    {person.name}
-                  </p>
-                  <p className="text-sm text-text-muted">{person.title}</p>
+                {/* Top padding holds the photo's protruding upper half */}
+                <div className="pt-20 lg:pt-28">
+                  <article className="relative rounded-[var(--radius-card)] border border-border bg-bg px-6 pb-8 pt-24 shadow-[var(--shadow-card)] lg:px-12 lg:pb-12 lg:pt-32">
+                    {/* Square photo — pink placeholder, straddles the card top */}
+                    <div
+                      className="absolute left-1/2 top-0 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[var(--radius-card)] border-4 border-bg bg-accent shadow-[var(--shadow-card)] lg:h-56 lg:w-56"
+                      role="img"
+                      aria-label={`Photo of ${person.name}, ${person.role}`}
+                    >
+                      <span className="px-2 text-center font-heading text-sm font-semibold uppercase tracking-wide text-text/70">
+                        {person.role}
+                      </span>
+                    </div>
+
+                    {/* Highlighted title box: ROLE — Name */}
+                    <div className="flex justify-center">
+                      <span className="inline-block rounded-[var(--radius-card)] bg-accent px-4 py-1.5 text-center font-heading text-sm font-bold uppercase tracking-wide text-text lg:text-base">
+                        {person.role} — {person.name}
+                      </span>
+                    </div>
+
+                    {/* Message body */}
+                    <div className="mt-6">
+                      {person.blocks.map((block, i) =>
+                        block.type === "quote" ? (
+                          <blockquote
+                            key={i}
+                            className="my-5 border-l-2 border-accent-strong pl-4 font-heading text-base italic text-text lg:text-lg"
+                          >
+                            “{block.text}”
+                          </blockquote>
+                        ) : (
+                          <p
+                            key={i}
+                            className="mt-4 text-justify text-text-muted"
+                          >
+                            {block.text}
+                          </p>
+                        )
+                      )}
+                    </div>
+                  </article>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         </div>
