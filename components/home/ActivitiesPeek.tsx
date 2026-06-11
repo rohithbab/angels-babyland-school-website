@@ -1,41 +1,45 @@
-import SectionHeading from "@/components/ui/SectionHeading";
 import CTAButton from "@/components/ui/CTAButton";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 
 /**
- * Section 3 — Activities sneak peek. Heading + written copy + one image
- * (text + image only, no live gallery). Links to /activities.
+ * Section 4 — Beyond Academics. Copy on the left, a modestly-sized image on the
+ * right. Heading + subheading + paragraphs sit together (no large vertical
+ * gaps). Links to /activities.
  */
 export default function ActivitiesPeek() {
   return (
     <section className="bg-bg-alt">
       <div className="container-x section-y">
-        <SectionHeading
-          title="Beyond Academics"
-          subtitle="Encouraging creativity, discipline, and holistic development through diverse activities."
-        />
-
-        <div className="mt-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          {/* Copy */}
           <div>
-            <p className="text-text-muted">
-              From cultural festivals and classical arts to sports and service
-              clubs, our students explore interests that shape character and
-              confidence. We believe a well-rounded education extends far beyond
-              the classroom.
+            <h2>Beyond Academics</h2>
+            <p className="mt-2 font-heading text-lg font-semibold text-accent-strong lg:text-xl">
+              Nurturing Talents. Building Character. Inspiring Futures.
             </p>
             <p className="mt-4 text-text-muted">
-              Every activity is designed to build teamwork, leadership, and a
-              lifelong love of learning.
+              At Angels Baby Land Matric Higher Secondary School, education
+              extends far beyond textbooks and classrooms. Through cultural
+              programs, classical arts, sports, leadership clubs, and community
+              initiatives, students are encouraged to discover their passions
+              and develop essential life skills.
+            </p>
+            <p className="mt-4 text-text-muted">
+              Every experience is thoughtfully designed to foster creativity,
+              confidence, discipline, teamwork, and leadership — helping students
+              grow into well-rounded individuals prepared to excel in every
+              stage of life.
             </p>
             <CTAButton href="/activities" className="mt-6">
               Check More
             </CTAButton>
           </div>
 
-          <div className="group relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border border-border">
+          {/* Image */}
+          <div className="group relative mx-auto aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)] lg:mx-0 lg:ml-auto">
             <PlaceholderImage
               alt="Students taking part in school activities"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 1024px) 100vw, 520px"
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
             />
           </div>

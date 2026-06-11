@@ -6,11 +6,18 @@ interface CTAButtonProps {
   children: React.ReactNode;
   /** primary = filled pink; secondary = outlined. Default: primary. */
   variant?: "primary" | "secondary";
+  /** md = standard; lg = larger padding + text (e.g. hero). Default: md. */
+  size?: "md" | "lg";
   className?: string;
 }
 
 const base =
-  "inline-flex items-center justify-center rounded-[var(--radius-card)] px-6 py-3 text-sm font-medium transition-colors duration-200";
+  "inline-flex items-center justify-center rounded-[var(--radius-card)] font-medium transition-colors duration-200";
+
+const sizes: Record<NonNullable<CTAButtonProps["size"]>, string> = {
+  md: "px-6 py-3 text-sm",
+  lg: "px-8 py-4 text-base lg:text-lg",
+};
 
 const variants: Record<NonNullable<CTAButtonProps["variant"]>, string> = {
   primary:
@@ -23,10 +30,14 @@ export default function CTAButton({
   href,
   children,
   variant = "primary",
+  size = "md",
   className = "",
 }: CTAButtonProps) {
   return (
-    <Link href={href} className={`${base} ${variants[variant]} ${className}`}>
+    <Link
+      href={href}
+      className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
+    >
       {children}
     </Link>
   );
