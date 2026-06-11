@@ -26,7 +26,7 @@ export default function AchievementsPeek() {
             <p className="mt-2 font-heading text-lg font-semibold text-accent-strong lg:text-xl">
               A Legacy of Success Built Over 30 Years.
             </p>
-            <p className="mt-4 text-text-muted">
+            <p className="mt-4 text-justify text-text-muted">
               The achievements of our students stand as a testament to the
               values, discipline, and excellence that define Angels Baby Land
               Matric Higher Secondary School. Over the years, our school has
@@ -34,7 +34,7 @@ export default function AchievementsPeek() {
               activities, and leadership initiatives, earning recognition and
               respect within the community.
             </p>
-            <p className="mt-4 text-text-muted">
+            <p className="mt-4 text-justify text-text-muted">
               Each milestone tells a story of determination, growth, and success
               — motivating every student to pursue excellence and create their
               own inspiring journey.

@@ -11,9 +11,9 @@ export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden bg-gradient-to-br from-accent/25 via-bg to-bg">
       <div className="container-x w-full">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-8">
           {/* Copy */}
-          <div>
+          <div className="lg:pl-10">
             <h1 className="text-4xl leading-[1.1] sm:text-5xl lg:text-6xl xl:text-[4.25rem]">
               {SITE.name}
             </h1>
@@ -35,7 +35,7 @@ export default function Hero() {
           </div>
 
           {/* Floating crest */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-start lg:pl-16">
             <Image
               src="/assets/home/hero_section_floating_image.png"
               alt="Angels Baby Land school crest"

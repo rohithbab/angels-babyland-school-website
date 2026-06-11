@@ -17,14 +17,14 @@ export default function ActivitiesPeek() {
             <p className="mt-2 font-heading text-lg font-semibold text-accent-strong lg:text-xl">
               Nurturing Talents. Building Character. Inspiring Futures.
             </p>
-            <p className="mt-4 text-text-muted">
+            <p className="mt-4 text-justify text-text-muted">
               At Angels Baby Land Matric Higher Secondary School, education
               extends far beyond textbooks and classrooms. Through cultural
               programs, classical arts, sports, leadership clubs, and community
               initiatives, students are encouraged to discover their passions
               and develop essential life skills.
             </p>
-            <p className="mt-4 text-text-muted">
+            <p className="mt-4 text-justify text-text-muted">
               Every experience is thoughtfully designed to foster creativity,
               confidence, discipline, teamwork, and leadership — helping students
               grow into well-rounded individuals prepared to excel in every

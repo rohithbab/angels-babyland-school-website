@@ -24,7 +24,7 @@ export default function AcademicExcellence() {
             <p className="mt-2 font-heading text-lg font-semibold text-accent-strong lg:text-xl">
               Empowering Students Through Knowledge and Excellence
             </p>
-            <p className="mt-4 text-text-muted">
+            <p className="mt-4 text-justify text-text-muted">
               At Angels Baby Land Matric Higher Secondary School, academics are
               at the heart of everything we do. Backed by over 30 years of
               educational excellence, we provide a nurturing learning
@@ -32,7 +32,7 @@ export default function AcademicExcellence() {
               thinking abilities, and the confidence to excel in every stage of
               life.
             </p>
-            <p className="mt-4 text-text-muted">
+            <p className="mt-4 text-justify text-text-muted">
               Our commitment to quality education inspires students to learn,
               grow, and achieve their fullest potential.
             </p>
