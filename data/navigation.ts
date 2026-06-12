@@ -37,9 +37,16 @@ export const footerLinks: NavLink[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-/** Contact placeholders — replaced with real details before launch. */
+/** Real school contact details. */
 export const contactInfo = {
-  address: "123 School Road, Town Name, District, State – 600000",
-  phone: "+91 00000 00000",
-  email: "info@angelsbabyland.example",
+  address: "23, Sundaram Pillai Nagar, Thondaiarpet, Chennai – 600081",
+  phone: "72999 26973",
+  phoneAlt: "044-25923037",
+  email: "angelsbabyland@gmail.com",
 } as const;
+
+/** Social media profiles shown in the footer. Real URLs added before launch. */
+export const socialLinks: NavLink[] = [
+  { label: "Instagram", href: "#" },
+  { label: "Facebook", href: "#" },
+];
