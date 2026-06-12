@@ -87,19 +87,20 @@ export default function Footer() {
         © {2026} {SITE.name}. All rights reserved.
       </div>
 
-      {/* Oversized brand watermark — fades out to transparent at both sides */}
+      {/* Soft pink glows hugging the left and right sides */}
       <div
         aria-hidden
-        className="select-none px-2 text-center leading-[0.78]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[70%]"
         style={{
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent, #000 28%, #000 72%, transparent)",
-          maskImage:
-            "linear-gradient(to right, transparent, #000 28%, #000 72%, transparent)",
+          background:
+            "radial-gradient(50% 115% at 0% 100%, rgba(248,187,208,0.55), transparent 70%), radial-gradient(50% 115% at 100% 100%, rgba(248,187,208,0.55), transparent 70%)",
         }}
-      >
-        <span className="block font-heading text-[27vw] font-extrabold tracking-tight text-accent/60">
-          ABL
+      />
+
+      {/* Oversized brand watermark — fades downward into the footer */}
+      <div aria-hidden className="select-none px-2 text-center leading-[0.8]">
+        <span className="block bg-gradient-to-b from-accent/70 to-accent/0 bg-clip-text font-heading text-[16vw] font-extrabold tracking-tight text-transparent">
+          ABL SCHOOL
         </span>
       </div>
     </footer>
