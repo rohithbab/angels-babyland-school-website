@@ -216,6 +216,8 @@ export default function AboutPage() {
             vertical connector line (timeline feel). */}
         <div>
           <SectionHeading
+            align="center"
+            flanked
             title="Our Leadership"
             subtitle="The vision and the voices behind Angels BabyLand."
           />

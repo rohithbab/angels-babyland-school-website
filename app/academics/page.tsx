@@ -1,117 +1,269 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Card from "@/components/ui/Card";
+import PlaceholderImage from "@/components/ui/PlaceholderImage";
 
 export const metadata: Metadata = buildMetadata({
   title: "Academics",
   description:
-    "State Board curriculum, classes from LKG to Higher Secondary, and our approach to teaching and evaluation.",
+    "Our curriculum pathway from Kindergarten to Higher Secondary, school toppers, and the higher-secondary course groups we offer.",
   path: "/academics",
 });
 
-const classes = [
-  { title: "LKG & UKG", note: "Early years foundation" },
-  { title: "Primary", note: "Classes 1 – 5" },
-  { title: "Middle", note: "Classes 6 – 8" },
-  { title: "High & Higher Secondary", note: "Classes 9 – 12" },
+/**
+ * Curriculum pathway — three developmental stages rendered as alternating
+ * image/content rows (image left, image right, image left). Images are pink
+ * placeholders for now; real photos are swapped in via PlaceholderImage later.
+ */
+const pathway = [
+  {
+    stage: "Kindergarten",
+    grades: "LKG & UKG",
+    title: "One Learn Curriculum",
+    subtitle: "Building Strong Foundations Through Joyful Learning",
+    paragraphs: [
+      `The One Learn Curriculum is designed to provide young learners with a stimulating and nurturing environment where curiosity, creativity, and confidence can flourish. Through activity-based learning, interactive experiences, and age-appropriate teaching methods, children develop essential literacy, numeracy, communication, and social skills during their formative years.`,
+      `The curriculum encourages exploration, imagination, and hands-on participation, helping children learn naturally while building a strong foundation for future academic success. By fostering a love for learning from an early age, the One Learn Curriculum supports the holistic development of every child, nurturing intellectual, emotional, social, and creative growth.`,
+    ],
+  },
+  {
+    stage: "Primary Class",
+    grades: "Grade 1 to 5",
+    title: "E-DAC Curriculum",
+    subtitle: "Empowering Young Minds Through Engaging Learning",
+    paragraphs: [
+      `The E-DAC Curriculum is designed to provide students with a strong academic foundation while encouraging curiosity, creativity, and independent thinking. Through a balanced blend of conceptual learning, practical activities, and interactive teaching methodologies, students develop a deeper understanding of core subjects and essential life skills.`,
+      `By creating an engaging and supportive learning environment, the curriculum helps children strengthen their communication, problem-solving, and critical-thinking abilities while fostering confidence and a passion for lifelong learning. E-DAC focuses on nurturing well-rounded learners who are prepared to excel academically and grow into responsible individuals.`,
+    ],
+  },
+  {
+    stage: "Samacheer Kalvi",
+    grades: "Grade 6 to 12",
+    title: "Samacheer Kalvi Curriculum",
+    subtitle: "Preparing Students for Academic Excellence and Future Success",
+    paragraphs: [
+      `The Samacheer Kalvi Curriculum provides students with a comprehensive and structured learning framework that promotes academic excellence, analytical thinking, and intellectual growth. Designed to strengthen subject knowledge and conceptual understanding, the curriculum equips learners with the skills and confidence needed to meet the challenges of higher education and an evolving world.`,
+      `Through a balanced approach to academics, practical application, and continuous assessment, students are encouraged to develop critical-thinking abilities, problem-solving skills, and a disciplined approach to learning. The curriculum not only prepares students for board examinations but also empowers them to become confident, responsible, and future-ready individuals capable of achieving success in their chosen paths.`,
+    ],
+  },
 ];
 
-const teaching = [
-  "Concept-Based Learning",
-  "Interactive Classroom Sessions",
-  "Individual Attention",
-  "Activity-Based Learning",
+/** Higher-secondary course groups, rendered as a two-column table. */
+const courseGroups = [
+  { group: "Group 1", subjects: "Maths with Computer Science" },
+  { group: "Group 2", subjects: "Maths with Biology" },
+  { group: "Group 3", subjects: "Commerce with Computer Application" },
+  { group: "Group 4", subjects: "Commerce with Business Maths" },
 ];
 
-const evaluation = [
-  "Regular Tests",
-  "Performance Tracking",
-  "Parent Communication",
-  "Remedial Support",
-];
+/** Topper slots per board exam — captions are placeholders for now. */
+const toppers = {
+  twelfth: ["Student Name", "Student Name", "Student Name"],
+  tenth: ["Student Name", "Student Name", "Student Name"],
+};
+
+function ToppersRow({ label, names }: { label: string; names: string[] }) {
+  return (
+    <div>
+      <h3 className="text-center font-heading text-xl font-bold lg:text-2xl">
+        {label}
+      </h3>
+      <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-10 sm:grid-cols-3">
+        {names.map((name, i) => (
+          <figure key={i} className="flex flex-col items-center text-center">
+            <div className="relative h-36 w-36 overflow-hidden rounded-full border-4 border-accent shadow-[var(--shadow-card)] sm:h-40 sm:w-40">
+              <PlaceholderImage
+                alt={`${label} — topper ${i + 1}`}
+                sizes="160px"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-4">
+              <p className="font-heading text-base font-bold">{name}</p>
+              <p className="mt-0.5 text-sm text-accent-strong">
+                Academic Topper 2025–2026
+              </p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function AcademicsPage() {
   return (
     <section className="container-x section-y">
-      {/* HERO */}
-      <SectionHeading
-        as="h1"
-        title="Academics"
-        subtitle="Building strong foundations through quality education and disciplined learning."
-      />
-
-      <div className="mt-12 space-y-14 lg:mt-16 lg:space-y-20">
-        {/* OVERVIEW */}
-        <div className="max-w-3xl">
-          <h2>Overview</h2>
-          <p className="mt-4 text-text-muted">
-            Academics form the core of our educational approach, ensuring
-            clarity, understanding, and strong conceptual learning for every
-            student.
+      {/* INTRO — copy left, image collage right */}
+      <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+        <div>
+          <h1>Academics</h1>
+          <p className="mt-5 text-justify text-text-muted lg:text-lg">
+            At Angels Baby Land Matric Higher Secondary School, academics form
+            the foundation of our commitment to nurturing confident, capable,
+            and responsible individuals. Our structured curriculum encourages
+            critical thinking, creativity, and a lifelong passion for learning
+            while preparing students to excel in both academics and life.
           </p>
         </div>
 
+        {/* Image grid box */}
+        <div className="grid grid-cols-2 grid-rows-2 gap-3 sm:gap-4">
+          <div className="relative col-span-1 row-span-2 overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)]">
+            <PlaceholderImage
+              alt="Students in the classroom"
+              sizes="(max-width: 1024px) 50vw, 260px"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)]">
+            <PlaceholderImage
+              alt="Science laboratory session"
+              sizes="(max-width: 1024px) 50vw, 260px"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)]">
+            <PlaceholderImage
+              alt="Library and reading activity"
+              sizes="(max-width: 1024px) 50vw, 260px"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-16 space-y-16 lg:mt-24 lg:space-y-24">
         {/* CURRICULUM */}
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <h2>Curriculum</h2>
-          <p className="mt-4 text-text-muted">
-            The school follows the State Board curriculum, designed to provide
-            structured and progressive learning.
+          <p className="mt-2 font-heading text-lg font-semibold text-accent-strong lg:text-xl">
+            A Strong Foundation for Lifelong Learning
+          </p>
+          <p className="mt-5 text-justify text-text-muted">
+            At Angels Baby Land Matric Higher Secondary School, our curriculum
+            is thoughtfully designed to support students at every stage of their
+            educational journey. With a balanced approach that evolves according
+            to the developmental needs of learners, we ensure that students
+            receive age-appropriate instruction, meaningful learning
+            experiences, and a strong academic foundation. From nurturing
+            curiosity and creativity in the early years to fostering critical
+            thinking, analytical skills, and academic excellence in higher
+            grades, our curriculum promotes holistic growth while preparing
+            students for future educational and life opportunities. Through a
+            blend of innovative teaching practices and established academic
+            standards, we strive to create confident, responsible, and lifelong
+            learners.
           </p>
         </div>
 
-        {/* CLASSES */}
+        {/* CURRICULUM PATHWAY — alternating image / content rows */}
         <div>
           <SectionHeading
-            title="Classes"
-            subtitle="A continuous learning path from the early years to higher secondary."
+            align="center"
+            flanked
+            title="Curriculum Pathway"
+            subtitle="A guided progression tailored to each stage of a child's growth."
           />
-          <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {classes.map((c) => (
-              <li key={c.title}>
-                <Card interactive={false} className="h-full p-6">
-                  <div className="mb-4 h-1 w-12 bg-accent" />
-                  <h3 className="text-lg font-bold">{c.title}</h3>
-                  <p className="mt-2 text-sm text-text-muted">{c.note}</p>
-                </Card>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-14 space-y-16 lg:mt-20 lg:space-y-24">
+            {pathway.map((stage, idx) => {
+              const imageLeft = idx % 2 === 0;
+              return (
+                <div
+                  key={stage.title}
+                  className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16"
+                >
+                  {/* Image */}
+                  <div
+                    className={`relative aspect-[4/3] w-full max-w-[540px] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)] ${
+                      imageLeft
+                        ? "lg:order-1 lg:mr-auto"
+                        : "lg:order-2 lg:ml-auto"
+                    } mx-auto`}
+                  >
+                    <PlaceholderImage
+                      alt={`${stage.stage} — ${stage.title}`}
+                      sizes="(max-width: 1024px) 100vw, 540px"
+                      className="object-cover"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className={imageLeft ? "lg:order-2" : "lg:order-1"}>
+                    <span className="inline-block rounded-[var(--radius-card)] bg-accent px-3 py-1 font-heading text-xs font-bold uppercase tracking-wide text-text">
+                      {stage.stage} · {stage.grades}
+                    </span>
+                    <h3 className="mt-4 text-2xl font-bold lg:text-3xl">
+                      {stage.title}
+                    </h3>
+                    <p className="mt-2 font-heading text-base font-semibold text-accent-strong lg:text-lg">
+                      {stage.subtitle}
+                    </p>
+                    {stage.paragraphs.map((para, i) => (
+                      <p key={i} className="mt-4 text-justify text-text-muted">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        {/* TEACHING */}
+        {/* TOPPERS */}
         <div>
           <SectionHeading
-            title="Our Teaching Approach"
-            subtitle="How we help every student understand, engage and grow."
+            align="center"
+            flanked
+            title="Our School Toppers"
+            subtitle="Academic Topper 2025–2026"
           />
-          <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {teaching.map((t) => (
-              <li key={t}>
-                <Card interactive={false} className="h-full p-6">
-                  <h3 className="text-base font-bold">{t}</h3>
-                </Card>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-14 space-y-14 lg:mt-20 lg:space-y-20">
+            <ToppersRow label="12th Toppers" names={toppers.twelfth} />
+            <ToppersRow label="10th Toppers" names={toppers.tenth} />
+          </div>
         </div>
 
-        {/* EVALUATION */}
+        {/* COURSES WE OFFER */}
         <div>
           <SectionHeading
-            title="Evaluation"
-            subtitle="Consistent assessment and support to keep every student on track."
+            align="center"
+            flanked
+            title="Courses We Offer"
+            subtitle="Higher Secondary subject groups for Grades 11 & 12."
           />
-          <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {evaluation.map((e) => (
-              <li key={e}>
-                <Card interactive={false} className="h-full p-6">
-                  <h3 className="text-base font-bold">{e}</h3>
-                </Card>
-              </li>
-            ))}
-          </ul>
+          <div className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)]">
+            <table className="w-full border-collapse text-left">
+              <thead>
+                <tr className="bg-accent text-text">
+                  <th className="px-5 py-4 font-heading text-sm font-bold uppercase tracking-wide lg:px-8">
+                    Groups
+                  </th>
+                  <th className="px-5 py-4 font-heading text-sm font-bold uppercase tracking-wide lg:px-8">
+                    Subjects
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {courseGroups.map((row, i) => (
+                  <tr
+                    key={row.group}
+                    className={`border-t border-border ${
+                      i % 2 === 1 ? "bg-bg-alt" : "bg-bg"
+                    }`}
+                  >
+                    <td className="px-5 py-4 font-heading font-semibold lg:px-8">
+                      {row.group}
+                    </td>
+                    <td className="px-5 py-4 text-text-muted lg:px-8">
+                      {row.subjects}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
