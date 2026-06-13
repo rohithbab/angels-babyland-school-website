@@ -18,13 +18,14 @@ const infrastructure = [
   "Library",
   "Playground",
   "Computer Lab",
+  "Robotics Lab",
 ];
 
 /**
- * Leadership "tree": Founder → Correspondent → Secretary, each rendered as an
- * alternating image/content row (img left, right, left). Photos are pink
- * placeholder boxes for now; real portraits are dropped in later.
- * Text is kept verbatim from the school's silver-jubilee souvenir.
+ * Leadership "tree": Founder → Correspondent → Principal → Secretary →
+ * President, each rendered as a stacked card joined by a vertical connector.
+ * Photos are pink placeholder boxes for now; real portraits are dropped in
+ * later. Text is kept verbatim from the school's messages.
  */
 type Block = { type: "p" | "quote"; text: string };
 
@@ -86,6 +87,28 @@ const leadership: {
     ],
   },
   {
+    role: "Principal",
+    name: "Mrs. Jackline Jose",
+    blocks: [
+      {
+        type: "p",
+        text: `At Angels Baby Land Matric Higher Secondary School, we believe that education is not merely the acquisition of knowledge but the development of character, confidence, and compassion. Our goal is to nurture students into responsible citizens who are prepared to face the challenges of an ever-changing world.`,
+      },
+      {
+        type: "p",
+        text: `We strive to provide a stimulating learning environment where every child is encouraged to discover their talents, develop critical thinking skills, and achieve academic excellence. Through dedication, discipline, and innovation, we aim to inspire a lifelong love for learning.`,
+      },
+      {
+        type: "quote",
+        text: `The future belongs to those who believe in the beauty of their dreams.`,
+      },
+      {
+        type: "p",
+        text: `With the support of our committed teachers, parents, and management, we continue to guide our students toward success while upholding the values and traditions that define our institution.`,
+      },
+    ],
+  },
+  {
     role: "Secretary",
     name: "Dr. Jasmine Deva Arul Selvi. T",
     blocks: [
@@ -116,6 +139,28 @@ const leadership: {
       {
         type: "quote",
         text: `Talent is cheaper than salt; what separates a talented individual from a successful one is a lot of hard work.`,
+      },
+    ],
+  },
+  {
+    role: "President",
+    name: "Dr. Charles Sekar",
+    blocks: [
+      {
+        type: "p",
+        text: `Angels Baby Land Matric Higher Secondary School has grown into a respected institution through a shared commitment to educational excellence and student development. We take pride in providing opportunities that help students realize their full potential.`,
+      },
+      {
+        type: "p",
+        text: `Our vision is to create a generation of confident, ethical, and socially responsible individuals who contribute meaningfully to society. We remain dedicated to enhancing educational standards while embracing innovation and progress.`,
+      },
+      {
+        type: "quote",
+        text: `Success is not measured by what we achieve for ourselves, but by the positive impact we create for others.`,
+      },
+      {
+        type: "p",
+        text: `I extend my gratitude to our students, parents, faculty members, and well-wishers whose trust and support continue to strengthen the legacy of Angels Baby Land.`,
       },
     ],
   },
@@ -166,28 +211,6 @@ export default function AboutPage() {
       </div>
 
       <div className="mt-14 space-y-14 lg:mt-20 lg:space-y-20">
-        {/* VISION + MISSION */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <Card interactive={false} className="p-8">
-            <div className="mb-4 h-1 w-12 bg-accent" />
-            <h3>Our Vision</h3>
-            <p className="mt-3 text-text-muted">
-              To create a learning environment that inspires students to achieve
-              academic excellence, develop strong values, and become responsible
-              individuals who contribute positively to society.
-            </p>
-          </Card>
-          <Card interactive={false} className="p-8">
-            <div className="mb-4 h-1 w-12 bg-accent" />
-            <h3>Our Mission</h3>
-            <p className="mt-3 text-text-muted">
-              To provide quality education through a balanced approach of
-              academics and extracurricular activities, fostering discipline,
-              creativity, and leadership in every student.
-            </p>
-          </Card>
-        </div>
-
         {/* LEADERSHIP — Founder → Correspondent → Secretary. Stacked cards, each
             with a square photo straddling the card's top edge, joined by a
             vertical connector line (timeline feel). */}
