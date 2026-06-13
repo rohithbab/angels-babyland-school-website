@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { buildMetadata } from "@/lib/seo";
 import SectionHeading from "@/components/ui/SectionHeading";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
@@ -21,6 +22,8 @@ const pathway = [
     grades: "LKG & UKG",
     title: "One Learn Curriculum",
     subtitle: "Building Strong Foundations Through Joyful Learning",
+    image: "/assets/about/Kindergarden_image.png",
+    fit: "cover" as const,
     paragraphs: [
       `The One Learn Curriculum is designed to provide young learners with a stimulating and nurturing environment where curiosity, creativity, and confidence can flourish. Through activity-based learning, interactive experiences, and age-appropriate teaching methods, children develop essential literacy, numeracy, communication, and social skills during their formative years.`,
       `The curriculum encourages exploration, imagination, and hands-on participation, helping children learn naturally while building a strong foundation for future academic success. By fostering a love for learning from an early age, the One Learn Curriculum supports the holistic development of every child, nurturing intellectual, emotional, social, and creative growth.`,
@@ -31,6 +34,8 @@ const pathway = [
     grades: "Grade 1 to 5",
     title: "E-DAC Curriculum",
     subtitle: "Empowering Young Minds Through Engaging Learning",
+    image: "/assets/about/Primary_image.png",
+    fit: "contain" as const,
     paragraphs: [
       `The E-DAC Curriculum is designed to provide students with a strong academic foundation while encouraging curiosity, creativity, and independent thinking. Through a balanced blend of conceptual learning, practical activities, and interactive teaching methodologies, students develop a deeper understanding of core subjects and essential life skills.`,
       `By creating an engaging and supportive learning environment, the curriculum helps children strengthen their communication, problem-solving, and critical-thinking abilities while fostering confidence and a passion for lifelong learning. E-DAC focuses on nurturing well-rounded learners who are prepared to excel academically and grow into responsible individuals.`,
@@ -41,6 +46,8 @@ const pathway = [
     grades: "Grade 6 to 12",
     title: "Samacheer Kalvi Curriculum",
     subtitle: "Preparing Students for Academic Excellence and Future Success",
+    image: "/assets/about/Samacheer_image.png",
+    fit: "contain" as const,
     paragraphs: [
       `The Samacheer Kalvi Curriculum provides students with a comprehensive and structured learning framework that promotes academic excellence, analytical thinking, and intellectual growth. Designed to strengthen subject knowledge and conceptual understanding, the curriculum equips learners with the skills and confidence needed to meet the challenges of higher education and an evolving world.`,
       `Through a balanced approach to academics, practical application, and continuous assessment, students are encouraged to develop critical-thinking abilities, problem-solving skills, and a disciplined approach to learning. The curriculum not only prepares students for board examinations but also empowers them to become confident, responsible, and future-ready individuals capable of achieving success in their chosen paths.`,
@@ -56,32 +63,81 @@ const courseGroups = [
   { group: "Group 4", subjects: "Commerce with Business Maths" },
 ];
 
-/** Topper slots per board exam — captions are placeholders for now. */
-const toppers = {
-  twelfth: ["Student Name", "Student Name", "Student Name"],
-  tenth: ["Student Name", "Student Name", "Student Name"],
+/** Board-exam toppers with portrait, name and marks. */
+type Topper = { name: string; marks: string; image: string };
+
+const toppers: { twelfth: Topper[]; tenth: Topper[] } = {
+  twelfth: [
+    {
+      name: "Sumithra S",
+      marks: "559 / 600",
+      image: "/assets/about/Toppers/12th_Toppers/First_Mark_12th.jpeg",
+    },
+    {
+      name: "Parameshwari M A",
+      marks: "547 / 600",
+      image: "/assets/about/Toppers/12th_Toppers/Second_Mark_12th.jpeg",
+    },
+    {
+      name: "Swathi S",
+      marks: "543 / 600",
+      image: "/assets/about/Toppers/12th_Toppers/Third_Mark_12th.jpeg",
+    },
+  ],
+  tenth: [
+    {
+      name: "Rajesh S",
+      marks: "480 / 500",
+      image: "/assets/about/Toppers/10th_Toppers/First_Mark_10th.jpeg",
+    },
+    {
+      name: "Baskar",
+      marks: "480 / 500",
+      image: "/assets/about/Toppers/10th_Toppers/First(1)_Mark_10th.jpeg",
+    },
+    {
+      name: "Varshini M",
+      marks: "479 / 500",
+      image: "/assets/about/Toppers/10th_Toppers/Second_Mark_10th.jpeg",
+    },
+    {
+      name: "Sivaprakash",
+      marks: "479 / 500",
+      image: "/assets/about/Toppers/10th_Toppers/Second(1)_Mark_10th.jpeg",
+    },
+    {
+      name: "Manivannan",
+      marks: "471 / 500",
+      image: "/assets/about/Toppers/10th_Toppers/Third_Mark_10th.jpeg",
+    },
+  ],
 };
 
-function ToppersRow({ label, names }: { label: string; names: string[] }) {
+function ToppersRow({ label, people }: { label: string; people: Topper[] }) {
   return (
     <div>
       <h3 className="text-center font-heading text-xl font-bold lg:text-2xl">
         {label}
       </h3>
-      <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-10 sm:grid-cols-3">
-        {names.map((name, i) => (
-          <figure key={i} className="flex flex-col items-center text-center">
+      <div className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-x-10 gap-y-10">
+        {people.map((person) => (
+          <figure
+            key={person.name}
+            className="flex w-40 flex-col items-center text-center"
+          >
             <div className="relative h-36 w-36 overflow-hidden rounded-full border-4 border-accent shadow-[var(--shadow-card)] sm:h-40 sm:w-40">
-              <PlaceholderImage
-                alt={`${label} — topper ${i + 1}`}
+              <Image
+                src={person.image}
+                alt={`${person.name} — ${label}`}
+                fill
                 sizes="160px"
                 className="object-cover"
               />
             </div>
             <figcaption className="mt-4">
-              <p className="font-heading text-base font-bold">{name}</p>
+              <p className="font-heading text-base font-bold">{person.name}</p>
               <p className="mt-0.5 text-sm text-accent-strong">
-                Academic Topper 2025–2026
+                {person.marks}
               </p>
             </figcaption>
           </figure>
@@ -179,12 +235,18 @@ export default function AcademicsPage() {
                       imageLeft
                         ? "lg:order-1 lg:mr-auto"
                         : "lg:order-2 lg:ml-auto"
-                    } mx-auto`}
+                    } ${stage.fit === "contain" ? "bg-white" : ""} mx-auto`}
                   >
-                    <PlaceholderImage
+                    <Image
+                      src={stage.image}
                       alt={`${stage.stage} — ${stage.title}`}
+                      fill
                       sizes="(max-width: 1024px) 100vw, 540px"
-                      className="object-cover"
+                      className={
+                        stage.fit === "contain"
+                          ? "object-contain p-6"
+                          : "object-cover"
+                      }
                     />
                   </div>
 
@@ -220,8 +282,8 @@ export default function AcademicsPage() {
             subtitle="Academic Topper 2025–2026"
           />
           <div className="mt-14 space-y-14 lg:mt-20 lg:space-y-20">
-            <ToppersRow label="12th Toppers" names={toppers.twelfth} />
-            <ToppersRow label="10th Toppers" names={toppers.tenth} />
+            <ToppersRow label="12th Toppers" people={toppers.twelfth} />
+            <ToppersRow label="10th Toppers" people={toppers.tenth} />
           </div>
         </div>
 
