@@ -113,30 +113,43 @@ const toppers: { twelfth: Topper[]; tenth: Topper[] } = {
   ],
 };
 
-function ToppersRow({ label, people }: { label: string; people: Topper[] }) {
+function ToppersRow({
+  label,
+  people,
+  cols,
+}: {
+  label: string;
+  people: Topper[];
+  cols: "three" | "five";
+}) {
+  // Circles auto-scale to their grid column, so every row stays on one line.
+  // 12th has 3 large circles with generous spacing; 10th packs 5 across.
+  const grid =
+    cols === "three"
+      ? "grid-cols-3 max-w-2xl gap-6 sm:gap-12"
+      : "grid-cols-5 max-w-4xl gap-3 sm:gap-6";
   return (
     <div>
       <h3 className="text-center font-heading text-xl font-bold lg:text-2xl">
         {label}
       </h3>
-      <div className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-x-10 gap-y-10">
+      <div className={`mx-auto mt-8 grid ${grid}`}>
         {people.map((person) => (
-          <figure
-            key={person.name}
-            className="flex w-40 flex-col items-center text-center"
-          >
-            <div className="relative h-36 w-36 overflow-hidden rounded-full border-4 border-accent shadow-[var(--shadow-card)] sm:h-40 sm:w-40">
+          <figure key={person.name} className="flex flex-col items-center text-center">
+            <div className="relative aspect-square w-full overflow-hidden rounded-full border-4 border-accent shadow-[var(--shadow-card)]">
               <Image
                 src={person.image}
                 alt={`${person.name} — ${label}`}
                 fill
-                sizes="160px"
-                className="object-cover"
+                sizes="(max-width: 768px) 30vw, 200px"
+                className="object-cover object-top"
               />
             </div>
-            <figcaption className="mt-4">
-              <p className="font-heading text-base font-bold">{person.name}</p>
-              <p className="mt-0.5 text-sm text-accent-strong">
+            <figcaption className="mt-3 sm:mt-4">
+              <p className="font-heading text-sm font-bold sm:text-base">
+                {person.name}
+              </p>
+              <p className="mt-0.5 text-xs text-accent-strong sm:text-sm">
                 {person.marks}
               </p>
             </figcaption>
@@ -282,8 +295,8 @@ export default function AcademicsPage() {
             subtitle="Academic Topper 2025–2026"
           />
           <div className="mt-14 space-y-14 lg:mt-20 lg:space-y-20">
-            <ToppersRow label="12th Toppers" people={toppers.twelfth} />
-            <ToppersRow label="10th Toppers" people={toppers.tenth} />
+            <ToppersRow label="12th Toppers" people={toppers.twelfth} cols="three" />
+            <ToppersRow label="10th Toppers" people={toppers.tenth} cols="five" />
           </div>
         </div>
 
