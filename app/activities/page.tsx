@@ -20,13 +20,19 @@ const items: CardItem[] = [
     title: "Clubs",
     href: "/activities/clubs",
     image: "/assets/placeholder.jpg",
-    blurb: "Scouts, Leo, Eco, dance, music and more.",
+    blurb: "Scouts, Leo, RSP, Eco and more.",
   },
   {
     title: "Sports",
     href: "/activities/sports",
     image: "/assets/placeholder.jpg",
     blurb: "Athletics, team games and the annual meet.",
+  },
+  {
+    title: "Extra Curricular",
+    href: "/activities/extra-curricular",
+    image: "/assets/placeholder.jpg",
+    blurb: "Music, dance, yoga, silambam, art and craft.",
   },
 ];
 
@@ -39,7 +45,7 @@ export default function ActivitiesPage() {
         subtitle="Encouraging creativity, confidence, and holistic development beyond the classroom."
         className="mb-10"
       />
-      <CardGrid items={items} columns={3} />
+      <CardGrid items={items} columns={4} />
     </section>
   );
 }

@@ -22,6 +22,7 @@ export const navItems: NavItem[] = [
       { label: "Culturals", href: "/activities/culturals" },
       { label: "Clubs", href: "/activities/clubs" },
       { label: "Sports", href: "/activities/sports" },
+      { label: "Extra Curricular", href: "/activities/extra-curricular" },
     ],
   },
   { label: "Achievements", href: "/achievements" },

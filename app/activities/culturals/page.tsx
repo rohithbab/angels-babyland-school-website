@@ -1,22 +1,36 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
-import GalleryDetail from "@/components/ui/GalleryDetail";
-import { culturals } from "@/data/activities";
+import SectionHeading from "@/components/ui/SectionHeading";
+import EventSection from "@/components/ui/EventSection";
+import { culturalsIntro, culturalGroups } from "@/data/activities";
 
 export const metadata: Metadata = buildMetadata({
   title: "Cultural Activities",
-  description: culturals.intro,
+  description: culturalsIntro.subtitle,
   path: "/activities/culturals",
 });
 
 export default function CulturalsPage() {
   return (
     <section className="container-x section-y">
-      <GalleryDetail
-        title={culturals.title}
-        intro={culturals.intro}
-        frames={culturals.frames}
+      <SectionHeading
+        as="h1"
+        align="center"
+        title={culturalsIntro.title}
+        subtitle={culturalsIntro.subtitle}
+        className="mb-12"
       />
+      <div className="space-y-12 lg:space-y-16">
+        {culturalGroups.map((group) => (
+          <EventSection
+            key={group.slug}
+            title={group.title}
+            subtitle={group.subtitle}
+            events={group.events}
+            ctaHref={`/activities/culturals/${group.slug}`}
+          />
+        ))}
+      </div>
     </section>
   );
 }

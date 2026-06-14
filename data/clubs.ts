@@ -37,6 +37,17 @@ export const clubs: Club[] = [
     ],
   },
   {
+    slug: "rsp",
+    title: "RSP",
+    blurb: "Road Safety Patrol — alertness and civic duty.",
+    intro:
+      "The Road Safety Patrol trains students in traffic awareness, discipline and responsible civic behaviour.",
+    frames: [
+      { image: IMG, caption: "Road safety awareness rally", date: "11 Sep 2025", time: "9:00 AM" },
+      { image: IMG, caption: "Traffic discipline drill", date: "06 Dec 2025", time: "10:00 AM" },
+    ],
+  },
+  {
     slug: "eco-club",
     title: "Eco Club",
     blurb: "Caring for our campus and our planet.",
@@ -48,25 +59,25 @@ export const clubs: Club[] = [
     ],
   },
   {
-    slug: "bharatanatyam",
-    title: "Bharatanatyam",
-    blurb: "Grace and tradition in classical dance.",
+    slug: "standard-club",
+    title: "Standard Club",
+    blurb: "Building values, etiquette and leadership.",
     intro:
-      "Students train in the classical art of Bharatanatyam, performing at school and cultural events.",
+      "The Standard Club nurtures discipline, etiquette and leadership through regular activities and group projects.",
     frames: [
-      { image: IMG, caption: "Annual recital", date: "20 Dec 2025", time: "6:00 PM" },
-      { image: IMG, caption: "Arangetram practice", date: "08 Nov 2025", time: "4:00 PM" },
+      { image: IMG, caption: "Leadership workshop", date: "19 Jul 2025", time: "2:00 PM" },
+      { image: IMG, caption: "Group activity session", date: "10 Oct 2025", time: "3:30 PM" },
     ],
   },
   {
-    slug: "music",
-    title: "Music",
-    blurb: "Voices and instruments in harmony.",
+    slug: "cubs-and-bulbuls",
+    title: "Cubs & Bulbuls",
+    blurb: "Scouting fun and values for our youngest.",
     intro:
-      "The Music club develops vocal and instrumental talent through regular practice and performances.",
+      "Cubs & Bulbuls introduces our youngest students to scouting through play, teamwork and simple acts of service.",
     frames: [
-      { image: IMG, caption: "School choir performance", date: "14 Feb 2026", time: "5:30 PM" },
-      { image: IMG, caption: "Instrumental workshop", date: "03 Mar 2026", time: "3:00 PM" },
+      { image: IMG, caption: "Cubs & Bulbuls rally", date: "23 Jan 2026", time: "9:30 AM" },
+      { image: IMG, caption: "Fun activity day", date: "14 Nov 2025", time: "10:00 AM" },
     ],
   },
 ];
