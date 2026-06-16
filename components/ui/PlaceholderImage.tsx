@@ -13,6 +13,8 @@ const PLACEHOLDER_SRC = "/assets/placeholder.jpg";
 interface PlaceholderImageProps {
   /** Required descriptive alt text (placeholder copy for now). */
   alt: string;
+  /** Override the default placeholder source. */
+  src?: string;
   /** Fill the parent (parent must be `relative`). Default: true. */
   fill?: boolean;
   width?: number;
@@ -25,6 +27,7 @@ interface PlaceholderImageProps {
 
 export default function PlaceholderImage({
   alt,
+  src,
   fill = true,
   width,
   height,
@@ -32,10 +35,12 @@ export default function PlaceholderImage({
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
   priority = false,
 }: PlaceholderImageProps) {
+  const imgSrc = src ?? PLACEHOLDER_SRC;
+
   if (!fill && width && height) {
     return (
       <Image
-        src={PLACEHOLDER_SRC}
+        src={imgSrc}
         alt={alt}
         width={width}
         height={height}
@@ -47,7 +52,7 @@ export default function PlaceholderImage({
 
   return (
     <Image
-      src={PLACEHOLDER_SRC}
+      src={imgSrc}
       alt={alt}
       fill
       sizes={sizes}

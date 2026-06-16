@@ -14,6 +14,7 @@ export default function AchievementsPeek() {
           {/* Image */}
           <div className="group relative mx-auto aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)] lg:mx-0">
             <PlaceholderImage
+              src="/assets/home/Our_achievements(home).jpeg"
               alt="School achievement and award ceremony"
               sizes="(max-width: 1024px) 100vw, 520px"
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"

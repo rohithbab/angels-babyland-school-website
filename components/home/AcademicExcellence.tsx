@@ -12,6 +12,7 @@ export default function AcademicExcellence() {
           {/* Image */}
           <div className="group relative mx-auto aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)] lg:mx-0">
             <PlaceholderImage
+              src="/assets/home/academics_grid_home_page.jpeg"
               alt="Students excelling in academics at Angels Baby Land"
               sizes="(max-width: 1024px) 100vw, 520px"
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
