@@ -39,6 +39,7 @@ export default function CardGrid({ items, columns = 3 }: CardGridProps) {
               {/* Square image area */}
               <div className="relative aspect-square overflow-hidden">
                 <PlaceholderImage
+                  src={item.image}
                   alt={item.title}
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

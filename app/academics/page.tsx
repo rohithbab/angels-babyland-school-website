@@ -180,6 +180,7 @@ export default function AcademicsPage() {
         <div className="grid grid-cols-2 grid-rows-2 gap-3 sm:gap-4">
           <div className="relative col-span-1 row-span-2 overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)]">
             <PlaceholderImage
+              src="/assets/academics/academics_image1.jpeg"
               alt="Students in the classroom"
               sizes="(max-width: 1024px) 50vw, 260px"
               className="object-cover"
@@ -187,6 +188,7 @@ export default function AcademicsPage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)]">
             <PlaceholderImage
+              src="/assets/academics/academics_iamge2.jpeg"
               alt="Science laboratory session"
               sizes="(max-width: 1024px) 50vw, 260px"
               className="object-cover"
@@ -194,6 +196,7 @@ export default function AcademicsPage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)]">
             <PlaceholderImage
+              src="/assets/academics/academics_image3.jpeg"
               alt="Library and reading activity"
               sizes="(max-width: 1024px) 50vw, 260px"
               className="object-cover"

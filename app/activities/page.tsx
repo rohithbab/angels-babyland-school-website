@@ -13,25 +13,25 @@ const items: CardItem[] = [
   {
     title: "Culturals",
     href: "/activities/culturals",
-    image: "/assets/placeholder.jpg",
+    image: "/assets/activities/events_grid.jpeg",
     blurb: "Annual day, festivals and stage performances.",
   },
   {
     title: "Clubs",
     href: "/activities/clubs",
-    image: "/assets/placeholder.jpg",
+    image: "/assets/activities/Clubs_grid.jpeg",
     blurb: "Scouts, Leo, RSP, Eco and more.",
   },
   {
     title: "Sports",
     href: "/activities/sports",
-    image: "/assets/placeholder.jpg",
+    image: "/assets/activities/Sports_day_grid.jpeg",
     blurb: "Athletics, team games and the annual meet.",
   },
   {
     title: "Extra Curricular",
     href: "/activities/extra-curricular",
-    image: "/assets/placeholder.jpg",
+    image: "/assets/activities/extra_curicullar_grid.jpeg",
     blurb: "Music, dance, yoga, silambam, art and craft.",
   },
 ];
