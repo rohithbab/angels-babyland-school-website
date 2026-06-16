@@ -47,6 +47,7 @@ export default function EventSection({
             <Card interactive={false} className="group h-full overflow-hidden">
               <div className="relative aspect-[4/3] overflow-hidden border-b border-border">
                 <PlaceholderImage
+                  src={ev.image}
                   alt={ev.name}
                   className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

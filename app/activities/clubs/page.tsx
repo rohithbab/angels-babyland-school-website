@@ -10,10 +10,16 @@ export const metadata: Metadata = buildMetadata({
   path: "/activities/clubs",
 });
 
+const clubImages: Record<string, string> = {
+  "scouts-and-guides": "/assets/activities/clubs/scouts_and_guides_grid_pic.jpeg",
+  "leo-club": "/assets/activities/clubs/leo_club_grid.jpeg",
+  "cubs-and-bulbuls": "/assets/activities/clubs/culbs_and_bulbul_grid.jpeg",
+};
+
 const items: CardItem[] = clubs.map((club) => ({
   title: club.title,
   href: `/activities/clubs/${club.slug}`,
-  image: "/assets/placeholder.jpg",
+  image: clubImages[club.slug] ?? "/assets/placeholder.jpg",
   blurb: club.blurb,
 }));
 

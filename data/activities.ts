@@ -32,9 +32,9 @@ export const culturalGroups: EventGroup[] = [
     subtitle:
       "Fun-filled celebrations designed for our kindergarten and primary students to build confidence, creativity, and joyful learning.",
     events: [
-      { image: IMG, name: "Kids Annual Day Celebration", date: "21 Dec 2025", time: "6:00 PM" },
-      { image: IMG, name: "Kids Independence Day Celebration", date: "15 Aug 2025", time: "9:00 AM" },
-      { image: IMG, name: "Kids Pongal Festival", date: "15 Jan 2026", time: "10:00 AM" },
+      { image: "/assets/activities/events/kids_events/Happy program.jpeg", name: "Happy Program by our Angels", date: "21 Dec 2025", time: "6:00 PM" },
+      { image: "/assets/activities/events/kids_events/Independence_day.jpeg", name: "Kids Independence Day Celebration", date: "15 Aug 2025", time: "9:00 AM" },
+      { image: "/assets/activities/events/kids_events/investiture_ceremony.jpeg", name: "Investiture Ceremony for Lil Champs", date: "15 Jan 2026", time: "10:00 AM" },
     ],
   },
   {
@@ -43,9 +43,9 @@ export const culturalGroups: EventGroup[] = [
     subtitle:
       "Vibrant stage performances, festivals and annual day celebrations that showcase the talents of our senior students.",
     events: [
-      { image: IMG, name: "Annual Day Celebration", date: "20 Dec 2025", time: "6:00 PM" },
-      { image: IMG, name: "Independence Day Cultural Show", date: "15 Aug 2025", time: "9:00 AM" },
-      { image: IMG, name: "Pongal Festival", date: "15 Jan 2026", time: "10:00 AM" },
+      { image: "/assets/activities/events/High_school_events/annual_day.jpeg", name: "Annual Day Celebration", date: "20 Dec 2025", time: "6:00 PM" },
+      { image: "/assets/activities/events/High_school_events/pongal_celebration.jpeg", name: "Pongal Celebration", date: "15 Jan 2026", time: "10:00 AM" },
+      { image: "/assets/activities/events/High_school_events/Cristmas_day.jpeg", name: "Christmas Celebration", date: "25 Dec 2025", time: "9:00 AM" },
     ],
   },
 ];
