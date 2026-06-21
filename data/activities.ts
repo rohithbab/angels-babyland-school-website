@@ -69,9 +69,9 @@ export const sportsGroups: EventGroup[] = [
     subtitle:
       "Playful, energetic games that develop coordination, fitness and a love for sport in our youngest students.",
     events: [
-      { image: IMG, name: "Primary Sports Day", date: "12 Dec 2025", time: "9:00 AM" },
-      { image: IMG, name: "Fun Field Games", date: "18 Sep 2025", time: "10:00 AM" },
-      { image: IMG, name: "Mini Marathon", date: "07 Nov 2025", time: "8:00 AM" },
+      { image: "/assets/activities/sports/kids_sports/Sports day 4.jpeg", name: "Overall Championship Trophy", date: "12 Dec 2025", time: "9:00 AM" },
+      { image: "/assets/activities/sports/kids_sports/Sports day1.jpeg", name: "School Drill", date: "18 Sep 2025", time: "10:00 AM" },
+      { image: "/assets/activities/sports/kids_sports/Sports Day3.jpeg", name: "Prize Distribution", date: "07 Nov 2025", time: "8:00 AM" },
     ],
   },
   {
