@@ -1,3 +1,4 @@
+import CTAButton from "@/components/ui/CTAButton";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 
 /**
@@ -10,7 +11,7 @@ export default function AcademicExcellence() {
       <div className="container-x section-y">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Image */}
-          <div className="group relative mx-auto aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)] lg:mx-0">
+          <div className="group relative mx-auto aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)] lg:mx-0 lg:ml-12">
             <PlaceholderImage
               src="/assets/home/academics_grid_home_page.jpeg"
               alt="Students excelling in academics at Angels Baby Land"
@@ -37,6 +38,9 @@ export default function AcademicExcellence() {
               Our commitment to quality education inspires students to learn,
               grow, and achieve their fullest potential.
             </p>
+            <CTAButton href="/academics" className="mt-6">
+              Check More
+            </CTAButton>
           </div>
         </div>
       </div>
