@@ -5,6 +5,8 @@ export interface ExtraActivity {
   slug: string;
   title: string;
   blurb: string;
+  /** Image shown on the landing-page card. */
+  image: string;
   intro: string;
   frames: GalleryFrame[];
 }
@@ -12,11 +14,17 @@ export interface ExtraActivity {
 // Placeholder image path — every slot renders the single placeholder for now.
 const IMG = "/assets/placeholder.jpg";
 
+// Real Art & Craft photos.
+const ART_GRID = "/assets/activities/extra_curicular/art_and_craft_grid_image.jpeg";
+const ART_1 = "/assets/activities/extra_curicular/arts and crafts/Arts_and_craft1.jpeg";
+const ART_2 = "/assets/activities/extra_curicular/arts and crafts/Arts_and_craft2.jpeg";
+
 export const extraActivities: ExtraActivity[] = [
   {
     slug: "keyboard-and-vocal",
     title: "Keyboard & Vocal",
     blurb: "Melody and voice training for budding musicians.",
+    image: IMG,
     intro:
       "Students explore rhythm, melody and voice through structured keyboard and vocal training, performing at school events.",
     frames: [
@@ -29,6 +37,7 @@ export const extraActivities: ExtraActivity[] = [
     slug: "classical-dance",
     title: "Classical Dance",
     blurb: "Grace and tradition in classical dance forms.",
+    image: IMG,
     intro:
       "Students train in classical dance, learning poise, expression and tradition while performing at cultural events.",
     frames: [
@@ -40,6 +49,7 @@ export const extraActivities: ExtraActivity[] = [
     slug: "western-dance",
     title: "Western Dance",
     blurb: "High-energy moves and modern choreography.",
+    image: IMG,
     intro:
       "The Western Dance group builds confidence and coordination through contemporary choreography and stage performances.",
     frames: [
@@ -51,6 +61,7 @@ export const extraActivities: ExtraActivity[] = [
     slug: "yoga",
     title: "Yoga",
     blurb: "Balance, breath and mindful well-being.",
+    image: IMG,
     intro:
       "Regular yoga sessions help students build flexibility, focus and calm through guided postures and breathing.",
     frames: [
@@ -62,6 +73,7 @@ export const extraActivities: ExtraActivity[] = [
     slug: "silambam",
     title: "Silambam",
     blurb: "Traditional Tamil martial art and self-defence.",
+    image: IMG,
     intro:
       "Silambam training develops agility, discipline and self-defence skills through this traditional Tamil martial art.",
     frames: [
@@ -73,11 +85,12 @@ export const extraActivities: ExtraActivity[] = [
     slug: "art-and-craft",
     title: "Art & Craft",
     blurb: "Imagination at work with colour and craft.",
+    image: ART_GRID,
     intro:
       "Students express creativity through drawing, painting and hands-on craft, with their work displayed at school exhibitions.",
     frames: [
-      { image: IMG, caption: "Art exhibition", date: "28 Feb 2026", time: "11:00 AM" },
-      { image: IMG, caption: "Craft workshop", date: "16 Aug 2025", time: "2:00 PM" },
+      { image: ART_1, caption: "Creative Thumb Painting", date: "16 Aug 2025", time: "2:00 PM" },
+      { image: ART_2, caption: "Origami & Paper Craft", date: "28 Feb 2026", time: "11:00 AM" },
     ],
   },
 ];

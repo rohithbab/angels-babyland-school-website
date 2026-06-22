@@ -14,7 +14,7 @@ export const metadata: Metadata = buildMetadata({
 const items: CardItem[] = extraActivities.map((activity) => ({
   title: activity.title,
   href: `/activities/extra-curricular/${activity.slug}`,
-  image: "/assets/placeholder.jpg",
+  image: activity.image,
   blurb: activity.blurb,
 }));
 
@@ -23,6 +23,8 @@ export default function ExtraCurricularPage() {
     <section className="container-x section-y">
       <SectionHeading
         as="h1"
+        align="center"
+        flanked
         title="Extra Curricular Activities"
         subtitle="Nurturing every talent beyond the classroom — from music and dance to yoga, silambam and art."
         className="mb-10"

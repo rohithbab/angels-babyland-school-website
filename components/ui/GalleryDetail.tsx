@@ -41,6 +41,7 @@ export default function GalleryDetail({
                 {/* Framed photo with hover zoom */}
                 <div className="relative aspect-[4/3] overflow-hidden border-b border-border">
                   <PlaceholderImage
+                    src={frame.image}
                     alt={frame.caption}
                     className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
