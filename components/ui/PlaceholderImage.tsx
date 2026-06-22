@@ -23,6 +23,8 @@ interface PlaceholderImageProps {
   /** Responsive sizes hint for the browser. */
   sizes?: string;
   priority?: boolean;
+  /** Encode quality (1-100). Defaults to Next's 75; raise for sharper photos. */
+  quality?: number;
 }
 
 export default function PlaceholderImage({
@@ -34,6 +36,7 @@ export default function PlaceholderImage({
   className,
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
   priority = false,
+  quality,
 }: PlaceholderImageProps) {
   const imgSrc = src ?? PLACEHOLDER_SRC;
 
@@ -46,6 +49,7 @@ export default function PlaceholderImage({
         height={height}
         className={className}
         priority={priority}
+        quality={quality}
       />
     );
   }
@@ -58,6 +62,7 @@ export default function PlaceholderImage({
       sizes={sizes}
       className={className}
       priority={priority}
+      quality={quality}
     />
   );
 }

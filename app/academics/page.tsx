@@ -169,10 +169,28 @@ export default function AcademicsPage() {
           <h1>Academics</h1>
           <p className="mt-5 text-justify text-text-muted lg:text-lg">
             At Angels Baby Land Matric Higher Secondary School, academics form
-            the foundation of our commitment to nurturing confident, capable,
-            and responsible individuals. Our structured curriculum encourages
-            critical thinking, creativity, and a lifelong passion for learning
+            the very foundation of our commitment to nurturing confident,
+            capable, and responsible individuals. Our thoughtfully structured
+            curriculum blends academic rigour with creativity — encouraging
+            critical thinking, curiosity, and a lifelong passion for learning
             while preparing students to excel in both academics and life.
+          </p>
+          <p className="mt-4 text-justify text-text-muted">
+            Backed by more than 30 years of educational excellence, we believe
+            true learning goes far beyond textbooks and examinations. Every
+            classroom is designed to spark enquiry, every lesson to deepen
+            understanding, and every milestone to strengthen the confidence our
+            students carry into the world. Our experienced and dedicated faculty
+            guide each child with care, ensuring learning remains both meaningful
+            and joyful.
+          </p>
+          <p className="mt-4 text-justify text-text-muted">
+            From the early years of Kindergarten to the higher secondary stage,
+            our academic journey is carefully aligned to each child's
+            developmental needs. We focus not only on outstanding results, but on
+            shaping well-rounded individuals — students who think independently,
+            act responsibly, and step forward fully prepared for the
+            opportunities of higher education and beyond.
           </p>
         </div>
 
@@ -182,7 +200,8 @@ export default function AcademicsPage() {
             <PlaceholderImage
               src="/assets/academics/academics_image1.jpeg"
               alt="Students in the classroom"
-              sizes="(max-width: 1024px) 50vw, 260px"
+              sizes="(max-width: 1024px) 50vw, 440px"
+              quality={90}
               className="object-cover"
             />
           </div>
