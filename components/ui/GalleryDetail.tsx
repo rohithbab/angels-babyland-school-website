@@ -20,16 +20,28 @@ interface GalleryDetailProps {
   title: string;
   intro: string;
   frames: GalleryFrame[];
+  /** Heading alignment. Default: left. */
+  align?: "left" | "center";
+  /** Show decorative rules on both sides of the title. */
+  flanked?: boolean;
 }
 
 export default function GalleryDetail({
   title,
   intro,
   frames,
+  align = "left",
+  flanked = false,
 }: GalleryDetailProps) {
   return (
     <div>
-      <SectionHeading as="h1" title={title} subtitle={intro} />
+      <SectionHeading
+        as="h1"
+        align={align}
+        flanked={flanked}
+        title={title}
+        subtitle={intro}
+      />
 
       {frames.length === 0 ? (
         <p className="mt-10 text-text-muted">Photos coming soon.</p>

@@ -34,6 +34,8 @@ export default async function ExtraActivityPage({ params }: PageProps) {
   return (
     <section className="container-x section-y">
       <GalleryDetail
+        align="center"
+        flanked
         title={activity.title}
         intro={activity.intro}
         frames={activity.frames}
