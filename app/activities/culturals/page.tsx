@@ -26,7 +26,7 @@ export default function CulturalsPage() {
             key={group.slug}
             title={group.title}
             subtitle={group.subtitle}
-            events={group.events}
+            events={group.events.slice(0, 3)}
             ctaHref={`/activities/culturals/${group.slug}`}
           />
         ))}
