@@ -36,7 +36,7 @@ export default function ActivitiesPeek() {
           </div>
 
           {/* Image */}
-          <div className="group relative mx-auto aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)] lg:mx-0 lg:ml-auto">
+          <div className="group relative mx-auto aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)] lg:ml-auto lg:mr-12">
             <PlaceholderImage
               src="/assets/home/Beyond_academics(home).jpeg"
               alt="Students taking part in school activities"
