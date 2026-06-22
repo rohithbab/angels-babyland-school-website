@@ -17,7 +17,7 @@ export default function AchievementsPeek() {
               src="/assets/home/Our_achievements(home).jpeg"
               alt="School achievement and award ceremony"
               sizes="(max-width: 1024px) 100vw, 520px"
-              className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+              className="object-cover object-[35%_center] transition-transform duration-300 ease-out group-hover:scale-105"
             />
           </div>
 
