@@ -33,7 +33,13 @@ export default async function AchievementDetailPage({ params }: PageProps) {
 
   return (
     <section className="container-x section-y">
-      <GalleryDetail title={item.title} intro={item.intro} frames={item.frames} />
+      <GalleryDetail
+        align="center"
+        flanked
+        title={item.title}
+        intro={item.intro}
+        frames={item.frames}
+      />
     </section>
   );
 }

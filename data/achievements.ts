@@ -5,17 +5,22 @@ export interface Achievement {
   slug: string;
   title: string;
   blurb: string;
+  /** Image shown on the landing-page card. */
+  image: string;
   intro: string;
   frames: GalleryFrame[];
 }
 
 const IMG = "/assets/placeholder.jpg";
+const SCHOOL_GRID = "/assets/achievements/school_achievements_grid_image.jpeg";
+const TEACHER_GRID = "/assets/achievements/teacher_achievements_grid_image.jpeg";
 
 export const achievements: Achievement[] = [
   {
     slug: "school",
     title: "School Achievements",
     blurb: "Milestones earned by our institution.",
+    image: SCHOOL_GRID,
     intro:
       "Recognitions and milestones earned by Angels Baby Land over three decades of service.",
     frames: [
@@ -27,6 +32,7 @@ export const achievements: Achievement[] = [
     slug: "teachers",
     title: "Teacher Achievements",
     blurb: "Excellence recognised among our faculty.",
+    image: TEACHER_GRID,
     intro:
       "Awards and honours earned by our dedicated faculty for excellence in teaching.",
     frames: [
@@ -38,6 +44,7 @@ export const achievements: Achievement[] = [
     slug: "student",
     title: "Student Achievements",
     blurb: "Our students shining across fields.",
+    image: IMG,
     intro:
       "Academic, sporting and cultural distinctions earned by our students.",
     frames: [

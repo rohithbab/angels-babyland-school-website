@@ -13,7 +13,7 @@ export const metadata: Metadata = buildMetadata({
 const items: CardItem[] = achievements.map((a) => ({
   title: a.title,
   href: `/achievements/${a.slug}`,
-  image: "/assets/placeholder.jpg",
+  image: a.image,
   blurb: a.blurb,
 }));
 
