@@ -41,6 +41,8 @@ export default function ActivitiesPage() {
     <section className="container-x section-y">
       <SectionHeading
         as="h1"
+        align="center"
+        flanked
         title="Activities & Clubs"
         subtitle="Encouraging creativity, confidence, and holistic development beyond the classroom."
         className="mb-10"

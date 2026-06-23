@@ -18,6 +18,8 @@ export default function OurJourneyPage() {
       {/* HERO */}
       <SectionHeading
         as="h1"
+        align="center"
+        flanked
         title="Our Journey"
         subtitle="A journey of growth, dedication, and excellence spanning over 30 years."
       />
@@ -47,6 +49,8 @@ export default function OurJourneyPage() {
       {/* TIMELINE — vertical on mobile, horizontal/stepped on desktop. */}
       <div className="mt-14 lg:mt-20">
         <SectionHeading
+          align="center"
+          flanked
           title="Milestones"
           subtitle="Key moments that shaped our school over three decades."
         />

@@ -10,6 +10,8 @@ export interface EventItem {
   name: string;
   date: string;
   time?: string;
+  /** Gallery year this tile belongs to (drives the year filter). */
+  year: number;
 }
 
 interface EventSectionProps {
@@ -41,6 +43,9 @@ export default function EventSection({
       <Heading>{title}</Heading>
       {subtitle && <p className="mt-3 max-w-3xl text-text-muted">{subtitle}</p>}
 
+      {events.length === 0 ? (
+        <p className="mt-8 text-text-muted">Photos coming soon.</p>
+      ) : (
       <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {events.map((ev, i) => (
           <li key={`${ev.name}-${i}`}>
@@ -69,6 +74,7 @@ export default function EventSection({
           </li>
         ))}
       </ul>
+      )}
 
       {ctaHref && (
         <div className="mt-8 flex justify-center">

@@ -16,6 +16,8 @@ export default function GalleryPage() {
     <section className="container-x section-y">
       <SectionHeading
         as="h1"
+        align="center"
+        flanked
         title="Gallery"
         subtitle="A glimpse into the vibrant life and memorable moments at our school."
       />

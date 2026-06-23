@@ -22,8 +22,10 @@ export default function AchievementsPage() {
     <section className="container-x section-y">
       <SectionHeading
         as="h1"
+        align="center"
+        flanked
         title="Achievements"
-        subtitle="Celebrating excellence, dedication, and success across academics and beyond."
+        subtitle="Celebrating a legacy of excellence, achievement, and success across every stage of learning and personal growth."
         className="mb-10"
       />
       <CardGrid items={items} columns={3} />

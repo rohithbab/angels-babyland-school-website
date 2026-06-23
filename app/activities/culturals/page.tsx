@@ -16,6 +16,7 @@ export default function CulturalsPage() {
       <SectionHeading
         as="h1"
         align="center"
+        flanked
         title={culturalsIntro.title}
         subtitle={culturalsIntro.subtitle}
         className="mb-12"
@@ -26,7 +27,7 @@ export default function CulturalsPage() {
             key={group.slug}
             title={group.title}
             subtitle={group.subtitle}
-            events={group.events.slice(0, 3)}
+            events={group.events.filter((e) => e.year === 2025).slice(0, 3)}
             ctaHref={`/activities/culturals/${group.slug}`}
           />
         ))}

@@ -28,6 +28,8 @@ export default function ClubsPage() {
     <section className="container-x section-y">
       <SectionHeading
         as="h1"
+        align="center"
+        flanked
         title="Clubs"
         subtitle="Where students explore interests beyond the classroom."
         className="mb-10"

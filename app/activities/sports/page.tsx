@@ -16,6 +16,7 @@ export default function SportsPage() {
       <SectionHeading
         as="h1"
         align="center"
+        flanked
         title={sportsIntro.title}
         subtitle={sportsIntro.subtitle}
         className="mb-12"
@@ -26,7 +27,7 @@ export default function SportsPage() {
             key={group.slug}
             title={group.title}
             subtitle={group.subtitle}
-            events={group.events}
+            events={group.events.filter((e) => e.year === 2025).slice(0, 3)}
             ctaHref={`/activities/sports/${group.slug}`}
           />
         ))}

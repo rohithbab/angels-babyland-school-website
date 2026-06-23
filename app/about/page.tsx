@@ -282,6 +282,8 @@ export default function AboutPage() {
         {/* INFRASTRUCTURE */}
         <div>
           <SectionHeading
+            align="center"
+            flanked
             title="Our Infrastructure"
             subtitle="Facilities designed to support learning, discovery and play."
           />

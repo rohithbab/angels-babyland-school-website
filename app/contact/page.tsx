@@ -28,6 +28,8 @@ export default function ContactPage() {
       {/* HERO */}
       <SectionHeading
         as="h1"
+        align="center"
+        flanked
         title="Contact Us"
         subtitle="We're here to help you with any queries."
       />
@@ -55,6 +57,8 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
           <div id="enquiry-form" className="scroll-mt-24">
             <SectionHeading
+              align="center"
+              flanked
               title="Send Us a Message"
               subtitle="Fill in the form and we'll get back to you."
               className="mb-6"
@@ -64,6 +68,8 @@ export default function ContactPage() {
 
           <div>
             <SectionHeading
+              align="center"
+              flanked
               title="Find Us"
               subtitle="Visit our campus during working hours."
               className="mb-6"

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
-import EventSection from "@/components/ui/EventSection";
+import EventYearView from "@/components/ui/EventYearView";
 import { sportsGroups, getSportsGroup } from "@/data/activities";
 
 interface PageProps {
@@ -33,7 +33,7 @@ export default async function SportsGroupPage({ params }: PageProps) {
 
   return (
     <section className="container-x section-y">
-      <EventSection
+      <EventYearView
         headingAs="h1"
         title={group.title}
         subtitle={group.subtitle}

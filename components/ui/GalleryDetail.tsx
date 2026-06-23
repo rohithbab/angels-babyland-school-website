@@ -14,6 +14,8 @@ export interface GalleryFrame {
   caption: string;
   date: string;
   time: string;
+  /** Gallery year this frame belongs to (drives the year filter). */
+  year: number;
 }
 
 interface GalleryDetailProps {

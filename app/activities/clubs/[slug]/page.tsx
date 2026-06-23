@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
-import GalleryDetail from "@/components/ui/GalleryDetail";
+import GalleryYearView from "@/components/ui/GalleryYearView";
 import { clubs, getClub } from "@/data/clubs";
 
 interface PageProps {
@@ -33,7 +33,13 @@ export default async function ClubDetailPage({ params }: PageProps) {
 
   return (
     <section className="container-x section-y">
-      <GalleryDetail title={club.title} intro={club.intro} frames={club.frames} />
+      <GalleryYearView
+        align="center"
+        flanked
+        title={club.title}
+        intro={club.intro}
+        frames={club.frames}
+      />
     </section>
   );
 }

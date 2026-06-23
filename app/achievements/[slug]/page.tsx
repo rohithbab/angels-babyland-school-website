@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
-import GalleryDetail from "@/components/ui/GalleryDetail";
+import GalleryYearView from "@/components/ui/GalleryYearView";
 import { achievements, getAchievement } from "@/data/achievements";
 
 interface PageProps {
@@ -33,7 +33,7 @@ export default async function AchievementDetailPage({ params }: PageProps) {
 
   return (
     <section className="container-x section-y">
-      <GalleryDetail
+      <GalleryYearView
         align="center"
         flanked
         title={item.title}
