@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
+import LeaderPhoto from "@/components/about/LeaderPhoto";
 
 export const metadata: Metadata = buildMetadata({
   title: "About",
@@ -29,14 +30,19 @@ const infrastructure = [
  */
 type Block = { type: "p" | "quote"; text: string };
 
+const LEADERS_DIR = "/assets/about/leaders_images";
+
 const leadership: {
   role: string;
   name: string;
+  /** Portrait path; falls back to a role placeholder until the file exists. */
+  photo: string;
   blocks: Block[];
 }[] = [
   {
     role: "Founder",
     name: "P. Thangaraj",
+    photo: `${LEADERS_DIR}/founder.png`,
     blocks: [
       {
         type: "p",
@@ -63,6 +69,7 @@ const leadership: {
   {
     role: "Correspondent",
     name: "Bagyam Thangaraj",
+    photo: `${LEADERS_DIR}/correspondent.png`,
     blocks: [
       {
         type: "p",
@@ -89,6 +96,7 @@ const leadership: {
   {
     role: "Principal",
     name: "Mrs. Jackline Jose",
+    photo: `${LEADERS_DIR}/principal.png`,
     blocks: [
       {
         type: "p",
@@ -111,6 +119,7 @@ const leadership: {
   {
     role: "Secretary",
     name: "Dr. Jasmine Deva Arul Selvi. T",
+    photo: `${LEADERS_DIR}/secretary.png`,
     blocks: [
       {
         type: "p",
@@ -145,6 +154,7 @@ const leadership: {
   {
     role: "President",
     name: "Dr. Charles Sekar",
+    photo: `${LEADERS_DIR}/president.png`,
     blocks: [
       {
         type: "p",
@@ -234,16 +244,13 @@ export default function AboutPage() {
                 {/* Top padding holds the photo's protruding upper half */}
                 <div className="pt-20 lg:pt-28">
                   <article className="relative rounded-[var(--radius-card)] border border-border bg-bg px-6 pb-8 pt-24 shadow-[var(--shadow-card)] lg:px-12 lg:pb-12 lg:pt-32">
-                    {/* Square photo — pink placeholder, straddles the card top */}
-                    <div
-                      className="absolute left-1/2 top-0 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[var(--radius-card)] border-4 border-bg bg-accent shadow-[var(--shadow-card)] lg:h-56 lg:w-56"
-                      role="img"
-                      aria-label={`Photo of ${person.name}, ${person.role}`}
-                    >
-                      <span className="px-2 text-center font-heading text-sm font-semibold uppercase tracking-wide text-text/70">
-                        {person.role}
-                      </span>
-                    </div>
+                    {/* Square portrait straddling the card top — shows the real
+                        photo once added, else a pink role placeholder. */}
+                    <LeaderPhoto
+                      src={person.photo}
+                      name={person.name}
+                      role={person.role}
+                    />
 
                     {/* Highlighted title box: ROLE — Name */}
                     <div className="flex justify-center">
