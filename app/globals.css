@@ -58,7 +58,9 @@
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
+    /* NOTE: do NOT set `scroll-behavior: smooth` here — it swallows the App
+       Router's scroll-to-top on navigation, leaving new pages scrolled partway
+       under the sticky navbar. Per-anchor smooth scrolling is opt-in instead. */
   }
 
   body {
