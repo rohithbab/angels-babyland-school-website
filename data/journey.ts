@@ -15,7 +15,7 @@ export const journey: JourneyMilestone[] = [
     year: "1993",
     title: "Our Beginning",
     blurb:
-      "Angels Baby Land opened its doors with a handful of classrooms and a vision for value-based education.",
+      "Angels Babyland opened its doors with a handful of classrooms and a vision for value-based education.",
     image: IMG,
   },
   {

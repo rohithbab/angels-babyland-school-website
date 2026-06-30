@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/*  Angels Baby Land — Design System                                   */
+/*  Angels Babyland — Design System                                   */
 /*  Theme tokens are exposed to Tailwind via @theme (auto-generates    */
 /*  utilities like bg-accent, text-text, border-border, font-heading)  */
 /*  and are also available as raw CSS variables (var(--color-accent)). */

@@ -14,7 +14,7 @@ export default function AcademicExcellence() {
           <div className="group relative mx-auto aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-[var(--shadow-card)] lg:mx-0 lg:ml-12">
             <PlaceholderImage
               src="/assets/home/academics_grid_home_page.jpeg"
-              alt="Students excelling in academics at Angels Baby Land"
+              alt="Students excelling in academics at Angels Babyland"
               sizes="(max-width: 1024px) 100vw, 520px"
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
             />
@@ -27,7 +27,7 @@ export default function AcademicExcellence() {
               Empowering Students Through Knowledge and Excellence
             </p>
             <p className="mt-4 text-justify text-text-muted">
-              At Angels Baby Land Matric Higher Secondary School, academics are
+              At Angels Babyland Matric Higher Secondary School, academics are
               at the heart of everything we do. Backed by over 30 years of
               educational excellence, we provide a nurturing learning
               environment where students develop strong foundations, critical

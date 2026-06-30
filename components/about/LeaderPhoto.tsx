@@ -38,7 +38,7 @@ export default function LeaderPhoto({
           alt={`${name}, ${role}`}
           fill
           sizes="(max-width: 1024px) 160px, 224px"
-          className="object-cover"
+          className="object-cover object-top"
           onError={() => setFailed(true)}
         />
       )}

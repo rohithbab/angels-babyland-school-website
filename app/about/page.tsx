@@ -9,7 +9,7 @@ import LeaderPhoto from "@/components/about/LeaderPhoto";
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "About Angels Baby Land Matric Higher Secondary School — our story, vision, mission, people and facilities.",
+    "About Angels Babyland Matric Higher Secondary School — our story, vision, mission, people and facilities.",
   path: "/about",
 });
 
@@ -46,7 +46,7 @@ const leadership: {
     blocks: [
       {
         type: "p",
-        text: `Late Mr. P. Thangaraj, the founder of Angels Baby Land Matriculation Higher Secondary School, established the institution in 1990 with just 16 students.`,
+        text: `Late Mr. P. Thangaraj, the founder of Angels Babyland Matriculation Higher Secondary School, established the institution in 1990 with just 16 students.`,
       },
       {
         type: "p",
@@ -85,7 +85,7 @@ const leadership: {
       },
       {
         type: "p",
-        text: `We wanted each and every child to be endowed with this priceless treasure — a youthful India that has begun to dream differently and is willing to go that extra mile to achieve their goals. At our Angels Baby Land institution we strive to work with the students to enhance their ability and thinking power beyond the classroom, in such a manner that they face the challenges independently and confidently. Each student is reinforced with worthy principles, virtues, ethics and character.`,
+        text: `We wanted each and every child to be endowed with this priceless treasure — a youthful India that has begun to dream differently and is willing to go that extra mile to achieve their goals. At our Angels Babyland institution we strive to work with the students to enhance their ability and thinking power beyond the classroom, in such a manner that they face the challenges independently and confidently. Each student is reinforced with worthy principles, virtues, ethics and character.`,
       },
       {
         type: "p",
@@ -100,7 +100,7 @@ const leadership: {
     blocks: [
       {
         type: "p",
-        text: `At Angels Baby Land Matric Higher Secondary School, we believe that education is not merely the acquisition of knowledge but the development of character, confidence, and compassion. Our goal is to nurture students into responsible citizens who are prepared to face the challenges of an ever-changing world.`,
+        text: `At Angels Babyland Matric Higher Secondary School, we believe that education is not merely the acquisition of knowledge but the development of character, confidence, and compassion. Our goal is to nurture students into responsible citizens who are prepared to face the challenges of an ever-changing world.`,
       },
       {
         type: "p",
@@ -158,7 +158,7 @@ const leadership: {
     blocks: [
       {
         type: "p",
-        text: `Angels Baby Land Matric Higher Secondary School has grown into a respected institution through a shared commitment to educational excellence and student development. We take pride in providing opportunities that help students realize their full potential.`,
+        text: `Angels Babyland Matric Higher Secondary School has grown into a respected institution through a shared commitment to educational excellence and student development. We take pride in providing opportunities that help students realize their full potential.`,
       },
       {
         type: "p",
@@ -170,7 +170,7 @@ const leadership: {
       },
       {
         type: "p",
-        text: `I extend my gratitude to our students, parents, faculty members, and well-wishers whose trust and support continue to strengthen the legacy of Angels Baby Land.`,
+        text: `I extend my gratitude to our students, parents, faculty members, and well-wishers whose trust and support continue to strengthen the legacy of Angels Babyland.`,
       },
     ],
   },
@@ -185,7 +185,7 @@ export default function AboutPage() {
         <div>
           <h1>About Us</h1>
           <p className="mt-3 text-text-muted">
-            For over three decades, Angels BabyLand has shaped confident,
+            For over three decades, Angels Babyland has shaped confident,
             capable young minds — rooted in knowledge, strong values, and an
             unwavering pursuit of excellence. Our promise lives in our motto:
             From Darkness, Lead Unto Light.
@@ -194,7 +194,7 @@ export default function AboutPage() {
           <div className="mt-10 lg:mt-14">
             <h2>Who We Are ?</h2>
             <p className="mt-4 text-justify text-text-muted">
-              Angels BabyLand Matric Higher Secondary School has been a trusted
+              Angels Babyland Matric Higher Secondary School has been a trusted
               name in education for over 30 years, dedicated to nurturing young
               minds and building a strong academic foundation. With a focus on
               discipline, values, and overall development, the school provides a
@@ -211,7 +211,7 @@ export default function AboutPage() {
         <div className="flex justify-center lg:justify-end">
           <Image
             src="/assets/about/about_us_section_image.png"
-            alt="Angels BabyLand school crest"
+            alt="Angels Babyland school crest"
             width={512}
             height={512}
             priority
@@ -229,7 +229,7 @@ export default function AboutPage() {
             align="center"
             flanked
             title="Our Leadership"
-            subtitle="The vision and the voices behind Angels BabyLand."
+            subtitle="The vision and the voices behind Angels Babyland."
           />
           <div className="mx-auto mt-16 flex w-full max-w-[1600px] flex-col lg:mt-20">
             {leadership.map((person, idx) => (

@@ -5,11 +5,11 @@ import type { Metadata } from "next";
  * Real copy / domain / OG images are filled in a later phase.
  */
 export const SITE = {
-  name: "Angels Baby Land Matric Higher Secondary School",
-  shortName: "Angels Baby Land School",
+  name: "Angels Babyland Matric Higher Secondary School",
+  shortName: "Angels Babyland School",
   tagline: "From Darkness, Lead Unto Light",
   description:
-    "Angels Baby Land Matric Higher Secondary School — building a legacy of excellence in education for over 30 years.",
+    "Angels Babyland Matric Higher Secondary School — building a legacy of excellence in education for over 30 years.",
   // TODO: replace with the real production domain before launch.
   url: "https://www.angelsbabyland.example",
 } as const;

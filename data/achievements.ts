@@ -22,7 +22,7 @@ export const achievements: Achievement[] = [
     blurb: "Milestones earned by our institution.",
     image: SCHOOL_GRID,
     intro:
-      "Recognitions and milestones earned by Angels Baby Land over three decades of service.",
+      "Recognitions and milestones earned by Angels Babyland over three decades of service.",
     frames: [
       { image: IMG, caption: "Best Institution award", date: "10 Oct 2025", time: "11:00 AM", year: 2025 },
       { image: IMG, caption: "Accreditation ceremony", date: "28 Apr 2025", time: "10:00 AM", year: 2025 },

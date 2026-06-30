@@ -29,7 +29,7 @@ export default function AchievementsPeek() {
             </p>
             <p className="mt-4 text-justify text-text-muted">
               The achievements of our students stand as a testament to the
-              values, discipline, and excellence that define Angels Baby Land
+              values, discipline, and excellence that define Angels Babyland
               Matric Higher Secondary School. Over the years, our school has
               celebrated numerous accomplishments in academics, sports, cultural
               activities, and leadership initiatives, earning recognition and

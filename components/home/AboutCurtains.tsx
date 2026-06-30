@@ -27,7 +27,7 @@ const cards: VisionMission[] = [
     image: "/assets/home/our_vision_cover_pic.png",
     lead: [
       "To be a center of educational excellence that empowers students with knowledge, character, and confidence, enabling them to become responsible citizens and future leaders. We envision a learning environment where academic achievement is balanced with moral values, creativity, discipline, and compassion.",
-      "For over three decades, Angels Baby Land Matric Higher Secondary School has remained committed to nurturing young minds and shaping generations of learners who contribute positively to society. Our vision is to inspire every student to discover their unique potential, embrace lifelong learning, and face the challenges of an ever-evolving world with courage, integrity, and determination.",
+      "For over three decades, Angels Babyland Matric Higher Secondary School has remained committed to nurturing young minds and shaping generations of learners who contribute positively to society. Our vision is to inspire every student to discover their unique potential, embrace lifelong learning, and face the challenges of an ever-evolving world with courage, integrity, and determination.",
       "We strive to create a culture where education extends beyond the classroom, fostering innovation, critical thinking, leadership, and social responsibility. Through a holistic approach to learning, we aim to develop individuals who not only excel academically but also uphold strong ethical values and make meaningful contributions to their communities and the nation.",
     ],
   },
@@ -35,7 +35,7 @@ const cards: VisionMission[] = [
     title: "Our Mission",
     image: "/assets/home/our_mission_cover_pic.png",
     lead: [
-      "At Angels Baby Land Matric Higher Secondary School, our mission is to provide a nurturing, inclusive, and stimulating educational environment that promotes academic excellence and personal growth. We are dedicated to delivering quality education that equips students with the knowledge, skills, and values necessary for success in life.",
+      "At Angels Babyland Matric Higher Secondary School, our mission is to provide a nurturing, inclusive, and stimulating educational environment that promotes academic excellence and personal growth. We are dedicated to delivering quality education that equips students with the knowledge, skills, and values necessary for success in life.",
     ],
     bulletsIntro: "Our mission is to:",
     bullets: [
@@ -84,7 +84,7 @@ function VisionMissionCard({
       {/* Cover image — the resting face */}
       <Image
         src={image}
-        alt={`${title} — Angels Baby Land`}
+        alt={`${title} — Angels Babyland`}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover"

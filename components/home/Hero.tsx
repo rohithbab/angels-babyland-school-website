@@ -38,7 +38,7 @@ export default function Hero() {
           <div className="flex justify-center lg:justify-start lg:pl-16">
             <Image
               src="/assets/home/hero_section_floating_image.png"
-              alt="Angels Baby Land school crest"
+              alt="Angels Babyland school crest"
               width={512}
               height={512}
               priority

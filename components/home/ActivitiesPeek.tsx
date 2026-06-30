@@ -18,7 +18,7 @@ export default function ActivitiesPeek() {
               Nurturing Talents. Building Character. Inspiring Futures.
             </p>
             <p className="mt-4 text-justify text-text-muted">
-              At Angels Baby Land Matric Higher Secondary School, education
+              At Angels Babyland Matric Higher Secondary School, education
               extends far beyond textbooks and classrooms. Through cultural
               programs, classical arts, sports, leadership clubs, and community
               initiatives, students are encouraged to discover their passions

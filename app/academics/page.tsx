@@ -168,7 +168,7 @@ export default function AcademicsPage() {
         <div>
           <h1>Academics</h1>
           <p className="mt-5 text-justify text-text-muted lg:text-lg">
-            At Angels Baby Land Matric Higher Secondary School, academics form
+            At Angels Babyland Matric Higher Secondary School, academics form
             the very foundation of our commitment to nurturing confident,
             capable, and responsible individuals. Our thoughtfully structured
             curriculum blends academic rigour with creativity — encouraging
@@ -232,7 +232,7 @@ export default function AcademicsPage() {
             A Strong Foundation for Lifelong Learning
           </p>
           <p className="mt-5 text-justify text-text-muted">
-            At Angels Baby Land Matric Higher Secondary School, our curriculum
+            At Angels Babyland Matric Higher Secondary School, our curriculum
             is thoughtfully designed to support students at every stage of their
             educational journey. With a balanced approach that evolves according
             to the developmental needs of learners, we ensure that students
