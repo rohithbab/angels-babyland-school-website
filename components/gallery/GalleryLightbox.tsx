@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import type { GalleryItem } from "@/data/gallery";
 
@@ -45,20 +46,31 @@ export default function GalleryLightbox({ images }: { images: GalleryItem[] }) {
       {/* GRID */}
       <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {images.map((img, i) => (
-          <li key={i}>
+          <motion.li
+            key={i}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45, ease: "easeOut", delay: (i % 4) * 0.08 }}
+          >
             <button
               type="button"
               onClick={() => setIndex(i)}
-              aria-label={`View image: ${img.alt}`}
+              aria-label={`View image: ${img.title}`}
               className="group relative block aspect-square w-full overflow-hidden rounded-[var(--radius-card)] border border-border"
             >
               <PlaceholderImage
+                src={img.image}
                 alt={img.alt}
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
               />
+              {/* Title overlay — slides up on hover / focus. */}
+              <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-3 bg-gradient-to-t from-black/75 via-black/30 to-transparent p-3 text-left text-sm font-medium text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+                {img.title}
+              </span>
             </button>
-          </li>
+          </motion.li>
         ))}
       </ul>
 
@@ -90,13 +102,14 @@ export default function GalleryLightbox({ images }: { images: GalleryItem[] }) {
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-card)] bg-bg">
               <PlaceholderImage
+                src={current.image}
                 alt={current.alt}
                 sizes="90vw"
                 className="object-contain"
               />
             </div>
             <p className="mt-3 text-center text-sm text-white/90">
-              {current.alt}
+              {current.title}
             </p>
 
             {/* Prev */}
