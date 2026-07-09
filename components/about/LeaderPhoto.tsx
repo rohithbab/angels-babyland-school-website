@@ -15,10 +15,18 @@ export default function LeaderPhoto({
   src,
   name,
   role,
+  objectPosition = "50% 0%",
 }: {
   src: string;
   name: string;
   role: string;
+  /**
+   * CSS object-position for the crop. Each source photo is framed
+   * differently, so this is tuned per leader. Default "50% 0%" (top) suits
+   * tightly-framed portraits; raise the Y value to trim empty headroom and
+   * lift the face (e.g. "50% 30%").
+   */
+  objectPosition?: string;
 }) {
   const [failed, setFailed] = useState(false);
 
@@ -38,7 +46,8 @@ export default function LeaderPhoto({
           alt={`${name}, ${role}`}
           fill
           sizes="(max-width: 1024px) 160px, 224px"
-          className="object-cover object-top"
+          className="object-cover"
+          style={{ objectPosition }}
           onError={() => setFailed(true)}
         />
       )}

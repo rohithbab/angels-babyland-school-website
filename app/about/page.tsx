@@ -37,6 +37,8 @@ const leadership: {
   name: string;
   /** Portrait path; falls back to a role placeholder until the file exists. */
   photo: string;
+  /** Optional crop tuning (CSS object-position) for this specific photo. */
+  photoPosition?: string;
   blocks: Block[];
 }[] = [
   {
@@ -120,6 +122,7 @@ const leadership: {
     role: "Secretary",
     name: "Dr. Jasmine Deva Arul Selvi. T",
     photo: `${LEADERS_DIR}/secretary.png`,
+    photoPosition: "50% 32%",
     blocks: [
       {
         type: "p",
@@ -250,6 +253,7 @@ export default function AboutPage() {
                       src={person.photo}
                       name={person.name}
                       role={person.role}
+                      objectPosition={person.photoPosition}
                     />
 
                     {/* Highlighted title box: ROLE — Name */}
