@@ -9,8 +9,13 @@ export interface Club {
   frames: GalleryFrame[];
 }
 
-// Placeholder image path — every slot renders the single placeholder for now.
+// Placeholder image path — used by clubs whose photos aren't in yet.
 const IMG = "/assets/placeholder.jpg";
+
+// Real club photo folders (2025 gallery).
+const SCOUTS = "/assets/activities/clubs/scouts_guides_folder/2025";
+const LEO = "/assets/activities/clubs/leo_club/2025";
+const CUBS = "/assets/activities/clubs/culbs_and_bulbuls/2025";
 
 export const clubs: Club[] = [
   {
@@ -20,9 +25,12 @@ export const clubs: Club[] = [
     intro:
       "Our Scouts & Guides unit builds character through service, teamwork and outdoor activity.",
     frames: [
-      { image: IMG, caption: "Annual scout camp", date: "12 Jan 2025", time: "9:00 AM", year: 2025 },
-      { image: IMG, caption: "Community service drive", date: "04 Feb 2025", time: "10:30 AM", year: 2025 },
-      { image: IMG, caption: "Flag hoisting ceremony", date: "26 Jan 2025", time: "8:00 AM", year: 2025 },
+      { image: `${SCOUTS}/troop-assembly.jpeg`, caption: "Troop assembly", date: "26 Jan 2025", time: "8:00 AM", year: 2025 },
+      { image: `${SCOUTS}/camp-drill.jpeg`, caption: "Camp drill and inspection", date: "11 Jan 2025", time: "7:30 AM", year: 2025 },
+      { image: `${SCOUTS}/camp-group-portrait.jpeg`, caption: "Group portrait at the annual camp", date: "12 Jan 2025", time: "9:00 AM", year: 2025 },
+      { image: `${SCOUTS}/guides-camp-portrait.jpeg`, caption: "Guides troop at camp", date: "12 Jan 2025", time: "9:30 AM", year: 2025 },
+      { image: `${SCOUTS}/campus-training.jpeg`, caption: "Training session on campus", date: "04 Feb 2025", time: "10:30 AM", year: 2025 },
+      { image: `${SCOUTS}/rally-assembly.jpeg`, caption: "Scouts & Guides rally", date: "22 Feb 2025", time: "9:00 AM", year: 2025 },
     ],
   },
   {
@@ -32,8 +40,10 @@ export const clubs: Club[] = [
     intro:
       "The Leo Club nurtures young leaders through social initiatives and collaborative projects.",
     frames: [
-      { image: IMG, caption: "Installation ceremony", date: "18 Jul 2025", time: "5:00 PM", year: 2025 },
-      { image: IMG, caption: "Tree plantation drive", date: "22 Aug 2025", time: "7:30 AM", year: 2025 },
+      { image: `${LEO}/womens-day-walkathon.jpeg`, caption: "Women's Day Walkathon", date: "08 Mar 2025", time: "6:30 AM", year: 2025 },
+      { image: `${LEO}/food-donation-drive.jpeg`, caption: "Food donation drive", date: "18 Jul 2025", time: "11:00 AM", year: 2025 },
+      { image: `${LEO}/community-food-drive.jpeg`, caption: "Community food distribution", date: "22 Aug 2025", time: "8:00 AM", year: 2025 },
+      { image: `${LEO}/road-safety-awareness.jpeg`, caption: "Road safety awareness campaign", date: "11 Sep 2025", time: "9:00 AM", year: 2025 },
     ],
   },
   {
@@ -76,8 +86,17 @@ export const clubs: Club[] = [
     intro:
       "Cubs & Bulbuls introduces our youngest students to scouting through play, teamwork and simple acts of service.",
     frames: [
-      { image: IMG, caption: "Cubs & Bulbuls rally", date: "23 Jan 2025", time: "9:30 AM", year: 2025 },
-      { image: IMG, caption: "Fun activity day", date: "14 Nov 2025", time: "10:00 AM", year: 2025 },
+      { image: `${CUBS}/state-award-ceremony.jpeg`, caption: "State-level award ceremony", date: "08 Aug 2025", time: "10:00 AM", year: 2025 },
+      { image: `${CUBS}/certificate-day.jpeg`, caption: "Certificate day", date: "08 Aug 2025", time: "11:00 AM", year: 2025 },
+      { image: `${CUBS}/cubs-pack-portrait.jpeg`, caption: "Cubs & Bulbuls pack portrait", date: "23 Jan 2025", time: "9:30 AM", year: 2025 },
+      { image: `${CUBS}/investiture-ceremony.jpeg`, caption: "Investiture ceremony", date: "14 Nov 2025", time: "10:00 AM", year: 2025 },
+      { image: `${CUBS}/scout-promise-ceremony.jpeg`, caption: "Reciting the scout promise", date: "14 Nov 2025", time: "9:30 AM", year: 2025 },
+      { image: `${CUBS}/welcoming-the-guest.jpeg`, caption: "Welcoming the chief guest", date: "14 Nov 2025", time: "9:00 AM", year: 2025 },
+      { image: `${CUBS}/annual-rally.jpeg`, caption: "Annual rally", date: "14 Nov 2025", time: "9:15 AM", year: 2025 },
+      { image: `${CUBS}/jungle-theme-activity.jpeg`, caption: "Jungle-theme mask activity", date: "22 Feb 2025", time: "10:30 AM", year: 2025 },
+      { image: `${CUBS}/troop-flag-activity.jpeg`, caption: "Troop flag activity", date: "22 Feb 2025", time: "11:00 AM", year: 2025 },
+      { image: `${CUBS}/adventure-obstacle-course.jpeg`, caption: "Adventure obstacle course", date: "05 Jun 2025", time: "9:00 AM", year: 2025 },
+      { image: `${CUBS}/heritage-excursion.jpeg`, caption: "Heritage excursion", date: "20 Dec 2025", time: "10:00 AM", year: 2025 },
     ],
   },
 ];
