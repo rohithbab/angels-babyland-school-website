@@ -13,11 +13,17 @@ export interface InfraCategory {
   blurb: string;
 }
 
-/** Public base path for all infrastructure photos. */
+/** Public base path for all infrastructure gallery photos. */
 export const INFRA_BASE = "/assets/about/our-infrastructure";
 
 /** Filesystem-safe folder name for the same base (relative to `public/`). */
 export const INFRA_DIR = "assets/about/our-infrastructure";
+
+/** Public base path for the curated one-per-category thumbnails. */
+export const INFRA_THUMBS_BASE = "/assets/about/infrastructure-thumbnails";
+
+/** Filesystem-safe thumbnails folder (relative to `public/`). */
+export const INFRA_THUMBS_DIR = "assets/about/infrastructure-thumbnails";
 
 export const infrastructureCategories: InfraCategory[] = [
   {

@@ -3,6 +3,8 @@ import path from "node:path";
 import {
   INFRA_BASE,
   INFRA_DIR,
+  INFRA_THUMBS_BASE,
+  INFRA_THUMBS_DIR,
   infrastructureCategories,
   type InfraCategory,
 } from "@/data/infrastructure";
@@ -19,6 +21,25 @@ const IMAGE_RE = /\.(jpe?g|png|webp|avif)$/i;
 export interface InfraCategoryWithImages extends InfraCategory {
   /** Public URLs of every photo in this category (sorted, may be empty). */
   images: string[];
+  /**
+   * Curated thumbnail for the carousel/marquee. The dedicated
+   * `infrastructure-thumbnails/<slug>.<ext>` file if present, else the first
+   * gallery photo, else null.
+   */
+  thumbnail: string | null;
+}
+
+const THUMB_EXTS = ["jpg", "jpeg", "png", "webp", "avif"];
+
+/** Resolve the curated thumbnail file for a category, if one exists. */
+export function categoryThumbnail(slug: string): string | null {
+  const dir = path.join(PUBLIC_DIR, INFRA_THUMBS_DIR);
+  for (const ext of THUMB_EXTS) {
+    if (fs.existsSync(path.join(dir, `${slug}.${ext}`))) {
+      return `${INFRA_THUMBS_BASE}/${slug}.${ext}`;
+    }
+  }
+  return null;
 }
 
 /** List the photo URLs inside one category folder, natural-sorted. */
@@ -36,17 +57,21 @@ export function listCategoryImages(slug: string): string[] {
   }
 }
 
-/** All categories, each with its resolved image list. */
+/** All categories, each with its resolved image list + thumbnail. */
 export function getInfrastructure(): InfraCategoryWithImages[] {
-  return infrastructureCategories.map((category) => ({
-    ...category,
-    images: listCategoryImages(category.slug),
-  }));
+  return infrastructureCategories.map((category) => {
+    const images = listCategoryImages(category.slug);
+    return {
+      ...category,
+      images,
+      thumbnail: categoryThumbnail(category.slug) ?? images[0] ?? null,
+    };
+  });
 }
 
 /**
- * One highlight photo per category (the first available), for the About-page
- * marquee. Categories with no photos yet are skipped.
+ * One curated highlight photo per category, for the About-page marquee.
+ * Categories with no thumbnail or photos yet are skipped.
  */
 export function getInfrastructureHighlights(): {
   slug: string;
@@ -54,6 +79,8 @@ export function getInfrastructureHighlights(): {
   src: string;
 }[] {
   return getInfrastructure()
-    .filter((c) => c.images.length > 0)
-    .map((c) => ({ slug: c.slug, title: c.title, src: c.images[0] }));
+    .filter((c): c is InfraCategoryWithImages & { thumbnail: string } =>
+      Boolean(c.thumbnail)
+    )
+    .map((c) => ({ slug: c.slug, title: c.title, src: c.thumbnail }));
 }
