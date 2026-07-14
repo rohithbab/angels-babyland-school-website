@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { buildMetadata } from "@/lib/seo";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Card from "@/components/ui/Card";
-import PlaceholderImage from "@/components/ui/PlaceholderImage";
+import CTAButton from "@/components/ui/CTAButton";
 import LeaderPhoto from "@/components/about/LeaderPhoto";
+import InfrastructureMarquee from "@/components/about/InfrastructureMarquee";
+import { getInfrastructureHighlights } from "@/lib/infrastructure";
 
 export const metadata: Metadata = buildMetadata({
   title: "About",
@@ -12,31 +13,6 @@ export const metadata: Metadata = buildMetadata({
     "About Angels Babyland Matric Higher Secondary School — our story, vision, mission, people and facilities.",
   path: "/about",
 });
-
-const INFRA_DIR = "/assets/about/infrastructure";
-
-/** Infrastructure cards. `image` is optional — cards without one fall back to
- *  the shared placeholder until a real photo is added. */
-const infrastructure: { title: string; image?: string; alt?: string }[] = [
-  { title: "Spacious Classrooms" },
-  {
-    title: "Science Laboratories",
-    image: `${INFRA_DIR}/science-lab.jpg`,
-    alt: "A teacher guiding students through a biology specimen study in the science laboratory",
-  },
-  { title: "Library" },
-  { title: "Playground" },
-  {
-    title: "Computer Lab",
-    image: `${INFRA_DIR}/computer-lab.jpg`,
-    alt: "Students working at desktop computers with their teacher in the computer lab",
-  },
-  {
-    title: "Robotics Lab",
-    image: `${INFRA_DIR}/robotics-lab.jpg`,
-    alt: "Students assembling robotics and electronics kits together in the robotics lab",
-  },
-];
 
 /**
  * Leadership "tree": Founder → Correspondent → Principal → Secretary →
@@ -196,6 +172,8 @@ const leadership: {
 ];
 
 export default function AboutPage() {
+  const infraHighlights = getInfrastructureHighlights();
+
   return (
     <section className="container-x section-y">
       {/* HERO + WHO WE ARE — crest vertically centered on the right, spanning
@@ -306,37 +284,35 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* INFRASTRUCTURE */}
+        {/* INFRASTRUCTURE — flanked title, descriptive copy, a right-to-left
+            photo marquee, and a CTA into the dedicated gallery page. */}
         <div>
           <SectionHeading
             align="center"
             flanked
             title="Our Infrastructure"
-            subtitle="Facilities designed to support learning, discovery and play."
           />
-          <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {infrastructure.map((item) => (
-              <li key={item.title}>
-                <Card
-                  interactive={false}
-                  className="group h-full overflow-hidden"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden border-b border-border">
-                    <PlaceholderImage
-                      src={item.image}
-                      alt={item.alt ?? item.title}
-                      quality={90}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="text-lg font-bold">{item.title}</h3>
-                  </div>
-                </Card>
-              </li>
-            ))}
-          </ul>
+          <p className="mx-auto mt-5 max-w-3xl text-center text-text-muted">
+            Our campus is built for learning in every form. Spacious, well-lit
+            classrooms give every child room to focus, while dedicated
+            laboratories for physics, chemistry, biology and computer science
+            equip students with everything each subject demands. A hands-on
+            robotics lab sparks invention, a well-stocked library nurtures a love
+            of reading, and an open playground keeps sport and play part of
+            everyday school life.
+          </p>
+
+          {infraHighlights.length > 0 && (
+            <div className="mt-10">
+              <InfrastructureMarquee items={infraHighlights} />
+            </div>
+          )}
+
+          <div className="mt-10 flex justify-center">
+            <CTAButton href="/about/infrastructure" size="lg">
+              Have a look
+            </CTAButton>
+          </div>
         </div>
 
         {/* FACULTY */}
