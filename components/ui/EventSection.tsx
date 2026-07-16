@@ -23,6 +23,8 @@ interface EventSectionProps {
   ctaLabel?: string;
   /** Heading tag for the section title. Default: h2. */
   headingAs?: ElementType;
+  /** Heading + subtitle alignment. Default: left. */
+  align?: "left" | "center";
 }
 
 /**
@@ -37,11 +39,21 @@ export default function EventSection({
   ctaHref,
   ctaLabel = "See More",
   headingAs: Heading = "h2",
+  align = "left",
 }: EventSectionProps) {
+  const centered = align === "center";
   return (
     <div className="rounded-[var(--radius-card)] border border-border bg-bg-alt p-6 lg:p-10">
-      <Heading>{title}</Heading>
-      {subtitle && <p className="mt-3 max-w-3xl text-text-muted">{subtitle}</p>}
+      <Heading className={centered ? "text-center" : undefined}>{title}</Heading>
+      {subtitle && (
+        <p
+          className={`mt-3 max-w-3xl text-text-muted ${
+            centered ? "mx-auto text-center" : ""
+          }`}
+        >
+          {subtitle}
+        </p>
+      )}
 
       {events.length === 0 ? (
         <p className="mt-8 text-text-muted">Photos coming soon.</p>
