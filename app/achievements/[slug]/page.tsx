@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import GalleryYearView from "@/components/ui/GalleryYearView";
 import { achievements, getAchievement } from "@/data/achievements";
 import { ACHIEVEMENT_FOLDERS } from "@/data/photoFolders";
-import { readFramesFromDisk } from "@/lib/photos";
+import { readFramesFromDisk, mergeFrames } from "@/lib/photos";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -35,8 +35,7 @@ export default async function AchievementDetailPage({ params }: PageProps) {
 
   const folder = ACHIEVEMENT_FOLDERS[slug];
   const diskFrames = folder ? readFramesFromDisk(folder) : [];
-  const allFrames =
-    diskFrames.length > 0 ? diskFrames : item.frames;
+  const allFrames = mergeFrames(item.frames, diskFrames);
 
   return (
     <section className="container-x section-y">

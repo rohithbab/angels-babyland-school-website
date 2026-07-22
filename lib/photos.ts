@@ -7,12 +7,21 @@ const IMAGE_RE = /\.(jpe?g|png|webp|avif)$/i;
 const YEAR_DIRS = ["2025", "2026"];
 
 export function generateCaption(filename: string): string {
-  const name = filename.replace(IMAGE_RE, "");
-  return name
-    .replace(/[-_]/g, " ")
+  const name = filename
+    .replace(IMAGE_RE, "")
+    .replace(/[-_]+/g, " ")
     .replace(/\s+/g, " ")
-    .trim()
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+    .trim();
+  const cleaned = name
+    .replace(/^whatsapp\s+image\s+\d{4}(?:-\d{2}){2}\s+at\s+[\d.]+(?:\s+(?:am|pm))?(?:\s*\(?\d+\)?)?/i, "")
+    .replace(/\s*\d+$/, "")
+    .trim();
+  if (!cleaned) return "Photo";
+  return cleaned
+    .split(/(?<=[a-z])(?=[A-Z])|\s+/)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ")
+    .trim();
 }
 
 export function listYearImages(baseDir: string, year: string): string[] {
@@ -102,4 +111,22 @@ export function hasPhotos(baseDir: string, years: string[] = YEAR_DIRS): boolean
     if (photos.length > 0) return true;
   }
   return false;
+}
+
+export function mergeFrames(
+  hardcoded: { image: string; caption: string; date: string; time: string; year: number }[],
+  disk: { image: string; caption: string; date: string; time: string; year: number }[],
+): { image: string; caption: string; date: string; time: string; year: number }[] {
+  const hardcodedPaths = new Set(hardcoded.map((f) => f.image));
+  const extra = disk.filter((f) => !hardcodedPaths.has(f.image));
+  return [...hardcoded, ...extra];
+}
+
+export function mergeEvents(
+  hardcoded: { image: string; name: string; date: string; time?: string; year: number }[],
+  disk: { image: string; name: string; date: string; time: string; year: number }[],
+): { image: string; name: string; date: string; time?: string; year: number }[] {
+  const hardcodedPaths = new Set(hardcoded.map((e) => e.image));
+  const extra = disk.filter((e) => !hardcodedPaths.has(e.image));
+  return [...hardcoded, ...extra];
 }

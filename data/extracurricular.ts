@@ -19,6 +19,7 @@ const IMG = "/assets/placeholder.jpg";
 const ART_GRID = "/assets/activities/extra_curicular/art_and_craft_grid_image.jpeg";
 const ART_1 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft1.jpeg";
 const ART_2 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft2.jpeg";
+const ART_3 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft3.jpeg";
 
 // Real Panel Class photos.
 const PANEL_GRID = "/assets/activities/extra_curicular/panel-class-grid.jpeg";
@@ -109,6 +110,7 @@ export const extraActivities: ExtraActivity[] = [
     frames: [
       { image: ART_1, caption: "Creative Thumb Painting", date: "16 Aug 2025", time: "2:00 PM", year: 2025 },
       { image: ART_2, caption: "Origami & Paper Craft", date: "28 Feb 2025", time: "11:00 AM", year: 2025 },
+      { image: ART_3, caption: "Arts & Craft with Student Engagement", date: "12 Mar 2025", time: "10:00 AM", year: 2025 },
     ],
   },
 ];

@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import EventYearView from "@/components/ui/EventYearView";
 import { culturalGroups, getCulturalGroup } from "@/data/activities";
 import { CULTURAL_FOLDERS } from "@/data/photoFolders";
-import { readEventsFromDisk } from "@/lib/photos";
+import { readEventsFromDisk, mergeEvents } from "@/lib/photos";
 
 interface PageProps {
   params: Promise<{ group: string }>;
@@ -35,8 +35,7 @@ export default async function CulturalGroupPage({ params }: PageProps) {
 
   const folder = CULTURAL_FOLDERS[slug];
   const diskEvents = folder ? readEventsFromDisk(folder) : [];
-  const allEvents =
-    diskEvents.length > 0 ? diskEvents : group.events;
+  const allEvents = mergeEvents(group.events, diskEvents);
 
   return (
     <section className="container-x section-y">

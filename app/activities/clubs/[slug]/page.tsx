@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import GalleryYearView from "@/components/ui/GalleryYearView";
 import { clubs, getClub } from "@/data/clubs";
 import { CLUB_FOLDERS } from "@/data/photoFolders";
-import { readFramesFromDisk } from "@/lib/photos";
+import { readFramesFromDisk, mergeFrames } from "@/lib/photos";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -35,8 +35,7 @@ export default async function ClubDetailPage({ params }: PageProps) {
 
   const folder = CLUB_FOLDERS[slug];
   const diskFrames = folder ? readFramesFromDisk(folder) : [];
-  const allFrames =
-    diskFrames.length > 0 ? diskFrames : club.frames;
+  const allFrames = mergeFrames(club.frames, diskFrames);
 
   return (
     <section className="container-x section-y">
