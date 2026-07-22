@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/seo";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CardGrid, { type CardItem } from "@/components/ui/CardGrid";
 import CTAButton from "@/components/ui/CTAButton";
-import InfrastructureMarquee from "@/components/about/InfrastructureMarquee";
+import MarqueeLightbox from "@/components/ui/MarqueeLightbox";
 import { getHappyProgramHighlights } from "@/lib/happyProgram";
 
 export const metadata: Metadata = buildMetadata({
@@ -68,7 +68,7 @@ export default function ActivitiesPage() {
 
         {highlights.length > 0 && (
           <div className="mt-10">
-            <InfrastructureMarquee items={highlights} />
+            <MarqueeLightbox items={highlights} />
           </div>
         )}
 
