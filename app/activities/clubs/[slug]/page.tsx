@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
 import GalleryYearView from "@/components/ui/GalleryYearView";
 import { clubs, getClub } from "@/data/clubs";
+import { CLUB_FOLDERS } from "@/data/photoFolders";
+import { readFramesFromDisk } from "@/lib/photos";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -31,6 +33,11 @@ export default async function ClubDetailPage({ params }: PageProps) {
   const club = getClub(slug);
   if (!club) notFound();
 
+  const folder = CLUB_FOLDERS[slug];
+  const diskFrames = folder ? readFramesFromDisk(folder) : [];
+  const allFrames =
+    diskFrames.length > 0 ? diskFrames : club.frames;
+
   return (
     <section className="container-x section-y">
       <GalleryYearView
@@ -38,7 +45,7 @@ export default async function ClubDetailPage({ params }: PageProps) {
         flanked
         title={club.title}
         intro={club.intro}
-        frames={club.frames}
+        frames={allFrames}
       />
     </section>
   );

@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
 import GalleryYearView from "@/components/ui/GalleryYearView";
 import { extraActivities, getExtraActivity } from "@/data/extracurricular";
+import { EXTRA_FOLDERS } from "@/data/photoFolders";
+import { readFramesFromDisk } from "@/lib/photos";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -31,6 +33,11 @@ export default async function ExtraActivityPage({ params }: PageProps) {
   const activity = getExtraActivity(slug);
   if (!activity) notFound();
 
+  const folder = EXTRA_FOLDERS[slug];
+  const diskFrames = folder ? readFramesFromDisk(folder) : [];
+  const allFrames =
+    diskFrames.length > 0 ? diskFrames : activity.frames;
+
   return (
     <section className="container-x section-y">
       <GalleryYearView
@@ -38,7 +45,7 @@ export default async function ExtraActivityPage({ params }: PageProps) {
         flanked
         title={activity.title}
         intro={activity.intro}
-        frames={activity.frames}
+        frames={allFrames}
       />
     </section>
   );

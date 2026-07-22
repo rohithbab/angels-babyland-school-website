@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
 import GalleryYearView from "@/components/ui/GalleryYearView";
 import { achievements, getAchievement } from "@/data/achievements";
+import { ACHIEVEMENT_FOLDERS } from "@/data/photoFolders";
+import { readFramesFromDisk } from "@/lib/photos";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -31,6 +33,11 @@ export default async function AchievementDetailPage({ params }: PageProps) {
   const item = getAchievement(slug);
   if (!item) notFound();
 
+  const folder = ACHIEVEMENT_FOLDERS[slug];
+  const diskFrames = folder ? readFramesFromDisk(folder) : [];
+  const allFrames =
+    diskFrames.length > 0 ? diskFrames : item.frames;
+
   return (
     <section className="container-x section-y">
       <GalleryYearView
@@ -38,7 +45,7 @@ export default async function AchievementDetailPage({ params }: PageProps) {
         flanked
         title={item.title}
         intro={item.intro}
-        frames={item.frames}
+        frames={allFrames}
       />
     </section>
   );

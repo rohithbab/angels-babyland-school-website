@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
-import SectionHeading from "@/components/ui/SectionHeading";
 import GalleryYearView from "@/components/ui/GalleryYearView";
-import { getHappyProgramFrames } from "@/lib/happyProgram";
+import { readFramesFromDisk } from "@/lib/photos";
 
 export const metadata: Metadata = buildMetadata({
   title: "Happy Program",
@@ -12,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function HappyProgramPage() {
-  const frames = getHappyProgramFrames();
+  const frames = readFramesFromDisk("assets/activities/happy-program");
 
   return (
     <section className="container-x section-y">

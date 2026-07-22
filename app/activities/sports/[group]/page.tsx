@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
 import EventYearView from "@/components/ui/EventYearView";
 import { sportsGroups, getSportsGroup } from "@/data/activities";
+import { SPORTS_FOLDERS } from "@/data/photoFolders";
+import { readEventsFromDisk } from "@/lib/photos";
 
 interface PageProps {
   params: Promise<{ group: string }>;
@@ -31,13 +33,18 @@ export default async function SportsGroupPage({ params }: PageProps) {
   const group = getSportsGroup(slug);
   if (!group) notFound();
 
+  const folder = SPORTS_FOLDERS[slug];
+  const diskEvents = folder ? readEventsFromDisk(folder) : [];
+  const allEvents =
+    diskEvents.length > 0 ? diskEvents : group.events;
+
   return (
     <section className="container-x section-y">
       <EventYearView
         headingAs="h1"
         title={group.title}
         subtitle={group.subtitle}
-        events={group.events}
+        events={allEvents}
       />
     </section>
   );

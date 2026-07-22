@@ -4,6 +4,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import GalleryLightbox from "@/components/gallery/GalleryLightbox";
 import GalleryIntro from "@/components/gallery/GalleryIntro";
 import { galleryImages } from "@/data/gallery";
+import { GALLERY_FOLDER } from "@/data/photoFolders";
+import { readGalleryItemsFromDisk } from "@/lib/photos";
 
 export const metadata: Metadata = buildMetadata({
   title: "Gallery",
@@ -13,6 +15,9 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function GalleryPage() {
+  const diskItems = readGalleryItemsFromDisk(GALLERY_FOLDER);
+  const images = diskItems.length > 0 ? diskItems : galleryImages;
+
   return (
     <section className="container-x section-y">
       <GalleryIntro />
@@ -25,7 +30,7 @@ export default function GalleryPage() {
       />
 
       <div className="mt-10">
-        <GalleryLightbox images={galleryImages} />
+        <GalleryLightbox images={images} />
       </div>
     </section>
   );

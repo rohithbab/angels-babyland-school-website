@@ -4,7 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CardGrid, { type CardItem } from "@/components/ui/CardGrid";
 import CTAButton from "@/components/ui/CTAButton";
 import MarqueeLightbox from "@/components/ui/MarqueeLightbox";
-import { getHappyProgramHighlights } from "@/lib/happyProgram";
+import { listYearImages, generateCaption } from "@/lib/photos";
 
 export const metadata: Metadata = buildMetadata({
   title: "Activities",
@@ -40,7 +40,12 @@ const items: CardItem[] = [
 ];
 
 export default function ActivitiesPage() {
-  const highlights = getHappyProgramHighlights();
+  const happyPhotos = listYearImages("assets/activities/happy-program", "2025");
+  const highlights = happyPhotos.slice(0, 10).map((src, i) => ({
+    slug: `happy-program-${i}`,
+    title: generateCaption(src.split("/").pop() ?? ""),
+    src,
+  }));
 
   return (
     <section className="container-x section-y">
