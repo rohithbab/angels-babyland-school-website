@@ -12,18 +12,30 @@ export interface ExtraActivity {
   frames: GalleryFrame[];
 }
 
-// Placeholder image path — every slot renders the single placeholder for now.
+// Placeholder image path.
 const IMG = "/assets/placeholder.jpg";
 
-// Real Art & Craft photos.
+// Art & Craft photos.
 const ART_GRID = "/assets/activities/extra_curicular/art_and_craft_grid_image.jpeg";
 const ART_1 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft1.jpeg";
 const ART_2 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft2.jpeg";
 const ART_3 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft3.jpeg";
 
-// Real Panel Class photos.
+// Panel Class photos.
 const PANEL_GRID = "/assets/activities/extra_curicular/panel-class-grid.jpeg";
 const PANEL_2025 = "/assets/activities/extra_curicular/pannel_class/2025";
+
+// Western Dance photos.
+const WESTERN = "/assets/activities/extra_curicular/western_dance/2025";
+const WESTERN_GRID = `${WESTERN}/Western_dance_01.jpeg`;
+
+// Yoga photos.
+const YOGA = "/assets/activities/extra_curicular/yoga/2025";
+const YOGA_GRID = `${YOGA}/Yoga_01.jpeg`;
+
+// Silambam photos.
+const SILAMBAM = "/assets/activities/extra_curicular/silambam/2025";
+const SILAMBAM_GRID = `${SILAMBAM}/Silambam_01.jpeg`;
 
 export const extraActivities: ExtraActivity[] = [
   {
@@ -55,36 +67,38 @@ export const extraActivities: ExtraActivity[] = [
     slug: "western-dance",
     title: "Western Dance",
     blurb: "High-energy moves and modern choreography.",
-    image: IMG,
+    image: WESTERN_GRID,
     intro:
       "The Western Dance group builds confidence and coordination through contemporary choreography and stage performances.",
     frames: [
-      { image: IMG, caption: "Stage performance", date: "21 Dec 2025", time: "7:00 PM", year: 2025 },
-      { image: IMG, caption: "Choreography workshop", date: "12 Sep 2025", time: "3:30 PM", year: 2025 },
+      { image: `${WESTERN}/Western_dance_01.jpeg`, caption: "Western Dance Performance", date: "21 Dec 2025", time: "7:00 PM", year: 2025 },
+      { image: `${WESTERN}/Western_dance_02.jpeg`, caption: "Western Dance Practice", date: "12 Sep 2025", time: "3:30 PM", year: 2025 },
     ],
   },
   {
     slug: "yoga",
     title: "Yoga",
     blurb: "Balance, breath and mindful well-being.",
-    image: IMG,
+    image: YOGA_GRID,
     intro:
       "Regular yoga sessions help students build flexibility, focus and calm through guided postures and breathing.",
     frames: [
-      { image: IMG, caption: "Morning yoga session", date: "21 Jun 2025", time: "7:00 AM", year: 2025 },
-      { image: IMG, caption: "International Yoga Day", date: "21 Jun 2025", time: "8:00 AM", year: 2025 },
+      { image: `${YOGA}/Yoga_01.jpeg`, caption: "Morning Yoga Session", date: "21 Jun 2025", time: "7:00 AM", year: 2025 },
+      { image: `${YOGA}/Yoga_02.JPG`, caption: "International Yoga Day", date: "21 Jun 2025", time: "8:00 AM", year: 2025 },
+      { image: `${YOGA}/Yoga_03.JPG`, caption: "Yoga Practice", date: "15 Jul 2025", time: "7:30 AM", year: 2025 },
     ],
   },
   {
     slug: "silambam",
     title: "Silambam",
     blurb: "Traditional Tamil martial art and self-defence.",
-    image: IMG,
+    image: SILAMBAM_GRID,
     intro:
       "Silambam training develops agility, discipline and self-defence skills through this traditional Tamil martial art.",
     frames: [
-      { image: IMG, caption: "Silambam demonstration", date: "15 Jan 2025", time: "10:00 AM", year: 2025 },
-      { image: IMG, caption: "Training session", date: "09 Oct 2025", time: "4:00 PM", year: 2025 },
+      { image: `${SILAMBAM}/Silambam_01.jpeg`, caption: "Silambam Demonstration", date: "15 Jan 2025", time: "10:00 AM", year: 2025 },
+      { image: `${SILAMBAM}/Silambam_02.jpeg`, caption: "Silambam Training Session", date: "09 Oct 2025", time: "4:00 PM", year: 2025 },
+      { image: `${SILAMBAM}/Silambam_03.jpeg`, caption: "Silambam Performance", date: "20 Dec 2025", time: "5:00 PM", year: 2025 },
     ],
   },
   {
@@ -143,7 +157,7 @@ export const extraLandingCards: CardItem[] = [
   {
     title: "Yoga & Silambam",
     href: "/activities/extra-curricular/yoga-and-silambam",
-    image: IMG, // placeholder until a combined grid image is supplied
+    image: YOGA_GRID,
     blurb: "Mindful balance and the traditional Tamil martial art.",
   },
   toCard("panel-class"),

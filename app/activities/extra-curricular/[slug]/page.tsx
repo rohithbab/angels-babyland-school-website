@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
-import GalleryYearView from "@/components/ui/GalleryYearView";
+import GalleryDetail from "@/components/ui/GalleryDetail";
 import { extraActivities, getExtraActivity } from "@/data/extracurricular";
 import { EXTRA_FOLDERS } from "@/data/photoFolders";
 import { readFramesFromDisk, mergeFrames } from "@/lib/photos";
@@ -39,7 +39,7 @@ export default async function ExtraActivityPage({ params }: PageProps) {
 
   return (
     <section className="container-x section-y">
-      <GalleryYearView
+      <GalleryDetail
         align="center"
         flanked
         title={activity.title}
