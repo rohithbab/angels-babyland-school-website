@@ -15,6 +15,9 @@ const IMG = "/assets/placeholder.jpg";
 const SCHOOL_GRID = "/assets/achievements/school_achievements_grid_image.jpeg";
 const TEACHER_GRID = "/assets/achievements/teacher_achievements_grid_image.jpeg";
 
+const STUDENTS = "/assets/achievements/students_achievements";
+const STUDENT_GRID = `${STUDENTS}/Students_achievements_04.jpeg`;
+
 export const achievements: Achievement[] = [
   {
     slug: "school",
@@ -44,12 +47,16 @@ export const achievements: Achievement[] = [
     slug: "student",
     title: "Student Achievements",
     blurb: "Our students shining across fields.",
-    image: IMG,
+    image: STUDENT_GRID,
     intro:
       "Academic, sporting and cultural distinctions earned by our students.",
     frames: [
-      { image: IMG, caption: "State topper felicitation", date: "30 May 2025", time: "10:30 AM", year: 2025 },
-      { image: IMG, caption: "District sports champions", date: "12 Dec 2025", time: "9:00 AM", year: 2025 },
+      { image: `${STUDENTS}/Students_achievements_01.jpeg`, caption: "Champion Athletes — District Level Winners", date: "20 Jan 2026", time: "10:00 AM", year: 2026 },
+      { image: `${STUDENTS}/Students_achievements_02.jpeg`, caption: "Proud Moments — Sports Award Ceremony", date: "20 Jan 2026", time: "11:00 AM", year: 2026 },
+      { image: `${STUDENTS}/Students_achievements_03.jpeg`, caption: "Team Spirit — Celebrating the Victory", date: "20 Jan 2026", time: "12:00 PM", year: 2026 },
+      { image: `${STUDENTS}/Students_achievements_04.jpeg`, caption: "Sports Excellence — Medal Winners", date: "20 Jan 2026", time: "1:00 PM", year: 2026 },
+      { image: `${STUDENTS}/Students_achievements_05.jpeg`, caption: "Triumph and Joy — Achievement Unlocked", date: "20 Jan 2026", time: "2:00 PM", year: 2026 },
+      { image: `${STUDENTS}/Students_achievements_06.jpeg`, caption: "Rising Stars — Student Achievers in Sports", date: "20 Jan 2026", time: "3:00 PM", year: 2026 },
     ],
   },
 ];
