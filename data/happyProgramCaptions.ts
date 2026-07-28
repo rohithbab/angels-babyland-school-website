@@ -1,0 +1,18 @@
+export const HAPPY_CAPTIONS: Record<string, string> = {
+  "Happy_programm_01.jpeg": "Curtains Up — A Grand Opening by Our Little Stars",
+  "Happy_programm_02.jpeg": "Tiny Tots, Big Hearts — Adorable Performance Alert",
+  "Happy_programm_03.jpeg": "Rhythm & Joy — Dancing to the Beat of Happiness",
+  "Happy_programm_04.jpeg": "Rainbow of Talents — A Colourful Stage Spectacle",
+  "Happy_programm_05.jpeg": "Giggles & Grins — Moments That Melt Hearts",
+  "Happy_programm_06.jpeg": "Together We Shine — A Beautiful Ensemble on Stage",
+  "Happy_programm_07.jpeg": "Moving to the Music — Graceful Dance Performance",
+  "Happy_programm_08.jpeg": "Proud Moments — Our Young Stars Owning the Stage",
+  "Happy_programm_09.jpeg": "Creative Magic — Little Artists at Their Best",
+  "Happy_programm_10.jpeg": "Team Effort, Star Performance — United in Celebration",
+  "Happy_programm_11.jpeg": "Energetic & Enthusiastic — Learning Through Performance",
+  "Happy_programm_12.jpeg": "Joy Unlimited — A Day Overflowing with Smiles",
+  "Happy_programm_13.jpeg": "Cherished Memories — Fun, Laughter & Celebrations",
+  "Happy_programm_14.jpeg": "Happy Hearts — Spreading Cheer All Around",
+  "Happy_programm_15.jpeg": "Snapshot of Joy — Reliving the Happy Program Magic",
+  "Happy_programm_16.jpeg": "Grand Finale — A Standing Ovation for Our Stars",
+};

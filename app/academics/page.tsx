@@ -22,7 +22,7 @@ const pathway = [
     grades: "LKG & UKG",
     title: "One Learn Curriculum",
     subtitle: "Building Strong Foundations Through Joyful Learning",
-    image: "/assets/about/Kindergarden_image.png",
+    image: "/assets/about/Onelern_image.png",
     fit: "cover" as const,
     paragraphs: [
       `The One Learn Curriculum is designed to provide young learners with a stimulating and nurturing environment where curiosity, creativity, and confidence can flourish. Through activity-based learning, interactive experiences, and age-appropriate teaching methods, children develop essential literacy, numeracy, communication, and social skills during their formative years.`,

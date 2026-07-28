@@ -11,7 +11,6 @@ export interface Achievement {
   frames: GalleryFrame[];
 }
 
-const IMG = "/assets/placeholder.jpg";
 const SCHOOL_GRID = "/assets/achievements/school_achievements_grid_image.jpeg";
 const TEACHER_GRID = "/assets/achievements/teacher_achievements_grid_image.jpeg";
 
@@ -27,8 +26,7 @@ export const achievements: Achievement[] = [
     intro:
       "Recognitions and milestones earned by Angels Babyland over three decades of service.",
     frames: [
-      { image: IMG, caption: "Best Institution award", date: "10 Oct 2025", time: "11:00 AM", year: 2025 },
-      { image: IMG, caption: "Accreditation ceremony", date: "28 Apr 2025", time: "10:00 AM", year: 2025 },
+      { image: "/assets/achievements/school_achievements/School_achievements_01.jpeg", caption: "Prestigious Honour — School Award Ceremony", date: "", time: "", year: 2025 },
     ],
   },
   {
@@ -39,8 +37,9 @@ export const achievements: Achievement[] = [
     intro:
       "Awards and honours earned by our dedicated faculty for excellence in teaching.",
     frames: [
-      { image: IMG, caption: "Best Teacher state award", date: "05 Sep 2025", time: "12:00 PM", year: 2025 },
-      { image: IMG, caption: "Faculty development honour", date: "19 Jan 2025", time: "2:00 PM", year: 2025 },
+      { image: "/assets/achievements/teacher_achievements/Teachers_achievement_01.jpeg", caption: "Excellence in Teaching — Faculty Felicitation", date: "", time: "", year: 2025 },
+      { image: "/assets/achievements/teacher_achievements/Teachers_achievement_02.jpeg", caption: "Honouring Dedication — Teacher Achievement Award", date: "", time: "", year: 2025 },
+      { image: "/assets/achievements/teacher_achievements/Teachers_achievement_03.jpeg", caption: "Proud Moments — Recognising Our Outstanding Educators", date: "", time: "", year: 2025 },
     ],
   },
   {

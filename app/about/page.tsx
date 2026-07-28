@@ -315,15 +315,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* FACULTY */}
-        <div className="max-w-3xl">
-          <h2>Our Faculty</h2>
-          <p className="mt-4 text-text-muted">
-            Our team of dedicated and experienced educators plays a vital role
-            in shaping the future of our students. They ensure every student
-            receives the guidance and support needed to succeed.
-          </p>
-        </div>
       </div>
     </section>
   );

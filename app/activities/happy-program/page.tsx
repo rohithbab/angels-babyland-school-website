@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import GalleryYearView from "@/components/ui/GalleryYearView";
-import { readFramesFromDisk } from "@/lib/photos";
+import { listYearImages } from "@/lib/photos";
+import { HAPPY_CAPTIONS } from "@/data/happyProgramCaptions";
 
 export const metadata: Metadata = buildMetadata({
   title: "Happy Program",
@@ -11,7 +12,17 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function HappyProgramPage() {
-  const frames = readFramesFromDisk("assets/activities/happy-program");
+  const images = listYearImages("assets/activities/happy-program", "2025");
+  const frames = images.map((img) => {
+    const filename = img.split("/").pop() ?? "";
+    return {
+      image: img,
+      caption: HAPPY_CAPTIONS[filename] ?? "Happy Program Moment",
+      date: "",
+      time: "",
+      year: 2025,
+    };
+  });
 
   return (
     <section className="container-x section-y">
