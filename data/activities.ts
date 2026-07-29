@@ -76,17 +76,17 @@ export const sportsGroups: EventGroup[] = [
       { image: "/assets/activities/sports/kids_sports/2025/Sports Day3.jpeg", name: "Prize Distribution", date: "07 Nov 2025", time: "8:00 AM", year: 2025 },
     ],
   },
-  {
-    slug: "higher-secondary",
-    title: "Higher Secondary Sports",
-    subtitle:
-      "Competitive athletics, team games and the annual sports meet that build fitness, discipline and team spirit.",
-    events: [
-      { image: IMG, name: "Annual Sports Meet", date: "07 Feb 2025", time: "8:00 AM", year: 2025 },
-      { image: IMG, name: "Inter-house Football Final", date: "23 Nov 2025", time: "3:30 PM", year: 2025 },
-      { image: IMG, name: "District Athletics Meet", date: "11 Oct 2025", time: "7:00 AM", year: 2025 },
-    ],
-  },
+  // {
+  //   slug: "higher-secondary",
+  //   title: "Higher Secondary Sports",
+  //   subtitle:
+  //     "Competitive athletics, team games and the annual sports meet that build fitness, discipline and team spirit.",
+  //   events: [
+  //     { image: IMG, name: "Annual Sports Meet", date: "07 Feb 2025", time: "8:00 AM", year: 2025 },
+  //     { image: IMG, name: "Inter-house Football Final", date: "23 Nov 2025", time: "3:30 PM", year: 2025 },
+  //     { image: IMG, name: "District Athletics Meet", date: "11 Oct 2025", time: "7:00 AM", year: 2025 },
+  //   ],
+  // },
 ];
 
 export function getSportsGroup(slug: string): EventGroup | undefined {

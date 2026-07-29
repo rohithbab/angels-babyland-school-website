@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { navItems, type NavItem } from "@/data/navigation";
 
 /** Is `href` the active route (exact match, or a parent of the current path)? */
@@ -234,29 +234,48 @@ function DesktopDropdown({
   item: NavItem;
   isActive: (href: string) => boolean;
 }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
   const parentActive = isActive(item.href);
+
+  useEffect(() => {
+    if (!open) return;
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
   return (
-    <li className="group relative">
-      <Link
-        href={item.href}
+    <div ref={ref} className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((v) => !v);
+        }}
         className={`flex items-center gap-1 px-3.5 py-2 text-sm font-semibold tracking-tight transition-colors ${
-          parentActive
+          parentActive || open
             ? "text-accent-strong"
             : "text-text hover:text-accent-strong"
         }`}
       >
         {item.label}
-        <span className="text-[10px] text-text-muted transition-transform duration-200 group-hover:rotate-180">
+        <span className={`text-[10px] text-text-muted transition-transform duration-200 ${open ? "rotate-180" : ""}`}>
           ▾
         </span>
-      </Link>
-      {/* Dropdown — appears on hover / focus-within */}
-      <div className="invisible absolute left-0 top-full min-w-44 translate-y-1 border border-border bg-bg opacity-0 shadow-[var(--shadow-card)] transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+      </button>
+      <div className={`absolute left-0 top-full min-w-44 border border-border bg-bg shadow-[var(--shadow-card)] transition-all duration-200 ${
+        open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
+      }`}>
         <ul className="py-1">
           {item.children?.map((child) => (
             <li key={child.href}>
               <Link
                 href={child.href}
+                onClick={() => setOpen(false)}
                 className={`block px-4 py-2 text-sm transition-colors hover:bg-bg-alt ${
                   isActive(child.href) ? "text-accent-strong" : "text-text"
                 }`}
@@ -267,6 +286,6 @@ function DesktopDropdown({
           ))}
         </ul>
       </div>
-    </li>
+    </div>
   );
 }

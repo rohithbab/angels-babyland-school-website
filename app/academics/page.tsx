@@ -23,7 +23,7 @@ const pathway = [
     title: "One Learn Curriculum",
     subtitle: "Building Strong Foundations Through Joyful Learning",
     image: "/assets/about/Onelern_image.png",
-    fit: "cover" as const,
+    fit: "contain" as const,
     paragraphs: [
       `The One Learn Curriculum is designed to provide young learners with a stimulating and nurturing environment where curiosity, creativity, and confidence can flourish. Through activity-based learning, interactive experiences, and age-appropriate teaching methods, children develop essential literacy, numeracy, communication, and social skills during their formative years.`,
       `The curriculum encourages exploration, imagination, and hands-on participation, helping children learn naturally while building a strong foundation for future academic success. By fostering a love for learning from an early age, the One Learn Curriculum supports the holistic development of every child, nurturing intellectual, emotional, social, and creative growth.`,
