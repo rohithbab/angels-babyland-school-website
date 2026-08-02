@@ -24,17 +24,17 @@ export const journey: JourneyMilestone[] = [
   },
   {
     year: "1997",
-    title: "Little Hands, Big Dreams",
-    blurb:
-      "Classrooms alive with craft, colour and curiosity as our earliest students discovered the joy of learning.",
-    image: `${IMG}/journey-02.jpg`,
-  },
-  {
-    year: "2000",
     title: "Finding Our Voice",
     blurb:
       "Proud graduates stepped forward at an open-air convocation — the young school growing in confidence.",
     image: `${IMG}/journey-03.jpg`,
+  },
+  {
+    year: "2000",
+    title: "Little Hands, Big Dreams",
+    blurb:
+      "Classrooms alive with craft, colour and curiosity as our earliest students discovered the joy of learning.",
+    image: `${IMG}/journey-02.jpg`,
   },
   {
     year: "2008",
