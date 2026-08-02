@@ -19,7 +19,7 @@ export default function JourneyVideo() {
     <div className="relative aspect-video w-full overflow-hidden rounded-[var(--radius-card)] border border-border bg-bg-alt shadow-[var(--shadow-card)]">
       <video
         ref={ref}
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover object-top"
         autoPlay
         muted
         loop

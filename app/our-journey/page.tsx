@@ -24,8 +24,8 @@ export default function OurJourneyPage() {
         subtitle="A journey of growth, dedication, and excellence spanning over 30 years."
       />
 
-      {/* LOOPING JOURNEY VIDEO — wide, filled rectangle (16:9), lightly capped. */}
-      <div className="mx-auto mt-12 max-w-7xl lg:mt-16">
+      {/* LOOPING JOURNEY VIDEO — wide, filled rectangle (16:9), capped to match grid. */}
+      <div className="mx-auto mt-12 max-w-5xl lg:mt-16">
         <JourneyVideo />
       </div>
 
