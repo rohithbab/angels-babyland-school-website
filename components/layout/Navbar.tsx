@@ -251,22 +251,29 @@ function DesktopDropdown({
 
   return (
     <div ref={ref} className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          setOpen((v) => !v);
-        }}
-        className={`flex items-center gap-1 px-3.5 py-2 text-sm font-semibold tracking-tight transition-colors ${
-          parentActive || open
-            ? "text-accent-strong"
-            : "text-text hover:text-accent-strong"
-        }`}
-      >
-        {item.label}
-        <span className={`text-[10px] text-text-muted transition-transform duration-200 ${open ? "rotate-180" : ""}`}>
+      <div className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold tracking-tight">
+        <Link
+          href={item.href}
+          className={`transition-colors ${
+            parentActive ? "text-accent-strong" : "text-text hover:text-accent-strong"
+          }`}
+        >
+          {item.label}
+        </Link>
+        <button
+          type="button"
+          aria-label={`Toggle ${item.label} menu`}
+          aria-expanded={open}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setOpen((v) => !v);
+          }}
+          className={`text-[10px] text-text-muted transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        >
           ▾
-        </span>
-      </button>
+        </button>
+      </div>
       <div className={`absolute left-0 top-full min-w-44 border border-border bg-bg shadow-[var(--shadow-card)] transition-all duration-200 ${
         open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
       }`}>

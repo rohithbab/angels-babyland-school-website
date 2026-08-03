@@ -13,6 +13,7 @@ export const metadata: Metadata = buildMetadata({
 const clubImages: Record<string, string> = {
   "scouts-and-guides": "/assets/activities/clubs/scouts_and_guides_grid_pic.jpeg",
   "leo-club": "/assets/activities/clubs/leo_club_grid.jpeg",
+  "standard-club": "/assets/activities/clubs/Standard_club_grid.jpeg",
   "cubs-and-bulbuls": "/assets/activities/clubs/culbs_and_bulbul_grid.jpeg",
 };
 

@@ -75,8 +75,9 @@ export const clubs: Club[] = [
     intro:
       "The Standard Club nurtures discipline, etiquette and leadership through regular activities and group projects.",
     frames: [
-      { image: IMG, caption: "Leadership workshop", date: "19 Jul 2025", time: "2:00 PM", year: 2025 },
-      { image: IMG, caption: "Group activity session", date: "10 Oct 2025", time: "3:30 PM", year: 2025 },
+      { image: "/assets/activities/clubs/standard_club/2025/Standard_club_01.jpeg", caption: "Dream Big, Lead Strong — Inspiring Young Leaders", date: "", time: "", year: 2025 },
+      { image: "/assets/activities/clubs/standard_club/2025/Standard_club_02.jpeg", caption: "Discipline Meets Dedication — Shaping Future Champions", date: "", time: "", year: 2025 },
+      { image: "/assets/activities/clubs/standard_club/2025/Standard_club_03.jpeg", caption: "Together We Rise — Building Character, One Step at a Time", date: "", time: "", year: 2025 },
     ],
   },
   {
