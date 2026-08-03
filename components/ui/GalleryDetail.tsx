@@ -20,6 +20,8 @@ export interface GalleryFrame {
   time: string;
   /** Gallery year this frame belongs to (drives the year filter). */
   year: number;
+  /** Optional object-position override for this frame's image. */
+  imagePosition?: string;
 }
 
 interface GalleryDetailProps {
@@ -95,7 +97,7 @@ export default function GalleryDetail({
                     <PlaceholderImage
                       src={frame.image}
                       alt={frame.caption}
-                      className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                      className={`object-cover transition-transform duration-300 ease-out group-hover:scale-105 ${frame.imagePosition ?? ""}`}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>

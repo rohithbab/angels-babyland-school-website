@@ -14,6 +14,7 @@ const clubImages: Record<string, string> = {
   "scouts-and-guides": "/assets/activities/clubs/scouts_and_guides_grid_pic.jpeg",
   "leo-club": "/assets/activities/clubs/leo_club_grid.jpeg",
   "standard-club": "/assets/activities/clubs/Standard_club_grid.jpeg",
+  "eco-club": "/assets/activities/clubs/Eco_club_grid.jpeg",
   "cubs-and-bulbuls": "/assets/activities/clubs/culbs_and_bulbul_grid.jpeg",
 };
 
@@ -22,6 +23,9 @@ const items: CardItem[] = clubs.map((club) => ({
   href: `/activities/clubs/${club.slug}`,
   image: clubImages[club.slug] ?? "/assets/placeholder.jpg",
   blurb: club.blurb,
+  imagePosition:
+    club.slug === "standard-club" ? "object-[38%_50%]" : undefined,
+  imageFit: club.slug === "eco-club" ? "contain" : undefined,
 }));
 
 export default function ClubsPage() {

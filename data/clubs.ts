@@ -64,8 +64,12 @@ export const clubs: Club[] = [
     intro:
       "The Eco Club promotes environmental awareness through hands-on green initiatives.",
     frames: [
-      { image: IMG, caption: "Campus clean-up", date: "05 Jun 2025", time: "9:00 AM", year: 2025 },
-      { image: IMG, caption: "Recycling workshop", date: "15 Sep 2025", time: "11:00 AM", year: 2025 },
+      { image: "/assets/activities/clubs/eco_club/2025/Eco_club_01.jpeg", caption: "Green Warriors in Action — Caring for Our Planet", date: "", time: "", year: 2025 },
+      { image: "/assets/activities/clubs/eco_club/2025/Eco_club_02.jpeg", caption: "Nurturing Nature — A Day of Green Activities", date: "", time: "", year: 2025 },
+      { image: "/assets/activities/clubs/eco_club/2025/Eco_club_03.jpeg", caption: "Planting Hope — Growing a Greener Tomorrow", date: "", time: "", year: 2025 },
+      { image: "/assets/activities/clubs/eco_club/2025/Eco_club_04.jpeg", caption: "Hands-On Earth Care — Small Steps, Big Impact", date: "", time: "", year: 2025 },
+      { image: "/assets/activities/clubs/eco_club/2025/Eco_club_05.jpeg", caption: "Protecting Our Planet — Eco Awareness Activity", date: "", time: "", year: 2025 },
+      { image: "/assets/activities/clubs/eco_club/2025/Eco_club_06.jpeg", caption: "Together for a Cleaner Campus — Eco Day Highlights", date: "", time: "", year: 2025 },
     ],
   },
   {

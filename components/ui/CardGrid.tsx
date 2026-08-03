@@ -13,6 +13,10 @@ export interface CardItem {
   /** Future image path; for now every slot renders the placeholder. */
   image: string;
   blurb?: string;
+  /** Optional object-position override for the cover image (e.g. "object-[38%_50%]"). */
+  imagePosition?: string;
+  /** Image fit mode. Default: cover (fills the square, may crop). */
+  imageFit?: "cover" | "contain";
 }
 
 interface CardGridProps {
@@ -41,7 +45,7 @@ export default function CardGrid({ items, columns = 3 }: CardGridProps) {
                 <PlaceholderImage
                   src={item.image}
                   alt={item.title}
-                  className="object-cover"
+                  className={`${item.imageFit === "contain" ? "object-contain" : "object-cover"} ${item.imagePosition ?? ""}`}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
