@@ -21,6 +21,10 @@ const ART_1 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_
 const ART_2 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft2.jpeg";
 const ART_3 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft3.jpeg";
 
+// Keyboard & Vocal photos.
+const KEYBOARD = "/assets/activities/extra_curicular/Keyboard_vocals/2025";
+const KEYBOARD_GRID = "/assets/activities/extra_curicular/Keyboard_vocals_grid.jpeg";
+
 // Panel Class photos.
 const PANEL_GRID = "/assets/activities/extra_curicular/panel-class-grid.jpeg";
 const PANEL_2025 = "/assets/activities/extra_curicular/pannel_class/2025";
@@ -42,13 +46,12 @@ export const extraActivities: ExtraActivity[] = [
     slug: "keyboard-and-vocal",
     title: "Keyboard & Vocal",
     blurb: "Melody and voice training for budding musicians.",
-    image: IMG,
+    image: KEYBOARD_GRID,
     intro:
       "Students explore rhythm, melody and voice through structured keyboard and vocal training, performing at school events.",
     frames: [
-      { image: IMG, caption: "Keyboard practice session", date: "10 Jul 2025", time: "3:30 PM", year: 2025 },
-      { image: IMG, caption: "Vocal recital", date: "14 Feb 2025", time: "5:30 PM", year: 2025 },
-      { image: IMG, caption: "Music showcase", date: "03 Mar 2025", time: "4:00 PM", year: 2025 },
+      { image: `${KEYBOARD}/Keyboard_vocals1.jpeg`, caption: "Keyboard Practice — Tuning Young Musicians", date: "", time: "", year: 2025 },
+      { image: `${KEYBOARD}/Keyboard_vocals2.jpeg`, caption: "Melody in the Making — Keyboard & Vocal Session", date: "", time: "", year: 2025 },
     ],
   },
   {
