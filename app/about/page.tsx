@@ -5,7 +5,10 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CTAButton from "@/components/ui/CTAButton";
 import LeaderPhoto from "@/components/about/LeaderPhoto";
 import InfrastructureMarquee from "@/components/about/InfrastructureMarquee";
+import AlumniMemories from "@/components/about/AlumniMemories";
 import { getInfrastructureHighlights } from "@/lib/infrastructure";
+import { readGalleryItemsFromDisk } from "@/lib/photos";
+import { ALUMNI_CAPTIONS } from "@/data/alumni";
 
 export const metadata: Metadata = buildMetadata({
   title: "About",
@@ -174,6 +177,13 @@ const leadership: {
 export default function AboutPage() {
   const infraHighlights = getInfrastructureHighlights();
 
+  const alumniRaw = readGalleryItemsFromDisk("assets/about/alumini_section");
+  const alumniPhotos = alumniRaw.map((a) => ({
+    image: a.image,
+    caption:
+      ALUMNI_CAPTIONS[a.image.split("/").pop() ?? ""] ?? a.title,
+  }));
+
   return (
     <section className="container-x section-y">
       {/* HERO + WHO WE ARE — crest vertically centered on the right, spanning
@@ -313,6 +323,12 @@ export default function AboutPage() {
               Have a look
             </CTAButton>
           </div>
+        </div>
+
+        {/* ALUMNI MEMORIES — spotlight + polaroid memory wall, CTA into the
+            dedicated alumni page. */}
+        <div className="rounded-[var(--radius-card)] bg-bg-alt/60 px-6 py-14 lg:px-12">
+          {alumniPhotos.length > 0 && <AlumniMemories photos={alumniPhotos} />}
         </div>
 
       </div>
