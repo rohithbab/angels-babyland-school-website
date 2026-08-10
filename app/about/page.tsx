@@ -94,7 +94,7 @@ const leadership: {
   {
     role: "Ex-President",
     name: "Prof. P. Ponnuswami (Late)",
-    photo: `${LEADERS_DIR}/ex-president.png`,
+    photo: `${LEADERS_DIR}/Ex-President — Prof. P. Ponnuswami.png`,
     blocks: [
       {
         type: "p",
