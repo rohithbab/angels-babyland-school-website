@@ -18,10 +18,11 @@ export const metadata: Metadata = buildMetadata({
 });
 
 /**
- * Leadership "tree": Founder → Correspondent → Principal → Secretary →
- * President, each rendered as a stacked card joined by a vertical connector.
- * Photos are pink placeholder boxes for now; real portraits are dropped in
- * later. Text is kept verbatim from the school's messages.
+ * Leadership: Founder → Correspondent → Ex-President → President → Secretary →
+ * Principal → Principal (Primary School) → Vice-Principals, each rendered as a
+ * stacked card joined by a vertical connector. Text is kept verbatim from the
+ * school's messages. Missing portraits (Ex-President, Mr. Chandran) fall back
+ * to a role placeholder until the photo file is dropped into the folder.
  */
 type Block = { type: "p" | "quote"; text: string };
 
@@ -65,7 +66,7 @@ const leadership: {
   },
   {
     role: "Correspondent",
-    name: "Bagyam Thangaraj",
+    name: "Dr. Bagyam Thangaraj",
     photo: `${LEADERS_DIR}/correspondent.png`,
     blocks: [
       {
@@ -91,25 +92,44 @@ const leadership: {
     ],
   },
   {
-    role: "Principal",
-    name: "Mrs. Jackline Jose",
-    photo: `${LEADERS_DIR}/principal.png`,
+    role: "Ex-President",
+    name: "Prof. P. Ponnuswami (Late)",
+    photo: `${LEADERS_DIR}/ex-president.png`,
     blocks: [
       {
         type: "p",
-        text: `At Angels Babyland Matric Higher Secondary School, we believe that education is not merely the acquisition of knowledge but the development of character, confidence, and compassion. Our goal is to nurture students into responsible citizens who are prepared to face the challenges of an ever-changing world.`,
-      },
-      {
-        type: "p",
-        text: `We strive to provide a stimulating learning environment where every child is encouraged to discover their talents, develop critical thinking skills, and achieve academic excellence. Through dedication, discipline, and innovation, we aim to inspire a lifelong love for learning.`,
+        text: `It has been a matter of great pride and joy to witness the remarkable journey of Angels Baby Land Matriculation Higher Secondary School. From its humble beginning with just 18 students, the institution has steadily grown into a respected centre of learning serving more than 1,500 students. This growth is a reflection of the dedication, perseverance, and vision of the management and teachers who have worked tirelessly for the advancement of the school.`,
       },
       {
         type: "quote",
-        text: `The future belongs to those who believe in the beauty of their dreams.`,
+        text: `It slowly but steadily grew to this stature.`,
       },
       {
         type: "p",
-        text: `With the support of our committed teachers, parents, and management, we continue to guide our students toward success while upholding the values and traditions that define our institution.`,
+        text: `I have been privileged to be associated with Angels Baby Land and to witness its growth and achievements over the years. Education is not merely about academic success, but about developing knowledge, character, confidence, and responsibility in young minds. I congratulate all the teachers, students, parents, and management who have contributed to this journey. May the school continue to uphold its values, inspire generations of students, and reach greater heights in the years to come. My heartfelt wishes to the entire Angels Baby Land family for continued success and excellence.`,
+      },
+    ],
+  },
+  {
+    role: "President",
+    name: "Dr. Charles Sekar",
+    photo: `${LEADERS_DIR}/president.png`,
+    blocks: [
+      {
+        type: "p",
+        text: `Angels Babyland Matric Higher Secondary School has grown into a respected institution through a shared commitment to educational excellence and student development. We take pride in providing opportunities that help students realize their full potential.`,
+      },
+      {
+        type: "p",
+        text: `Our vision is to create a generation of confident, ethical, and socially responsible individuals who contribute meaningfully to society. We remain dedicated to enhancing educational standards while embracing innovation and progress.`,
+      },
+      {
+        type: "quote",
+        text: `Success is not measured by what we achieve for ourselves, but by the positive impact we create for others.`,
+      },
+      {
+        type: "p",
+        text: `I extend my gratitude to our students, parents, faculty members, and well-wishers whose trust and support continue to strengthen the legacy of Angels Babyland.`,
       },
     ],
   },
@@ -150,25 +170,90 @@ const leadership: {
     ],
   },
   {
-    role: "President",
-    name: "Dr. Charles Sekar",
-    photo: `${LEADERS_DIR}/president.png`,
+    role: "Principal",
+    name: "Mrs. Jackline Jose",
+    photo: `${LEADERS_DIR}/principal.png`,
     blocks: [
       {
         type: "p",
-        text: `Angels Babyland Matric Higher Secondary School has grown into a respected institution through a shared commitment to educational excellence and student development. We take pride in providing opportunities that help students realize their full potential.`,
+        text: `At Angels Babyland Matric Higher Secondary School, we believe that education is not merely the acquisition of knowledge but the development of character, confidence, and compassion. Our goal is to nurture students into responsible citizens who are prepared to face the challenges of an ever-changing world.`,
       },
       {
         type: "p",
-        text: `Our vision is to create a generation of confident, ethical, and socially responsible individuals who contribute meaningfully to society. We remain dedicated to enhancing educational standards while embracing innovation and progress.`,
+        text: `We strive to provide a stimulating learning environment where every child is encouraged to discover their talents, develop critical thinking skills, and achieve academic excellence. Through dedication, discipline, and innovation, we aim to inspire a lifelong love for learning.`,
       },
       {
         type: "quote",
-        text: `Success is not measured by what we achieve for ourselves, but by the positive impact we create for others.`,
+        text: `The future belongs to those who believe in the beauty of their dreams.`,
       },
       {
         type: "p",
-        text: `I extend my gratitude to our students, parents, faculty members, and well-wishers whose trust and support continue to strengthen the legacy of Angels Babyland.`,
+        text: `With the support of our committed teachers, parents, and management, we continue to guide our students toward success while upholding the values and traditions that define our institution.`,
+      },
+    ],
+  },
+  {
+    role: "Principal (Primary School)",
+    name: "Mrs. Hilda Thabitha",
+    photo: `${LEADERS_DIR}/Principal(Primary School).png`,
+    blocks: [
+      {
+        type: "p",
+        text: `It is a privilege to be part of Angels Baby Land, an institution that has remained committed to nurturing young minds with knowledge, values, and confidence. Over the years, we have seen our students grow not only in their academic abilities but also in their creativity, discipline, character, and sense of responsibility.`,
+      },
+      {
+        type: "quote",
+        text: `Every child has the potential to shine when given the right guidance, care, and opportunity.`,
+      },
+      {
+        type: "p",
+        text: `At the primary level, we believe that every child deserves a joyful and supportive learning environment where curiosity is encouraged and every achievement is valued. Our dedicated teachers strive to make learning meaningful beyond the classroom while helping students discover their strengths and build a strong foundation for the future. I am proud to be part of this journey and wish every student of Angels Baby Land continued growth, confidence, and success.`,
+      },
+    ],
+  },
+  {
+    role: "Vice-Principal",
+    name: "Mr. Chandran",
+    photo: `${LEADERS_DIR}/chandran.png`,
+    blocks: [
+      {
+        type: "p",
+        text: `Being part of Angels Baby Land is a journey of learning, growth, and shared responsibility. Over the years, our school has remained committed to providing students with a strong foundation in education while nurturing discipline, confidence, values, and good character.`,
+      },
+      {
+        type: "quote",
+        text: `True education is not only about what we learn, but about who we become.`,
+      },
+      {
+        type: "p",
+        text: `With the constant support of our dedicated teachers, parents, and management, we strive to create an environment where every student is encouraged to learn, explore, and reach their potential. We believe that every child has unique abilities, and our role is to guide them with patience and encouragement so they can discover and develop those strengths.`,
+      },
+      {
+        type: "p",
+        text: `As we move forward, our commitment remains to create meaningful learning experiences that prepare students not only for academic success but also for the responsibilities of life. I am proud to be part of this institution and look forward to seeing our students continue to grow into confident, responsible, and successful individuals who contribute positively to society.`,
+      },
+    ],
+  },
+  {
+    role: "Vice-Principal",
+    name: "Mrs. Saradha",
+    photo: `${LEADERS_DIR}/Vice_Principal(Mrs.Saradha).png`,
+    blocks: [
+      {
+        type: "p",
+        text: `It is a privilege to be part of Angels Baby Land, an institution dedicated to nurturing young minds through quality education, strong values, and meaningful learning experiences. Our journey is guided by the belief that every child deserves the right environment, encouragement, and opportunities to discover their abilities and grow with confidence.`,
+      },
+      {
+        type: "quote",
+        text: `Every child is a unique journey of potential, waiting to be nurtured and inspired.`,
+      },
+      {
+        type: "p",
+        text: `Through the combined efforts of our teachers, parents, and management, we strive to create a positive learning environment where students are encouraged to think, explore, and express themselves. Beyond academics, we focus on developing discipline, compassion, responsibility, and respect for others.`,
+      },
+      {
+        type: "p",
+        text: `As we continue moving forward, our commitment remains to prepare students not only for academic success but also for the challenges and opportunities of the future. I am proud to be part of the Angels Baby Land family and wish all our students continued growth, happiness, and success.`,
       },
     ],
   },
@@ -228,9 +313,10 @@ export default function AboutPage() {
       </div>
 
       <div className="mt-14 space-y-14 lg:mt-20 lg:space-y-20">
-        {/* LEADERSHIP — Founder → Correspondent → Secretary. Stacked cards, each
-            with a square photo straddling the card's top edge, joined by a
-            vertical connector line (timeline feel). */}
+        {/* LEADERSHIP — Founder → Correspondent → Ex-President → President →
+            Secretary → Principal → Principal (Primary School) → Vice-Principals.
+            Stacked cards, each with a square photo straddling the card's top
+            edge, joined by a vertical connector line (timeline feel). */}
         <div>
           <SectionHeading
             align="center"
@@ -240,7 +326,7 @@ export default function AboutPage() {
           />
           <div className="mx-auto mt-16 flex w-full max-w-[1600px] flex-col lg:mt-20">
             {leadership.map((person, idx) => (
-              <div key={person.role} className="w-full">
+              <div key={person.name} className="w-full">
                 {/* Connector line between consecutive cards */}
                 {idx > 0 && (
                   <div className="flex justify-center" aria-hidden>
