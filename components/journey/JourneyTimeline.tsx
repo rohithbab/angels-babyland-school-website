@@ -20,7 +20,7 @@ export default function JourneyTimeline({
     <ol className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-14 lg:gap-8">
       {items.map((m, i) => (
         <motion.li
-          key={m.year}
+          key={m.image}
           initial={{ opacity: 0, y: reduce ? 0 : 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}

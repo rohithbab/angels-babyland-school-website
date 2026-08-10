@@ -37,6 +37,20 @@ export const journey: JourneyMilestone[] = [
     image: `${IMG}/journey-02.jpg`,
   },
   {
+    year: "2005",
+    title: "Champions of the Field",
+    blurb:
+      "Sports Day 2005 — a beaming young winner steps up under the evening lights to receive their prize, every hard-won effort on the field honoured with pride.",
+    image: `${IMG}/journey-15.jpg`,
+  },
+  {
+    year: "2005",
+    title: "A Moment of Honour",
+    blurb:
+      "Sports Day 2005 — a guest of honour felicitated with warmth and gratitude, the whole school gathered to celebrate discipline, teamwork and sporting spirit.",
+    image: `${IMG}/journey-16.jpg`,
+  },
+  {
     year: "2008",
     title: "Rooted in Culture",
     blurb:
