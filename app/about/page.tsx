@@ -214,7 +214,7 @@ const leadership: {
   {
     role: "Vice-Principal",
     name: "Mr. Chandran",
-    photo: `${LEADERS_DIR}/chandran.png`,
+    photo: `${LEADERS_DIR}/Vice_Principal(Mr.Chandran).png`,
     blocks: [
       {
         type: "p",
