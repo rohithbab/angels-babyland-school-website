@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import GalleryDetail from "@/components/ui/GalleryDetail";
 import { extraActivities, getExtraActivity } from "@/data/extracurricular";
 import { EXTRA_FOLDERS } from "@/data/photoFolders";
-import { readFramesFromDisk, mergeFrames } from "@/lib/photos";
+import { readFramesFromFlatDir, mergeFrames } from "@/lib/photos";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -34,7 +34,7 @@ export default async function ExtraActivityPage({ params }: PageProps) {
   if (!activity) notFound();
 
   const folder = EXTRA_FOLDERS[slug];
-  const diskFrames = folder ? readFramesFromDisk(folder) : [];
+  const diskFrames = folder ? readFramesFromFlatDir(folder) : [];
   const allFrames = mergeFrames(activity.frames, diskFrames);
 
   return (

@@ -60,6 +60,32 @@ export function readFramesFromDisk(
   return frames;
 }
 
+/**
+ * Frames from a flat folder (no year subfolders). Used by the Extra-Curricular
+ * galleries, which dropped the year filter — images live directly in the
+ * activity folder and are picked up automatically here.
+ */
+export function readFramesFromFlatDir(
+  baseDir: string,
+): { image: string; caption: string; date: string; time: string; year: number }[] {
+  const dir = path.join(PUBLIC_DIR, baseDir);
+  try {
+    return fs
+      .readdirSync(dir)
+      .filter((name) => IMAGE_RE.test(name))
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+      .map((name) => ({
+        image: `/${baseDir}/${name}`,
+        caption: generateCaption(name),
+        date: "",
+        time: "",
+        year: 0,
+      }));
+  } catch {
+    return [];
+  }
+}
+
 export function readEventsFromDisk(
   baseDir: string,
   years: string[] = YEAR_DIRS,

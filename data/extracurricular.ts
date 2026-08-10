@@ -14,32 +14,32 @@ export interface ExtraActivity {
 
 // Art & Craft photos.
 const ART_GRID = "/assets/activities/extra_curicular/art_and_craft_grid_image.jpeg";
-const ART_1 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft1.jpeg";
-const ART_2 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft2.jpeg";
-const ART_3 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft3.jpeg";
+const ART_1 = "/assets/activities/extra_curicular/arts and crafts/Arts_and_craft1.jpeg";
+const ART_2 = "/assets/activities/extra_curicular/arts and crafts/Arts_and_craft2.jpeg";
+const ART_3 = "/assets/activities/extra_curicular/arts and crafts/Arts_and_craft3.jpeg";
 
 // Keyboard & Vocal photos.
-const KEYBOARD = "/assets/activities/extra_curicular/Keyboard_vocals/2025";
+const KEYBOARD = "/assets/activities/extra_curicular/Keyboard_vocals";
 const KEYBOARD_GRID = "/assets/activities/extra_curicular/Keyboard_vocals_grid.jpeg";
 
 // Panel Class photos.
 const PANEL_GRID = "/assets/activities/extra_curicular/panel-class-grid.jpeg";
-const PANEL_2025 = "/assets/activities/extra_curicular/pannel_class/2025";
+const PANEL = "/assets/activities/extra_curicular/pannel_class";
 
 // Classical Dance photos.
-const CLASSICAL = "/assets/activities/extra_curicular/classical_dance/2025";
+const CLASSICAL = "/assets/activities/extra_curicular/classical_dance";
 const CLASSICAL_GRID = "/assets/activities/extra_curicular/Classical_dance_grid.jpeg";
 
 // Western Dance photos.
-const WESTERN = "/assets/activities/extra_curicular/western_dance/2025";
+const WESTERN = "/assets/activities/extra_curicular/western_dance";
 const WESTERN_GRID = `${WESTERN}/Western_dance_01.jpeg`;
 
 // Yoga photos.
-const YOGA = "/assets/activities/extra_curicular/yoga/2025";
+const YOGA = "/assets/activities/extra_curicular/yoga";
 const YOGA_GRID = `${YOGA}/Yoga_01.jpeg`;
 
 // Silambam photos.
-const SILAMBAM = "/assets/activities/extra_curicular/silambam/2025";
+const SILAMBAM = "/assets/activities/extra_curicular/silambam";
 const SILAMBAM_GRID = `${SILAMBAM}/Silambam_01.jpeg`;
 
 export const extraActivities: ExtraActivity[] = [
@@ -63,10 +63,10 @@ export const extraActivities: ExtraActivity[] = [
     intro:
       "Students train in classical dance, learning poise, expression and tradition while performing at cultural events.",
     frames: [
-      { image: `${CLASSICAL}/Classical_dance_01.jpeg`, caption: "Bharatanatyam — Grace in Motion", date: "", time: "", year: 2025 },
-      { image: `${CLASSICAL}/Classical_dance_02.jpeg`, caption: "Classical Dance Practice Session", date: "", time: "", year: 2025 },
-      { image: `${CLASSICAL}/Classical_dance_03.jpeg`, caption: "Classical Dance Floor Practice", date: "", time: "", year: 2025 },
-      { image: `${CLASSICAL}/Classical_dance_04.jpeg`, caption: "Classical Dance Recital", date: "", time: "", year: 2025 },
+      { image: `${CLASSICAL}/Classical_dance_01.jpeg`, caption: "Every Finger Tells a Story — The Language of Mudras", date: "", time: "", year: 2025 },
+      { image: `${CLASSICAL}/Classical_dance_02.jpeg`, caption: "Where Every Dance Begins — A Graceful Namaskaram", date: "", time: "", year: 2025 },
+      { image: `${CLASSICAL}/Classical_dance_03.jpeg`, caption: "Moving as One — Grace That Flows in Perfect Rhythm", date: "", time: "", year: 2025 },
+      { image: `${CLASSICAL}/Classical_dance_04.jpeg`, caption: "Rooted, Poised and Radiant — The Spirit of Bharatanatyam", date: "", time: "", year: 2025 },
     ],
   },
   {
@@ -115,9 +115,9 @@ export const extraActivities: ExtraActivity[] = [
     intro:
       "Our smart interactive panels turn every lesson into a vivid, hands-on experience — from guided digital activities to student-led presentations.",
     frames: [
-      { image: `${PANEL_2025}/panel-class-01.jpg`, caption: "Interactive lesson on the smart panel", date: "08 Jul 2025", time: "10:00 AM", year: 2025 },
-      { image: `${PANEL_2025}/panel-class-02.jpg`, caption: "Digital learning activity", date: "22 Jul 2025", time: "11:30 AM", year: 2025 },
-      { image: `${PANEL_2025}/panel-class-03.jpg`, caption: "Student presentation on the panel", date: "05 Aug 2025", time: "2:00 PM", year: 2025 },
+      { image: `${PANEL}/panel-class-01.jpg`, caption: "Interactive lesson on the smart panel", date: "08 Jul 2025", time: "10:00 AM", year: 2025 },
+      { image: `${PANEL}/panel-class-02.jpg`, caption: "Digital learning activity", date: "22 Jul 2025", time: "11:30 AM", year: 2025 },
+      { image: `${PANEL}/panel-class-03.jpg`, caption: "Student presentation on the panel", date: "05 Aug 2025", time: "2:00 PM", year: 2025 },
     ],
   },
   {
