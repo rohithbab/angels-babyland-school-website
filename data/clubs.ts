@@ -9,13 +9,11 @@ export interface Club {
   frames: GalleryFrame[];
 }
 
-// Placeholder image path — used by clubs whose photos aren't in yet.
-const IMG = "/assets/placeholder.jpg";
-
 // Real club photo folders (2025 gallery).
 const SCOUTS = "/assets/activities/clubs/scouts_guides_folder/2025";
 const LEO = "/assets/activities/clubs/leo_club/2025";
 const CUBS = "/assets/activities/clubs/culbs_and_bulbuls/2025";
+const RSP = "/assets/activities/clubs/Rsp/2025";
 
 export const clubs: Club[] = [
   {
@@ -53,8 +51,7 @@ export const clubs: Club[] = [
     intro:
       "The Road Safety Patrol trains students in traffic awareness, discipline and responsible civic behaviour.",
     frames: [
-      { image: IMG, caption: "Road safety awareness rally", date: "11 Sep 2025", time: "9:00 AM", year: 2025 },
-      { image: IMG, caption: "Traffic discipline drill", date: "06 Dec 2025", time: "10:00 AM", year: 2025 },
+      { image: `${RSP}/RSP_01.jpeg`, caption: "Road Safety Patrol — On Duty", date: "", time: "", year: 2025 },
     ],
   },
   {

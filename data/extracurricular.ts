@@ -12,9 +12,6 @@ export interface ExtraActivity {
   frames: GalleryFrame[];
 }
 
-// Placeholder image path.
-const IMG = "/assets/placeholder.jpg";
-
 // Art & Craft photos.
 const ART_GRID = "/assets/activities/extra_curicular/art_and_craft_grid_image.jpeg";
 const ART_1 = "/assets/activities/extra_curicular/arts and crafts/2025/Arts_and_craft1.jpeg";
@@ -28,6 +25,10 @@ const KEYBOARD_GRID = "/assets/activities/extra_curicular/Keyboard_vocals_grid.j
 // Panel Class photos.
 const PANEL_GRID = "/assets/activities/extra_curicular/panel-class-grid.jpeg";
 const PANEL_2025 = "/assets/activities/extra_curicular/pannel_class/2025";
+
+// Classical Dance photos.
+const CLASSICAL = "/assets/activities/extra_curicular/classical_dance/2025";
+const CLASSICAL_GRID = "/assets/activities/extra_curicular/Classical_dance_grid.jpeg";
 
 // Western Dance photos.
 const WESTERN = "/assets/activities/extra_curicular/western_dance/2025";
@@ -58,12 +59,14 @@ export const extraActivities: ExtraActivity[] = [
     slug: "classical-dance",
     title: "Classical Dance",
     blurb: "Grace and tradition in classical dance forms.",
-    image: IMG,
+    image: CLASSICAL_GRID,
     intro:
       "Students train in classical dance, learning poise, expression and tradition while performing at cultural events.",
     frames: [
-      { image: IMG, caption: "Annual recital", date: "20 Dec 2025", time: "6:00 PM", year: 2025 },
-      { image: IMG, caption: "Dance practice", date: "08 Nov 2025", time: "4:00 PM", year: 2025 },
+      { image: `${CLASSICAL}/Classical_dance_01.jpeg`, caption: "Bharatanatyam — Grace in Motion", date: "", time: "", year: 2025 },
+      { image: `${CLASSICAL}/Classical_dance_02.jpeg`, caption: "Classical Dance Practice Session", date: "", time: "", year: 2025 },
+      { image: `${CLASSICAL}/Classical_dance_03.jpeg`, caption: "Classical Dance Floor Practice", date: "", time: "", year: 2025 },
+      { image: `${CLASSICAL}/Classical_dance_04.jpeg`, caption: "Classical Dance Recital", date: "", time: "", year: 2025 },
     ],
   },
   {

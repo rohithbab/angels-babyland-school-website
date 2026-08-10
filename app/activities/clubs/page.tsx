@@ -16,6 +16,7 @@ const clubImages: Record<string, string> = {
   "standard-club": "/assets/activities/clubs/Standard_club_grid.jpeg",
   "eco-club": "/assets/activities/clubs/Eco_club_grid.jpeg",
   "cubs-and-bulbuls": "/assets/activities/clubs/culbs_and_bulbul_grid.jpeg",
+  "rsp": "/assets/activities/clubs/RSP_grid.jpeg",
 };
 
 const items: CardItem[] = clubs.map((club) => ({
