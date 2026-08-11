@@ -25,9 +25,9 @@ export default function SectionHeading({
     <div className={`max-w-2xl ${alignment} ${className}`}>
       {flanked ? (
         <div className="flex items-center justify-center gap-4">
-          <span className="h-px w-10 bg-accent-strong/50 sm:w-16" aria-hidden />
+          <span className="h-0.5 w-10 rounded-full bg-accent-strong/60 sm:w-16" aria-hidden />
           <Heading className="whitespace-nowrap">{title}</Heading>
-          <span className="h-px w-10 bg-accent-strong/50 sm:w-16" aria-hidden />
+          <span className="h-0.5 w-10 rounded-full bg-accent-strong/60 sm:w-16" aria-hidden />
         </div>
       ) : (
         <Heading>{title}</Heading>
