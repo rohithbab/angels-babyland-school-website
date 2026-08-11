@@ -10,7 +10,7 @@ export const SITE = {
   tagline: "From Darkness, Lead Unto Light",
   description:
     "Angels Babyland Matric Higher Secondary School — building a legacy of excellence in education for over 30 years.",
-  url: "https://angelsbabyland.com",
+  url: "https://angelsbabyland.org",
 } as const;
 
 interface PageSeo {
