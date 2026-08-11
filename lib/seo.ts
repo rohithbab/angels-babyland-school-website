@@ -10,8 +10,7 @@ export const SITE = {
   tagline: "From Darkness, Lead Unto Light",
   description:
     "Angels Babyland Matric Higher Secondary School — building a legacy of excellence in education for over 30 years.",
-  // TODO: replace with the real production domain before launch.
-  url: "https://www.angelsbabyland.example",
+  url: "https://angelsbabyland.com",
 } as const;
 
 interface PageSeo {
