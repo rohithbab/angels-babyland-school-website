@@ -61,6 +61,7 @@ const courseGroups = [
   { group: "Group 2", subjects: "Maths with Biology" },
   { group: "Group 3", subjects: "Commerce with Computer Application" },
   { group: "Group 4", subjects: "Commerce with Business Maths" },
+  { group: "Group 5", subjects: "Pure Science" },
 ];
 
 /** Board-exam toppers with portrait, name and marks. */

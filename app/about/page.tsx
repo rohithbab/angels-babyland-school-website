@@ -193,7 +193,7 @@ const leadership: {
     ],
   },
   {
-    role: "Principal (Primary School)",
+    role: "Principal (Primary Section)",
     name: "Mrs. Hilda Thabitha",
     photo: `${LEADERS_DIR}/Principal(Primary School).png`,
     blocks: [
@@ -313,6 +313,58 @@ export default function AboutPage() {
       </div>
 
       <div className="mt-14 space-y-14 lg:mt-20 lg:space-y-20">
+        {/* IN LOVING MEMORY — a quiet tribute placed above the leadership.
+            No body copy: just portraits with names. The correspondent's
+            parents (one restored, de-framed photo) and the Ex-President's
+            wife. */}
+        <div>
+          <SectionHeading
+            align="center"
+            flanked
+            title="In Loving Memory"
+          />
+          <div className="mx-auto mt-12 flex max-w-4xl flex-col items-center gap-12 lg:mt-16">
+            {/* Correspondent's parents */}
+            <figure className="w-full max-w-2xl text-center">
+              <div className="overflow-hidden rounded-[var(--radius-card)] border border-border bg-bg p-3 shadow-[var(--shadow-card)]">
+                <Image
+                  src={`${LEADERS_DIR}/Correspondent_Parents.png`}
+                  alt="Late Mr. P. Kandasamy and Late Mrs. K. Thenammal"
+                  width={2154}
+                  height={1100}
+                  className="h-auto w-full rounded-[var(--radius-card)] object-contain"
+                />
+              </div>
+              <figcaption className="mt-5">
+                <p className="font-heading text-lg font-bold text-text lg:text-xl">
+                  Late Mr. P. Kandasamy &amp; Late Mrs. K. Thenammal
+                </p>
+                <p className="mt-1 text-sm italic text-text-muted">
+                  In loving memory of our beloved correspondent parents
+                </p>
+              </figcaption>
+            </figure>
+
+            {/* Ex-President's wife */}
+            <figure className="w-full max-w-xs text-center">
+              <div className="overflow-hidden rounded-[var(--radius-card)] border border-border bg-bg p-3 shadow-[var(--shadow-card)]">
+                <Image
+                  src={`${LEADERS_DIR}/Sugirtha_Mani_Ponnuswami.png`}
+                  alt="Mrs. Sugirtha Mani Ponnuswami"
+                  width={1402}
+                  height={1122}
+                  className="h-auto w-full rounded-[var(--radius-card)] object-contain"
+                />
+              </div>
+              <figcaption className="mt-5">
+                <p className="font-heading text-lg font-bold text-text lg:text-xl">
+                  Mrs. Sugirtha Mani Ponnuswami
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
         {/* LEADERSHIP — Founder → Correspondent → Ex-President → President →
             Secretary → Principal → Principal (Primary School) → Vice-Principals.
             Stacked cards, each with a square photo straddling the card's top
