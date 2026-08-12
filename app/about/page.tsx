@@ -345,20 +345,20 @@ export default function AboutPage() {
               </figcaption>
             </figure>
 
-            {/* Ex-President's wife */}
-            <figure className="w-full max-w-xs text-center">
+            {/* Ex-President & his wife */}
+            <figure className="w-full max-w-2xl text-center">
               <div className="overflow-hidden rounded-[var(--radius-card)] border border-border bg-bg p-3 shadow-[var(--shadow-card)]">
                 <Image
-                  src={`${LEADERS_DIR}/Sugirtha_Mani_Ponnuswami.png`}
-                  alt="Mrs. Sugirtha Mani Ponnuswami"
-                  width={1402}
-                  height={1122}
+                  src={`${LEADERS_DIR}/sugirtha and ponnuswami photo.png`}
+                  alt="Prof. P. Ponnuswami and Mrs. Sugirtha Ponnuswami"
+                  width={1484}
+                  height={1060}
                   className="h-auto w-full rounded-[var(--radius-card)] object-contain"
                 />
               </div>
               <figcaption className="mt-5">
                 <p className="font-heading text-lg font-bold text-text lg:text-xl">
-                  Mrs. Sugirtha Mani Ponnuswami
+                  Prof. P. Ponnuswami &amp; Mrs. Sugirtha Ponnuswami
                 </p>
               </figcaption>
             </figure>
