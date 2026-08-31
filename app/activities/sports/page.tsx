@@ -22,15 +22,23 @@ export default function SportsPage() {
         className="mb-12"
       />
       <div className="space-y-12 lg:space-y-16">
-        {sportsGroups.map((group) => (
-          <EventSection
-            key={group.slug}
-            title={group.title}
-            subtitle={group.subtitle}
-            events={group.events.filter((e) => e.year === 2025).slice(0, 3)}
-            ctaHref={`/activities/sports/${group.slug}`}
-          />
-        ))}
+        {sportsGroups.map((group) => {
+          // Preview the most recent year that actually has photos.
+          const years = group.events.map((e) => e.year);
+          const latest = years.length ? Math.max(...years) : 0;
+          const preview = group.events
+            .filter((e) => e.year === latest)
+            .slice(0, 3);
+          return (
+            <EventSection
+              key={group.slug}
+              title={group.title}
+              subtitle={group.subtitle}
+              events={preview}
+              ctaHref={`/activities/sports/${group.slug}`}
+            />
+          );
+        })}
       </div>
     </section>
   );

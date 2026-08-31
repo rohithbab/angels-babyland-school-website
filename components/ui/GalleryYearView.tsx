@@ -23,14 +23,18 @@ export default function GalleryYearView({
   align,
   flanked,
 }: GalleryYearViewProps) {
-  const [year, setYear] = useState<number>(GALLERY_YEARS[0]);
+  // Open on the most recent year that has photos; newest year shown first.
+  const years = [...GALLERY_YEARS].sort((a, b) => b - a);
+  const defaultYear =
+    years.find((y) => frames.some((f) => f.year === y)) ?? years[0];
+  const [year, setYear] = useState<number>(defaultYear);
   const visible = frames.filter((f) => f.year === year);
 
   return (
     <div>
       {/* Year filter pinned to the top-right, above the heading. */}
       <div className="mb-8 flex justify-end">
-        <YearFilter years={GALLERY_YEARS} selected={year} onSelect={setYear} />
+        <YearFilter years={years} selected={year} onSelect={setYear} />
       </div>
       <GalleryDetail
         title={title}

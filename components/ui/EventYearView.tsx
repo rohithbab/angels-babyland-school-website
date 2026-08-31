@@ -21,14 +21,18 @@ export default function EventYearView({
   events,
   headingAs,
 }: EventYearViewProps) {
-  const [year, setYear] = useState<number>(GALLERY_YEARS[0]);
+  // Open on the most recent year that has photos; newest year shown first.
+  const years = [...GALLERY_YEARS].sort((a, b) => b - a);
+  const defaultYear =
+    years.find((y) => events.some((e) => e.year === y)) ?? years[0];
+  const [year, setYear] = useState<number>(defaultYear);
   const visible = events.filter((e) => e.year === year);
 
   return (
     <div>
       {/* Year filter pinned to the top-right, above the heading. */}
       <div className="mb-8 flex justify-end">
-        <YearFilter years={GALLERY_YEARS} selected={year} onSelect={setYear} />
+        <YearFilter years={years} selected={year} onSelect={setYear} />
       </div>
       <EventSection
         title={title}

@@ -107,3 +107,53 @@ export const clubs: Club[] = [
 export function getClub(slug: string): Club | undefined {
   return clubs.find((c) => c.slug === slug);
 }
+
+/** A titled group of frames shown as its own sub-section on a club page. */
+export interface GalleryCategory {
+  title: string;
+  frames: GalleryFrame[];
+}
+
+const LEO_26 = "/assets/activities/clubs/leo_club/2026";
+
+/**
+ * Leo Club 2026 service projects, grouped into categories. Rendered as
+ * labelled sub-sections by LeoClubView; the 2025 gallery stays flat.
+ */
+export const leoCategories2026: GalleryCategory[] = [
+  {
+    title: "Blood Donation Camp",
+    frames: [
+      { image: `${LEO_26}/blood_donation_02.jpeg`, caption: "Every Drop Counts — Donate Blood, Donate Life", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/blood_donation_01.jpeg`, caption: "Honoured for a Noble Cause", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/blood_donation_03.jpeg`, caption: "A Gift of Life — Certificate of Appreciation", date: "", time: "", year: 2026 },
+    ],
+  },
+  {
+    title: "Food Donation for Cancer Patients",
+    frames: [
+      { image: `${LEO_26}/Food donation for cancer awareness_02.jpeg`, caption: "Free Food for Cancer Patients — Serving with Compassion", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/Food donation for cancer awareness_01.jpeg`, caption: "A Warm Meal, A Kind Heart", date: "", time: "", year: 2026 },
+    ],
+  },
+  {
+    title: "Old Age Home Visit",
+    frames: [
+      { image: `${LEO_26}/Old age hoem _01.jpeg`, caption: "Small Gifts, Big Smiles — A Visit to Vuyiroli Home", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/Old age hoem _02.jpeg`, caption: "Serving with Love — Sharing a Meal with Our Elders", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/Old age hoem _03.jpeg`, caption: "Nourishing Bonds — Lunch Served with Care", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/Old age hoem _04.jpeg`, caption: "A Moment of Togetherness", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/Old age hoem _05.jpeg`, caption: "Time Well Spent — Listening, Sharing, Caring", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/Old age hoem _06.jpeg`, caption: "Hands That Serve — Compassion in Action", date: "", time: "", year: 2026 },
+    ],
+  },
+  {
+    title: "Club Meetings & Installation",
+    frames: [
+      { image: `${LEO_26}/leo_club_03.jpeg`, caption: "Leo Club Installation — A New Year of Service Begins", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/leo_club_02.jpeg`, caption: "Leos with a Purpose — Our Club, Our Community", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/leo_club_04.jpeg`, caption: "Pinned with Pride — New Leos Take the Pledge", date: "", time: "", year: 2026 },
+      { image: `${LEO_26}/leo_club_05.jpeg`, caption: "A Badge of Service — Investiture of Young Leaders", date: "", time: "", year: 2026 },
+    ],
+  },
+];

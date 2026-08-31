@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
 import GalleryYearView from "@/components/ui/GalleryYearView";
-import { clubs, getClub } from "@/data/clubs";
+import LeoClubView from "@/components/ui/LeoClubView";
+import { clubs, getClub, leoCategories2026 } from "@/data/clubs";
 import { CLUB_FOLDERS } from "@/data/photoFolders";
 import { readFramesFromDisk, mergeFrames } from "@/lib/photos";
 
@@ -36,6 +37,22 @@ export default async function ClubDetailPage({ params }: PageProps) {
   const folder = CLUB_FOLDERS[slug];
   const diskFrames = folder ? readFramesFromDisk(folder) : [];
   const allFrames = mergeFrames(club.frames, diskFrames);
+
+  // Leo Club shows its 2026 service projects as labelled category sections;
+  // older years stay a flat gallery.
+  if (slug === "leo-club") {
+    const flatFrames = allFrames.filter((f) => f.year !== 2026);
+    return (
+      <section className="container-x section-y">
+        <LeoClubView
+          title={club.title}
+          intro={club.intro}
+          flatFrames={flatFrames}
+          categories={leoCategories2026}
+        />
+      </section>
+    );
+  }
 
   return (
     <section className="container-x section-y">

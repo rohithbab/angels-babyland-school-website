@@ -1,7 +1,5 @@
 import type { EventItem } from "@/components/ui/EventSection";
 
-const IMG = "/assets/placeholder.jpg";
-
 /** A page-level intro (centered heading + subtitle) for an activity hub. */
 export interface ActivityIntro {
   title: string;
@@ -64,6 +62,10 @@ export const sportsIntro: ActivityIntro = {
     "Building fitness, discipline and team spirit through games and athletics for every age group — from our youngest learners to higher secondary students.",
 };
 
+const KIDS_SPORTS_25 = "/assets/activities/sports/kids_sports/2025";
+const KIDS_SPORTS_26 = "/assets/activities/sports/kids_sports/2026";
+const HS_SPORTS_26 = "/assets/activities/sports/high_school_sports/2026";
+
 export const sportsGroups: EventGroup[] = [
   {
     slug: "primary",
@@ -71,22 +73,48 @@ export const sportsGroups: EventGroup[] = [
     subtitle:
       "Playful, energetic games that develop coordination, fitness and a love for sport in our youngest students.",
     events: [
-      { image: "/assets/activities/sports/kids_sports/2025/Sports day 4.jpeg", name: "Overall Championship Trophy", date: "12 Dec 2025", time: "9:00 AM", year: 2025 },
-      { image: "/assets/activities/sports/kids_sports/2025/Sports day1.jpeg", name: "School Drill", date: "18 Sep 2025", time: "10:00 AM", year: 2025 },
-      { image: "/assets/activities/sports/kids_sports/2025/Sports Day3.jpeg", name: "Prize Distribution", date: "07 Nov 2025", time: "8:00 AM", year: 2025 },
+      // Annual Sports Meet 2026
+      { image: `${KIDS_SPORTS_26}/BC5A0011.JPG`, name: "Beats of the March — Our Little Band", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0018.JPG`, name: "A Grand Welcome for the Chief Guest", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0052.JPG`, name: "Felicitating Our Chief Guest", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0090.JPG`, name: "Tulip House March Past", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0094.JPG`, name: "Lily House on Parade", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0103.JPG`, name: "House Captains Salute the Chief Guest", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0171.JPG`, name: "Tiny Champions on the Podium", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0327.JPG`, name: "Little Yogis in Action", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0419.JPG`, name: "Tricolour at the Top — A Proud Pyramid", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0423.JPG`, name: "Balance and Teamwork", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0433.JPG`, name: "Standing Tall Together", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0470.JPG`, name: "Winning Smiles with the Trophy", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0476.JPG`, name: "Little Winners Celebrate", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${KIDS_SPORTS_26}/BC5A0487.JPG`, name: "Joy of Winning — Our KG Stars", date: "24 Aug 2026", time: "", year: 2026 },
+      // 2025
+      { image: `${KIDS_SPORTS_25}/Sports day 4.jpeg`, name: "Overall Championship Trophy", date: "12 Dec 2025", time: "9:00 AM", year: 2025 },
+      { image: `${KIDS_SPORTS_25}/Sports day1.jpeg`, name: "School Drill", date: "18 Sep 2025", time: "10:00 AM", year: 2025 },
+      { image: `${KIDS_SPORTS_25}/Sports Day3.jpeg`, name: "Prize Distribution", date: "07 Nov 2025", time: "8:00 AM", year: 2025 },
     ],
   },
-  // {
-  //   slug: "higher-secondary",
-  //   title: "Higher Secondary Sports",
-  //   subtitle:
-  //     "Competitive athletics, team games and the annual sports meet that build fitness, discipline and team spirit.",
-  //   events: [
-  //     { image: IMG, name: "Annual Sports Meet", date: "07 Feb 2025", time: "8:00 AM", year: 2025 },
-  //     { image: IMG, name: "Inter-house Football Final", date: "23 Nov 2025", time: "3:30 PM", year: 2025 },
-  //     { image: IMG, name: "District Athletics Meet", date: "11 Oct 2025", time: "7:00 AM", year: 2025 },
-  //   ],
-  // },
+  {
+    slug: "higher-secondary",
+    title: "Higher Secondary Sports",
+    subtitle:
+      "Competitive athletics, mass drills and the annual sports meet that build fitness, discipline and team spirit in our senior students.",
+    events: [
+      // Annual Sports Meet 2026
+      { image: `${HS_SPORTS_26}/BC5A0527.JPG`, name: "Honouring Our Chief Guest", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0555.JPG`, name: "Tulip House March Past", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0557.JPG`, name: "Save Water Awareness March", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0564.JPG`, name: "The Grand March Past of the Houses", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0670.JPG`, name: "Champions on the Podium", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0714.JPG`, name: "Strength Meets Grace — Mass Yoga Display", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0759.JPG`, name: "Rhythm and Discipline — Mass Drill", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0765.JPG`, name: "Silambam — Skill, Focus and Tradition", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0802.JPG`, name: "Reaching New Heights — Human Pyramid", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0863.JPG`, name: "The Thrill of Victory", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0878.JPG`, name: "Champions with the Winner's Shield", date: "24 Aug 2026", time: "", year: 2026 },
+      { image: `${HS_SPORTS_26}/BC5A0888.JPG`, name: "Behind Every Champion — Our Sports Team", date: "24 Aug 2026", time: "", year: 2026 },
+    ],
+  },
 ];
 
 export function getSportsGroup(slug: string): EventGroup | undefined {
