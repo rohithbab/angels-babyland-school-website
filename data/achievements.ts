@@ -37,6 +37,9 @@ export const achievements: Achievement[] = [
     intro:
       "Awards and honours earned by our dedicated faculty for excellence in teaching.",
     frames: [
+      { image: "/assets/achievements/teacher_achievements/Teachers_achievement_04.jpeg", caption: "Celebrating Excellence in Teaching", date: "", time: "", year: 2025 },
+      { image: "/assets/achievements/teacher_achievements/Teachers_achievement_05.jpeg", caption: "Recognising Our Best Teachers", date: "", time: "", year: 2025 },
+      { image: "/assets/achievements/teacher_achievements/Teachers_achievement_06.jpeg", caption: "Together in Service & Leadership", date: "", time: "", year: 2025 },
       { image: "/assets/achievements/teacher_achievements/Teachers_achievement_01.jpeg", caption: "Excellence in Teaching — Faculty Felicitation", date: "", time: "", year: 2025 },
       { image: "/assets/achievements/teacher_achievements/Teachers_achievement_02.jpeg", caption: "Honouring Dedication — Teacher Achievement Award", date: "", time: "", year: 2025 },
       { image: "/assets/achievements/teacher_achievements/Teachers_achievement_03.jpeg", caption: "Proud Moments — Recognising Our Outstanding Educators", date: "", time: "", year: 2025 },
