@@ -27,6 +27,8 @@ export const achievements: Achievement[] = [
       "Recognitions and milestones earned by Angels Babyland over three decades of service.",
     frames: [
       { image: "/assets/achievements/school_achievements/School_achievements_01.jpeg", caption: "Prestigious Honour — School Award Ceremony", date: "", time: "", year: 2025 },
+      { image: "/assets/achievements/school_achievements/Ymca award_01.jpeg", caption: "Iconic Edu Excellence Award 2026 — Angels Baby Land Shines at YMCA Madras", date: "", time: "", year: 2026 },
+      { image: "/assets/achievements/school_achievements/Ymca award_02.jpeg", caption: "A Grand Stage, A Greater Honour — School Voice Educational Conference 2026", date: "", time: "", year: 2026 },
     ],
   },
   {
