@@ -26,6 +26,8 @@ export const achievements: Achievement[] = [
     intro:
       "Recognitions and milestones earned by Angels Babyland over three decades of service.",
     frames: [
+      { image: "/assets/achievements/school_achievements/Best_budget_private_school_01.jpeg", caption: "Best Budget Private School — Honoured on the National Stage at the India School Rankings 2026-27 Awards, New Delhi", date: "", time: "", year: 2026 },
+      { image: "/assets/achievements/school_achievements/Best_budget_private_school_02.jpeg", caption: "Quality Education Within Every Family's Reach — Best Budget Private School Award, Delhi", date: "", time: "", year: 2026 },
       { image: "/assets/achievements/school_achievements/School_achievements_01.jpeg", caption: "Prestigious Honour — School Award Ceremony", date: "", time: "", year: 2025 },
       { image: "/assets/achievements/school_achievements/Ymca award_01.jpeg", caption: "Iconic Edu Excellence Award 2026 — Angels Baby Land Shines at YMCA Madras", date: "", time: "", year: 2026 },
       { image: "/assets/achievements/school_achievements/Ymca award_02.jpeg", caption: "A Grand Stage, A Greater Honour — School Voice Educational Conference 2026", date: "", time: "", year: 2026 },
@@ -55,6 +57,9 @@ export const achievements: Achievement[] = [
     intro:
       "Academic, sporting and cultural distinctions earned by our students.",
     frames: [
+      { image: `${STUDENTS}/Kishore_achievement3.jpeg`, caption: "Asian Championship, Thailand — Vishu & Kishore Bring Home Silver in Self Defence", date: "", time: "", year: 2025 },
+      { image: `${STUDENTS}/Kishore_achievement2.jpeg`, caption: "Strength, Skill & Spirit — Our Self Defence Stars in Action at the Asian Championship", date: "", time: "", year: 2025 },
+      { image: `${STUDENTS}/Kishore_achievement1.jpeg`, caption: "Silver on the Asian Stage — A Hero's Welcome Home", date: "", time: "", year: 2025 },
       { image: `${STUDENTS}/Students_achievements_01.jpeg`, caption: "Champion Athletes — District Level Winners", date: "20 Jan 2026", time: "10:00 AM", year: 2026 },
       { image: `${STUDENTS}/Students_achievements_02.jpeg`, caption: "Proud Moments — Sports Award Ceremony", date: "20 Jan 2026", time: "11:00 AM", year: 2026 },
       { image: `${STUDENTS}/Students_achievements_03.jpeg`, caption: "Team Spirit — Celebrating the Victory", date: "20 Jan 2026", time: "12:00 PM", year: 2026 },
