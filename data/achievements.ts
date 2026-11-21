@@ -57,6 +57,14 @@ export const achievements: Achievement[] = [
     intro:
       "Academic, sporting and cultural distinctions earned by our students.",
     frames: [
+      { image: `${STUDENTS}/Chess_Varunyaa.jpeg`, caption: "Checkmate Champion! — M. Varunyaa (VII C) Clinches 3rd Place at the 16th Inter School Chess Tournament", date: "21 Nov 2026", time: "", year: 2026 },
+      { image: `${STUDENTS}/Chess_Dharshan.jpeg`, caption: "Every Move Counts — G. Dharshan (VIII) Wins 3rd Place at the 16th Inter School Chess Tournament", date: "21 Nov 2026", time: "", year: 2026 },
+      { image: `${STUDENTS}/Chess_Noorul_Aabida.jpeg`, caption: "Strategy & Grit — N. Noorul Aabida (VII C) Secures 7th Place at the Inter School Chess Tournament", date: "21 Nov 2026", time: "", year: 2026 },
+      { image: `${STUDENTS}/Chess_Rohith_Varshan.jpeg`, caption: "Young Grandmaster in the Making — M. Rohith Varshan (V C) Secures 7th Place in Chess", date: "21 Nov 2026", time: "", year: 2026 },
+      { image: `${STUDENTS}/Robotics_2nd_prize_01.jpeg`, caption: "Little Innovators, Big Win! — Anu Yazhini, Arshiya, Mona Shree & Sree Saran Secure 2nd Prize in Robotics", date: "", time: "", year: 2026 },
+      { image: `${STUDENTS}/Robotics_2nd_prize_02.jpeg`, caption: "Building Tomorrow, Today — Our Robotics Team Brings Home the 2nd Prize Trophy", date: "", time: "", year: 2026 },
+      { image: `${STUDENTS}/Apsara_handwriting_01.jpeg`, caption: "Beautiful Writing, Brilliant Minds — Apsara Handwriting Competition Prize Winner", date: "", time: "", year: 2026 },
+      { image: `${STUDENTS}/Apsara_handwriting_02.jpeg`, caption: "Every Stroke a Masterpiece — Celebrating Our Apsara Handwriting Competition Winner", date: "", time: "", year: 2026 },
       { image: `${STUDENTS}/Kishore_achievement3.jpeg`, caption: "Asian Championship, Thailand — Vishu & Kishore Bring Home Silver in Self Defence", date: "", time: "", year: 2025 },
       { image: `${STUDENTS}/Kishore_achievement2.jpeg`, caption: "Strength, Skill & Spirit — Our Self Defence Stars in Action at the Asian Championship", date: "", time: "", year: 2025 },
       { image: `${STUDENTS}/Kishore_achievement1.jpeg`, caption: "Silver on the Asian Stage — A Hero's Welcome Home", date: "", time: "", year: 2025 },
