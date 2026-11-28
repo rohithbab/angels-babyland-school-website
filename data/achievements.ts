@@ -75,6 +75,7 @@ export const achievements: Achievement[] = [
       { image: `${STUDENTS}/Students_achievements_04.jpeg`, caption: "Sports Excellence — Medal Winners", date: "20 Jan 2026", time: "1:00 PM", year: 2026 },
       { image: `${STUDENTS}/Students_achievements_05.jpeg`, caption: "Triumph and Joy — Achievement Unlocked", date: "20 Jan 2026", time: "2:00 PM", year: 2026 },
       { image: `${STUDENTS}/Students_achievements_06.jpeg`, caption: "Rising Stars — Student Achievers in Sports", date: "20 Jan 2026", time: "3:00 PM", year: 2026 },
+      { image: `${STUDENTS}/vels_university_best_students_award.jpeg`, caption: "Best Student Award — Our 12th Std Stars Honoured at Vels University", date: "28 Nov 2026", time: "", year: 2026 },
     ],
   },
 ];

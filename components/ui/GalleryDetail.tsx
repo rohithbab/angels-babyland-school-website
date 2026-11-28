@@ -103,11 +103,15 @@ export default function GalleryDetail({
                   </div>
                   <div className="p-5">
                     <p className="font-medium">{frame.caption}</p>
-                    <div className="mt-3 flex items-center gap-3 text-xs text-text-muted">
-                      <span>{frame.date}</span>
-                      <span aria-hidden="true">·</span>
-                      <span>{frame.time}</span>
-                    </div>
+                    {(frame.date || frame.time) && (
+                      <div className="mt-3 flex items-center gap-3 text-xs text-text-muted">
+                        {frame.date && <span>{frame.date}</span>}
+                        {frame.date && frame.time && (
+                          <span aria-hidden="true">·</span>
+                        )}
+                        {frame.time && <span>{frame.time}</span>}
+                      </div>
+                    )}
                   </div>
                 </Card>
               </button>
